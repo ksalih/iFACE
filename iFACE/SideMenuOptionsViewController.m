@@ -29,10 +29,12 @@ NSInteger const SideMenuOptionsSectionUser = 0;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-     self.managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    self.managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     
-    self.user = [[self.fetchedResultsController fetchedObjects] objectAtIndex:0];
-    self.userNameLabel.text = self.user.fullName;
+    if ([[self.fetchedResultsController fetchedObjects] count] >0 ) {
+        self.user = [[self.fetchedResultsController fetchedObjects] objectAtIndex:0];
+        self.userNameLabel.text = self.user.fullName;
+    }
     
 }
 
@@ -79,25 +81,25 @@ NSInteger const SideMenuOptionsSectionUser = 0;
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    switch (indexPath.section) {
-        case SideMenuOptionsSectionUserActions:
-            switch (indexPath.row) {
-                case SideMenuOptionsActionLogout:{
-                    //pop ups an alert
-                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Logout"
-                                                                        message:@"Would you like to log out of the  application?"
-                                                                       delegate:self
-                                                              cancelButtonTitle:NSLocalizedString(@"Yes", nil)
-                                                              otherButtonTitles:NSLocalizedString(@"No", nil), nil];
-                    [alertView show];
-                }
-                    break;
-            }
-            break;
-            
-        default:
-            break;
-    }
+//    switch (indexPath.section) {
+//        case SideMenuOptionsSectionUserActions:
+//            switch (indexPath.row) {
+//                case SideMenuOptionsActionLogout:{
+//                    //pop ups an alert
+//                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Logout"
+//                                                                        message:@"Would you like to log out of the  application?"
+//                                                                       delegate:self
+//                                                              cancelButtonTitle:NSLocalizedString(@"Yes", nil)
+//                                                              otherButtonTitles:NSLocalizedString(@"No", nil), nil];
+//                    [alertView show];
+//                }
+//                    break;
+//            }
+//            break;
+//            
+//        default:
+//            break;
+//    }
     
 }
 #pragma mark - Alert Delegates

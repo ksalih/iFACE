@@ -127,14 +127,14 @@
         <scene sceneID="XWV-G2-3Df">
             <objects>
                 <tableViewController id="qOB-LG-c73" customClass="SideMenuOptionsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CEa-tB-aFX">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CEa-tB-aFX">
                         <rect key="frame" x="0.0" y="0.0" width="280" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.29019607843137252" green="0.32549019607843138" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="qH2-tp-wLI">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Faz-up-Zw1" imageView="qD7-JD-1DL" style="IBUITableViewCellStyleDefault" id="kaZ-bc-9sn">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Faz-up-Zw1" imageView="qD7-JD-1DL" style="IBUITableViewCellStyleDefault" id="kaZ-bc-9sn" customClass="JYTrueEtchedCell">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -158,7 +158,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="User Actions" id="ZIL-bh-tCK">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="ncw-AQ-cnB" imageView="yEf-vG-0d8" style="IBUITableViewCellStyleDefault" id="mbZ-Zp-T7R">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="ncw-AQ-cnB" imageView="yEf-vG-0d8" style="IBUITableViewCellStyleDefault" id="mbZ-Zp-T7R" customClass="JYTrueEtchedCell">
                                         <rect key="frame" x="0.0" y="66" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -178,7 +178,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="LfR-r4-2Y1" imageView="rFR-DB-mJc" style="IBUITableViewCellStyleDefault" id="UZs-hm-BWh">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="LfR-r4-2Y1" imageView="rFR-DB-mJc" style="IBUITableViewCellStyleDefault" id="UZs-hm-BWh" customClass="JYTrueEtchedCell">
                                         <rect key="frame" x="0.0" y="110" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -198,7 +198,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="cyh-mZ-UV0" imageView="Qr7-sg-x2b" style="IBUITableViewCellStyleDefault" id="dbF-Ta-NY8">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="cyh-mZ-UV0" imageView="Qr7-sg-x2b" style="IBUITableViewCellStyleDefault" id="dbF-Ta-NY8" customClass="JYTrueEtchedCell">
                                         <rect key="frame" x="0.0" y="154" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -250,6 +250,9 @@
             <relationships>
                 <relationship kind="outlet" name="headerText" candidateClass="UILabel"/>
             </relationships>
+        </class>
+        <class className="JYTrueEtchedCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JYTrueEtchedCell.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
