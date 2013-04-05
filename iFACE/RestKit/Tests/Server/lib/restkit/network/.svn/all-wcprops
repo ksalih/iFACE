@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Server/lib/restkit/network
+END
+authentication.rb
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Server/lib/restkit/network/authentication.rb
+END
+etags.rb
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Server/lib/restkit/network/etags.rb
+END
+timeout.rb
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Server/lib/restkit/network/timeout.rb
+END
+redirection.rb
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Server/lib/restkit/network/redirection.rb
+END

@@ -19,8 +19,18 @@
 		F862582D170E86E400C952A6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F862582C170E86E400C952A6 /* Default-568h@2x.png */; };
 		F8625830170E86E400C952A6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F862582E170E86E400C952A6 /* MainStoryboard.storyboard */; };
 		F8625833170E86E400C952A6 /* iFACE.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8625831170E86E400C952A6 /* iFACE.xcdatamodeld */; };
-		F8625836170E86E400C952A6 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8625835170E86E400C952A6 /* MasterViewController.m */; };
-		F8625839170E86E400C952A6 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8625838170E86E400C952A6 /* DetailViewController.m */; };
+		F8625845170E8A2200C952A6 /* ShadowedView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8625844170E8A2200C952A6 /* ShadowedView.m */; };
+		F8625849170E8A8800C952A6 /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F8625848170E8A8800C952A6 /* BackgroundLayer.m */; };
+		F862584B170E8ADF00C952A6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F862584A170E8ADF00C952A6 /* QuartzCore.framework */; };
+		F862584E170E8B1600C952A6 /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F862584D170E8B1600C952A6 /* SlideMenuViewController.m */; };
+		F8625851170E8B4400C952A6 /* JYDarkView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8625850170E8B4400C952A6 /* JYDarkView.m */; };
+		F8625854170E8B5600C952A6 /* JYGraphicsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F8625853170E8B5600C952A6 /* JYGraphicsHelper.m */; };
+		F8625859170E8C9F00C952A6 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F8625858170E8C9F00C952A6 /* User.m */; };
+		F862585C170E8D2C00C952A6 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = F862585B170E8D2C00C952A6 /* Event.m */; };
+		F8625860170E8F1D00C952A6 /* backMenuButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F862585E170E8F1D00C952A6 /* backMenuButton.png */; };
+		F8625861170E8F1D00C952A6 /* backMenuButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F862585F170E8F1D00C952A6 /* backMenuButton@2x.png */; };
+		F8625864170E90FD00C952A6 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8625863170E90FD00C952A6 /* MainTabViewController.m */; };
+		F862586A170E92BF00C952A6 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8625869170E92BF00C952A6 /* TabViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,10 +50,27 @@
 		F862582C170E86E400C952A6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F862582F170E86E400C952A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		F8625832170E86E400C952A6 /* iFACE.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iFACE.xcdatamodel; sourceTree = "<group>"; };
-		F8625834170E86E400C952A6 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		F8625835170E86E400C952A6 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		F8625837170E86E400C952A6 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		F8625838170E86E400C952A6 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		F8625843170E8A2200C952A6 /* ShadowedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowedView.h; sourceTree = "<group>"; };
+		F8625844170E8A2200C952A6 /* ShadowedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowedView.m; sourceTree = "<group>"; };
+		F8625847170E8A8800C952A6 /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
+		F8625848170E8A8800C952A6 /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
+		F862584A170E8ADF00C952A6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F862584C170E8B1600C952A6 /* SlideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuViewController.h; sourceTree = "<group>"; };
+		F862584D170E8B1600C952A6 /* SlideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuViewController.m; sourceTree = "<group>"; };
+		F862584F170E8B4400C952A6 /* JYDarkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYDarkView.h; sourceTree = "<group>"; };
+		F8625850170E8B4400C952A6 /* JYDarkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYDarkView.m; sourceTree = "<group>"; };
+		F8625852170E8B5600C952A6 /* JYGraphicsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYGraphicsHelper.h; sourceTree = "<group>"; };
+		F8625853170E8B5600C952A6 /* JYGraphicsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYGraphicsHelper.m; sourceTree = "<group>"; };
+		F8625857170E8C9F00C952A6 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = model/User.h; sourceTree = "<group>"; };
+		F8625858170E8C9F00C952A6 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = model/User.m; sourceTree = "<group>"; };
+		F862585A170E8D2C00C952A6 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = model/Event.h; sourceTree = "<group>"; };
+		F862585B170E8D2C00C952A6 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = model/Event.m; sourceTree = "<group>"; };
+		F862585E170E8F1D00C952A6 /* backMenuButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backMenuButton.png; sourceTree = "<group>"; };
+		F862585F170E8F1D00C952A6 /* backMenuButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backMenuButton@2x.png"; sourceTree = "<group>"; };
+		F8625862170E90FD00C952A6 /* MainTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabViewController.h; sourceTree = "<group>"; };
+		F8625863170E90FD00C952A6 /* MainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabViewController.m; sourceTree = "<group>"; };
+		F8625868170E92BF00C952A6 /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabViewController.h; path = ViewControllers/TabViewController.h; sourceTree = "<group>"; };
+		F8625869170E92BF00C952A6 /* TabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabViewController.m; path = ViewControllers/TabViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +78,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F862584B170E8ADF00C952A6 /* QuartzCore.framework in Frameworks */,
+				F8625819170E86E400C952A6 /* CoreGraphics.framework in Frameworks */,
 				F8625815170E86E400C952A6 /* UIKit.framework in Frameworks */,
 				F8625817170E86E400C952A6 /* Foundation.framework in Frameworks */,
-				F8625819170E86E400C952A6 /* CoreGraphics.framework in Frameworks */,
 				F862581B170E86E400C952A6 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,6 +109,7 @@
 		F8625813170E86E400C952A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F862584A170E8ADF00C952A6 /* QuartzCore.framework */,
 				F8625814170E86E400C952A6 /* UIKit.framework */,
 				F8625816170E86E400C952A6 /* Foundation.framework */,
 				F8625818170E86E400C952A6 /* CoreGraphics.framework */,
@@ -92,13 +121,13 @@
 		F862581C170E86E400C952A6 /* iFACE */ = {
 			isa = PBXGroup;
 			children = (
+				F862585D170E8E3800C952A6 /* images */,
+				F8625856170E8C7C00C952A6 /* Model */,
+				F8625855170E8B7E00C952A6 /* View Controllers */,
+				F8625846170E8A2800C952A6 /* components */,
 				F862583F170E871B00C952A6 /* main */,
 				F8625825170E86E400C952A6 /* AppDelegate.h */,
 				F8625826170E86E400C952A6 /* AppDelegate.m */,
-				F8625834170E86E400C952A6 /* MasterViewController.h */,
-				F8625835170E86E400C952A6 /* MasterViewController.m */,
-				F8625837170E86E400C952A6 /* DetailViewController.h */,
-				F8625838170E86E400C952A6 /* DetailViewController.m */,
 				F862581D170E86E400C952A6 /* Supporting Files */,
 			);
 			path = iFACE;
@@ -125,6 +154,54 @@
 				F862582E170E86E400C952A6 /* MainStoryboard.storyboard */,
 			);
 			name = main;
+			sourceTree = "<group>";
+		};
+		F8625846170E8A2800C952A6 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				F8625852170E8B5600C952A6 /* JYGraphicsHelper.h */,
+				F8625853170E8B5600C952A6 /* JYGraphicsHelper.m */,
+				F862584F170E8B4400C952A6 /* JYDarkView.h */,
+				F8625850170E8B4400C952A6 /* JYDarkView.m */,
+				F8625847170E8A8800C952A6 /* BackgroundLayer.h */,
+				F8625848170E8A8800C952A6 /* BackgroundLayer.m */,
+				F8625843170E8A2200C952A6 /* ShadowedView.h */,
+				F8625844170E8A2200C952A6 /* ShadowedView.m */,
+			);
+			name = components;
+			sourceTree = "<group>";
+		};
+		F8625855170E8B7E00C952A6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F862584C170E8B1600C952A6 /* SlideMenuViewController.h */,
+				F862584D170E8B1600C952A6 /* SlideMenuViewController.m */,
+				F8625862170E90FD00C952A6 /* MainTabViewController.h */,
+				F8625863170E90FD00C952A6 /* MainTabViewController.m */,
+				F8625868170E92BF00C952A6 /* TabViewController.h */,
+				F8625869170E92BF00C952A6 /* TabViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F8625856170E8C7C00C952A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F862585A170E8D2C00C952A6 /* Event.h */,
+				F862585B170E8D2C00C952A6 /* Event.m */,
+				F8625857170E8C9F00C952A6 /* User.h */,
+				F8625858170E8C9F00C952A6 /* User.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F862585D170E8E3800C952A6 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				F862585E170E8F1D00C952A6 /* backMenuButton.png */,
+				F862585F170E8F1D00C952A6 /* backMenuButton@2x.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +260,8 @@
 				F862582B170E86E400C952A6 /* Default@2x.png in Resources */,
 				F862582D170E86E400C952A6 /* Default-568h@2x.png in Resources */,
 				F8625830170E86E400C952A6 /* MainStoryboard.storyboard in Resources */,
+				F8625860170E8F1D00C952A6 /* backMenuButton.png in Resources */,
+				F8625861170E8F1D00C952A6 /* backMenuButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,8 +275,15 @@
 				F8625823170E86E400C952A6 /* main.m in Sources */,
 				F8625827170E86E400C952A6 /* AppDelegate.m in Sources */,
 				F8625833170E86E400C952A6 /* iFACE.xcdatamodeld in Sources */,
-				F8625836170E86E400C952A6 /* MasterViewController.m in Sources */,
-				F8625839170E86E400C952A6 /* DetailViewController.m in Sources */,
+				F8625845170E8A2200C952A6 /* ShadowedView.m in Sources */,
+				F8625849170E8A8800C952A6 /* BackgroundLayer.m in Sources */,
+				F862584E170E8B1600C952A6 /* SlideMenuViewController.m in Sources */,
+				F8625851170E8B4400C952A6 /* JYDarkView.m in Sources */,
+				F8625854170E8B5600C952A6 /* JYGraphicsHelper.m in Sources */,
+				F8625859170E8C9F00C952A6 /* User.m in Sources */,
+				F862585C170E8D2C00C952A6 /* Event.m in Sources */,
+				F8625864170E90FD00C952A6 /* MainTabViewController.m in Sources */,
+				F862586A170E92BF00C952A6 /* TabViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +406,7 @@
 				F862583E170E86E400C952A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

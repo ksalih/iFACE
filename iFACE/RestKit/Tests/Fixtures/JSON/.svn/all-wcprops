@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON
+END
+NakedEvents.json
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/NakedEvents.json
+END
+RailsUser.json
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/RailsUser.json
+END
+ComplexNestedUser.json
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/ComplexNestedUser.json
+END
+SameKeyDifferentTargetClasses.json
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/SameKeyDifferentTargetClasses.json
+END
+errors.json
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/errors.json
+END
+user.json
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/user.json
+END
+ArrayOfHumans.json
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/ArrayOfHumans.json
+END
+benchmark_parents_and_children.json
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/benchmark_parents_and_children.json
+END
+DynamicKeys.json
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/DynamicKeys.json
+END
+nested_user.json
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/nested_user.json
+END
+ConnectingParents.json
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/ConnectingParents.json
+END
+ArrayOfResults.json
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/ArrayOfResults.json
+END
+error.json
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/error.json
+END
+Foursquare.json
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/Foursquare.json
+END
+DynamicKeysWithRelationship.json
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/DynamicKeysWithRelationship.json
+END
+lists.json
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/lists.json
+END
+DynamicKeysWithNestedRelationship.json
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/DynamicKeysWithNestedRelationship.json
+END
+users.json
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/users.json
+END
+ArrayOfNestedDictionaries.json
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/ArrayOfNestedDictionaries.json
+END
+parents_and_children.json
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Fixtures/JSON/parents_and_children.json
+END

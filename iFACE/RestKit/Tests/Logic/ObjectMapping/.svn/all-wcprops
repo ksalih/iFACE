@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Logic/ObjectMapping
+END
+RKMIMETypeSerializationTest.m
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Logic/ObjectMapping/RKMIMETypeSerializationTest.m
+END
+RKMappingResultTest.m
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Logic/ObjectMapping/RKMappingResultTest.m
+END
+RKObjectMappingNextGenTest.m
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Logic/ObjectMapping/RKObjectMappingNextGenTest.m
+END
+RKMappingOperationTest.m
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Logic/ObjectMapping/RKMappingOperationTest.m
+END
+RKRelationshipMappingTest.m
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Logic/ObjectMapping/RKRelationshipMappingTest.m
+END
+RKAttributeMappingTest.m
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Logic/ObjectMapping/RKAttributeMappingTest.m
+END
+RKDynamicMappingTest.m
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Logic/ObjectMapping/RKDynamicMappingTest.m
+END
+RKObjectManagerTest.m
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Logic/ObjectMapping/RKObjectManagerTest.m
+END
+RKObjectMappingTest.m
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Logic/ObjectMapping/RKObjectMappingTest.m
+END
+RKPaginatorTest.m
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Logic/ObjectMapping/RKPaginatorTest.m
+END
+RKObjectParameterizationTest.m
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Tests/Logic/ObjectMapping/RKObjectParameterizationTest.m
+END

@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Code/Search
+END
+RKManagedObjectStore+RKSearchAdditions.h
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Code/Search/RKManagedObjectStore+RKSearchAdditions.h
+END
+RKSearchWordEntity.h
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Code/Search/RKSearchWordEntity.h
+END
+RKSearchTokenizer.h
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Code/Search/RKSearchTokenizer.h
+END
+RKSearchWord.h
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Code/Search/RKSearchWord.h
+END
+RKManagedObjectStore+RKSearchAdditions.m
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Code/Search/RKManagedObjectStore+RKSearchAdditions.m
+END
+RKSearchWordEntity.m
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Code/Search/RKSearchWordEntity.m
+END
+RKSearchIndexer.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Code/Search/RKSearchIndexer.h
+END
+RKSearchTokenizer.m
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Code/Search/RKSearchTokenizer.m
+END
+RKSearchPredicate.h
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Code/Search/RKSearchPredicate.h
+END
+RKSearchWord.m
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Code/Search/RKSearchWord.m
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Code/Search/README.md
+END
+RKSearchIndexer.m
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Code/Search/RKSearchIndexer.m
+END
+RKSearchPredicate.m
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/ITMOD/!svn/ver/9153/ITMOD/Phmsa/PhmsaFieldOpsMobile/trunk/FieldOps%20Mobile/RestKit/Code/Search/RKSearchPredicate.m
+END
