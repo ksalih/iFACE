@@ -11,7 +11,7 @@
 
 @implementation User
 
-@dynamic name;
+@dynamic fullName;
 @dynamic password;
 @dynamic username;
 
