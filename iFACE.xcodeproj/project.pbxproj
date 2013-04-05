@@ -59,6 +59,12 @@
 		F8792061170F700400C8CBE1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8792060170F700400C8CBE1 /* CFNetwork.framework */; };
 		F8792063170F700D00C8CBE1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8792062170F700D00C8CBE1 /* CoreLocation.framework */; };
 		F8792065170F701400C8CBE1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8792064170F701400C8CBE1 /* MapKit.framework */; };
+		F879206A170F7CA700C8CBE1 /* me off.png in Resources */ = {isa = PBXBuildFile; fileRef = F8792066170F7CA700C8CBE1 /* me off.png */; };
+		F879206B170F7CA700C8CBE1 /* me off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8792067170F7CA700C8CBE1 /* me off@2x.png */; };
+		F879206C170F7CA700C8CBE1 /* me on.png in Resources */ = {isa = PBXBuildFile; fileRef = F8792068170F7CA700C8CBE1 /* me on.png */; };
+		F879206D170F7CA700C8CBE1 /* me on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8792069170F7CA700C8CBE1 /* me on@2x.png */; };
+		F8792070170F7CD800C8CBE1 /* settings off.png in Resources */ = {isa = PBXBuildFile; fileRef = F879206E170F7CD800C8CBE1 /* settings off.png */; };
+		F8792071170F7CD800C8CBE1 /* settings off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F879206F170F7CD800C8CBE1 /* settings off@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +144,12 @@
 		F8792060170F700400C8CBE1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F8792062170F700D00C8CBE1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F8792064170F701400C8CBE1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F8792066170F7CA700C8CBE1 /* me off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me off.png"; sourceTree = "<group>"; };
+		F8792067170F7CA700C8CBE1 /* me off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me off@2x.png"; sourceTree = "<group>"; };
+		F8792068170F7CA700C8CBE1 /* me on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me on.png"; sourceTree = "<group>"; };
+		F8792069170F7CA700C8CBE1 /* me on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me on@2x.png"; sourceTree = "<group>"; };
+		F879206E170F7CD800C8CBE1 /* settings off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings off.png"; sourceTree = "<group>"; };
+		F879206F170F7CD800C8CBE1 /* settings off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings off@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +313,12 @@
 		F862585D170E8E3800C952A6 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F879206E170F7CD800C8CBE1 /* settings off.png */,
+				F879206F170F7CD800C8CBE1 /* settings off@2x.png */,
+				F8792066170F7CA700C8CBE1 /* me off.png */,
+				F8792067170F7CA700C8CBE1 /* me off@2x.png */,
+				F8792068170F7CA700C8CBE1 /* me on.png */,
+				F8792069170F7CA700C8CBE1 /* me on@2x.png */,
 				F862585E170E8F1D00C952A6 /* backMenuButton.png */,
 				F862585F170E8F1D00C952A6 /* backMenuButton@2x.png */,
 			);
@@ -418,6 +436,12 @@
 				F8792023170F19AB00C8CBE1 /* greyButtonHighlight@2x.png in Resources */,
 				F8792024170F19AB00C8CBE1 /* greyButton@2x.png in Resources */,
 				F879202F170F2BDD00C8CBE1 /* JYDarkTranslucentCellHeaderView.xib in Resources */,
+				F879206A170F7CA700C8CBE1 /* me off.png in Resources */,
+				F879206B170F7CA700C8CBE1 /* me off@2x.png in Resources */,
+				F879206C170F7CA700C8CBE1 /* me on.png in Resources */,
+				F879206D170F7CA700C8CBE1 /* me on@2x.png in Resources */,
+				F8792070170F7CD800C8CBE1 /* settings off.png in Resources */,
+				F8792071170F7CD800C8CBE1 /* settings off@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

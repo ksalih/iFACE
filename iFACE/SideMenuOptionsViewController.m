@@ -85,7 +85,7 @@ NSInteger const SideMenuOptionsSectionUser = 0;
                 case SideMenuOptionsActionLogout:{
                     //pop ups an alert
                     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Logout"
-                                                                        message:@"Would you like to log out of the FieldOps Mobile application?"
+                                                                        message:@"Would you like to log out of the  application?"
                                                                        delegate:self
                                                               cancelButtonTitle:NSLocalizedString(@"Yes", nil)
                                                               otherButtonTitles:NSLocalizedString(@"No", nil), nil];

@@ -33,7 +33,7 @@
 #define MAIN_STORYBOARD @"mainStoryBoard"
 
 //database
-#define USERS_TABLE @"Users"
+#define USERS_TABLE @"User"
 #define MAILBOX_INBOX_TABLE @"Inbox"
 #define MAILBOX_OUTBOX_TABLE @"Outbox"
 #define MAILBOX_SENT_TABLE @"Sent"
