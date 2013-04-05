@@ -72,6 +72,11 @@
 		F879207C170F851C00C8CBE1 /* WelcomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F879207B170F851C00C8CBE1 /* WelcomeScreenViewController.m */; };
 		F879207F170F86EA00C8CBE1 /* deloitteDigitalLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F879207D170F86EA00C8CBE1 /* deloitteDigitalLogo.png */; };
 		F8792080170F86EA00C8CBE1 /* deloitteDigitalLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F879207E170F86EA00C8CBE1 /* deloitteDigitalLogo@2x.png */; };
+		F8792083170F8D6F00C8CBE1 /* BlueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F8792081170F8D6F00C8CBE1 /* BlueButton.png */; };
+		F8792084170F8D6F00C8CBE1 /* BlueButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8792082170F8D6F00C8CBE1 /* BlueButton@2x.png */; };
+		F8792087170F902F00C8CBE1 /* BlueButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8792086170F902F00C8CBE1 /* BlueButton.m */; };
+		F879208A170F91E700C8CBE1 /* BlueButtonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = F8792088170F91E600C8CBE1 /* BlueButtonHighlighted.png */; };
+		F879208B170F91E700C8CBE1 /* BlueButtonHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8792089170F91E600C8CBE1 /* BlueButtonHighlighted@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +170,12 @@
 		F879207B170F851C00C8CBE1 /* WelcomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WelcomeScreenViewController.m; path = ViewControllers/WelcomeScreenViewController.m; sourceTree = "<group>"; };
 		F879207D170F86EA00C8CBE1 /* deloitteDigitalLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deloitteDigitalLogo.png; sourceTree = "<group>"; };
 		F879207E170F86EA00C8CBE1 /* deloitteDigitalLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deloitteDigitalLogo@2x.png"; sourceTree = "<group>"; };
+		F8792081170F8D6F00C8CBE1 /* BlueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueButton.png; sourceTree = "<group>"; };
+		F8792082170F8D6F00C8CBE1 /* BlueButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BlueButton@2x.png"; sourceTree = "<group>"; };
+		F8792085170F902F00C8CBE1 /* BlueButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlueButton.h; path = components/BlueButton.h; sourceTree = "<group>"; };
+		F8792086170F902F00C8CBE1 /* BlueButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlueButton.m; path = components/BlueButton.m; sourceTree = "<group>"; };
+		F8792088170F91E600C8CBE1 /* BlueButtonHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueButtonHighlighted.png; sourceTree = "<group>"; };
+		F8792089170F91E600C8CBE1 /* BlueButtonHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BlueButtonHighlighted@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,7 +295,7 @@
 				F879203B170F6E2900C8CBE1 /* JYStringHelperFunctions.h */,
 				F879203C170F6E2900C8CBE1 /* JYStringHelperFunctions.m */,
 				F8792028170F2BCE00C8CBE1 /* Table */,
-				F879201C170F199100C8CBE1 /* GreyButton */,
+				F879201C170F199100C8CBE1 /* Buttons */,
 				F8625852170E8B5600C952A6 /* JYGraphicsHelper.h */,
 				F8625853170E8B5600C952A6 /* JYGraphicsHelper.m */,
 				F862584F170E8B4400C952A6 /* JYDarkView.h */,
@@ -330,6 +341,10 @@
 		F862585D170E8E3800C952A6 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F8792088170F91E600C8CBE1 /* BlueButtonHighlighted.png */,
+				F8792089170F91E600C8CBE1 /* BlueButtonHighlighted@2x.png */,
+				F8792081170F8D6F00C8CBE1 /* BlueButton.png */,
+				F8792082170F8D6F00C8CBE1 /* BlueButton@2x.png */,
 				F879207D170F86EA00C8CBE1 /* deloitteDigitalLogo.png */,
 				F879207E170F86EA00C8CBE1 /* deloitteDigitalLogo@2x.png */,
 				F8792076170F815700C8CBE1 /* search off.png */,
@@ -348,7 +363,7 @@
 			name = images;
 			sourceTree = "<group>";
 		};
-		F879201C170F199100C8CBE1 /* GreyButton */ = {
+		F879201C170F199100C8CBE1 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
 				F8792025170F210000C8CBE1 /* GreyImageButton.h */,
@@ -357,8 +372,10 @@
 				F879201E170F19AB00C8CBE1 /* greyButton.png */,
 				F879201F170F19AB00C8CBE1 /* greyButtonHighlight@2x.png */,
 				F8792020170F19AB00C8CBE1 /* greyButton@2x.png */,
+				F8792085170F902F00C8CBE1 /* BlueButton.h */,
+				F8792086170F902F00C8CBE1 /* BlueButton.m */,
 			);
-			name = GreyButton;
+			name = Buttons;
 			sourceTree = "<group>";
 		};
 		F8792028170F2BCE00C8CBE1 /* Table */ = {
@@ -471,6 +488,10 @@
 				F8792079170F815700C8CBE1 /* search off@2x.png in Resources */,
 				F879207F170F86EA00C8CBE1 /* deloitteDigitalLogo.png in Resources */,
 				F8792080170F86EA00C8CBE1 /* deloitteDigitalLogo@2x.png in Resources */,
+				F8792083170F8D6F00C8CBE1 /* BlueButton.png in Resources */,
+				F8792084170F8D6F00C8CBE1 /* BlueButton@2x.png in Resources */,
+				F879208A170F91E700C8CBE1 /* BlueButtonHighlighted.png in Resources */,
+				F879208B170F91E700C8CBE1 /* BlueButtonHighlighted@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +525,7 @@
 				F8792047170F6E6600C8CBE1 /* NSString+UUID.m in Sources */,
 				F879204A170F6EBE00C8CBE1 /* User.m in Sources */,
 				F879207C170F851C00C8CBE1 /* WelcomeScreenViewController.m in Sources */,
+				F8792087170F902F00C8CBE1 /* BlueButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

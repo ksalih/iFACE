@@ -1,5 +1,5 @@
 //
-//  WelcomeScreenViewController.h
+//  BlueButton.h
 //  iFACE
 //
 //  Created by Jorge Carvallo on 4/5/13.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WelcomeScreenViewController : UIViewController
-- (IBAction)signInButton:(id)sender;
+@interface BlueButton : UIButton
 
 @end
