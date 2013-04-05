@@ -69,6 +69,9 @@
 		F8792075170F80E300C8CBE1 /* activity off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8792073170F80E300C8CBE1 /* activity off@2x.png */; };
 		F8792078170F815700C8CBE1 /* search off.png in Resources */ = {isa = PBXBuildFile; fileRef = F8792076170F815700C8CBE1 /* search off.png */; };
 		F8792079170F815700C8CBE1 /* search off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8792077170F815700C8CBE1 /* search off@2x.png */; };
+		F879207C170F851C00C8CBE1 /* WelcomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F879207B170F851C00C8CBE1 /* WelcomeScreenViewController.m */; };
+		F879207F170F86EA00C8CBE1 /* deloitteDigitalLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F879207D170F86EA00C8CBE1 /* deloitteDigitalLogo.png */; };
+		F8792080170F86EA00C8CBE1 /* deloitteDigitalLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F879207E170F86EA00C8CBE1 /* deloitteDigitalLogo@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +161,10 @@
 		F8792073170F80E300C8CBE1 /* activity off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "activity off@2x.png"; sourceTree = "<group>"; };
 		F8792076170F815700C8CBE1 /* search off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search off.png"; sourceTree = "<group>"; };
 		F8792077170F815700C8CBE1 /* search off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search off@2x.png"; sourceTree = "<group>"; };
+		F879207A170F851C00C8CBE1 /* WelcomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WelcomeScreenViewController.h; path = ViewControllers/WelcomeScreenViewController.h; sourceTree = "<group>"; };
+		F879207B170F851C00C8CBE1 /* WelcomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WelcomeScreenViewController.m; path = ViewControllers/WelcomeScreenViewController.m; sourceTree = "<group>"; };
+		F879207D170F86EA00C8CBE1 /* deloitteDigitalLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deloitteDigitalLogo.png; sourceTree = "<group>"; };
+		F879207E170F86EA00C8CBE1 /* deloitteDigitalLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deloitteDigitalLogo@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +310,8 @@
 				F8625863170E90FD00C952A6 /* MainTabViewController.m */,
 				F8625868170E92BF00C952A6 /* TabViewController.h */,
 				F8625869170E92BF00C952A6 /* TabViewController.m */,
+				F879207A170F851C00C8CBE1 /* WelcomeScreenViewController.h */,
+				F879207B170F851C00C8CBE1 /* WelcomeScreenViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -321,6 +330,8 @@
 		F862585D170E8E3800C952A6 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F879207D170F86EA00C8CBE1 /* deloitteDigitalLogo.png */,
+				F879207E170F86EA00C8CBE1 /* deloitteDigitalLogo@2x.png */,
 				F8792076170F815700C8CBE1 /* search off.png */,
 				F8792077170F815700C8CBE1 /* search off@2x.png */,
 				F8792072170F80E300C8CBE1 /* activity off.png */,
@@ -458,6 +469,8 @@
 				F8792075170F80E300C8CBE1 /* activity off@2x.png in Resources */,
 				F8792078170F815700C8CBE1 /* search off.png in Resources */,
 				F8792079170F815700C8CBE1 /* search off@2x.png in Resources */,
+				F879207F170F86EA00C8CBE1 /* deloitteDigitalLogo.png in Resources */,
+				F8792080170F86EA00C8CBE1 /* deloitteDigitalLogo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +503,7 @@
 				F8792046170F6E6600C8CBE1 /* DirectoryWatcher.m in Sources */,
 				F8792047170F6E6600C8CBE1 /* NSString+UUID.m in Sources */,
 				F879204A170F6EBE00C8CBE1 /* User.m in Sources */,
+				F879207C170F851C00C8CBE1 /* WelcomeScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
