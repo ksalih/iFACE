@@ -14,13 +14,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"TableBG"]];
+    self.view.backgroundColor = background;
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
+   }
 
 - (void) registerSlideMenuViewController:(SlideMenuViewController *) slideMenuViewController{
     self.slideMenuViewController = slideMenuViewController;
