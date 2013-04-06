@@ -119,5 +119,50 @@
     return 0;
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:12];
+        cell.detailTextLabel.font = [UIFont systemFontOfSize:12];
+        cell.detailTextLabel.textColor = [UIColor lightGrayColor];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    cell.textLabel.text = [self.nearbyVenues[indexPath.row] name];
+    FSVenue *venue = self.nearbyVenues[indexPath.row];
+    if (venue.location.address) {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@m, %@",
+                                     venue.location.distance,
+                                     venue.location.address];
+    }else{
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@m",
+                                     venue.location.distance];
+    }
+    
+    return cell;
+}
+#pragma mark  - mapview delegate
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation{
+    if (annotation == mapView.userLocation)
+        return nil;
+    
+    static NSString *s = @"ann";
+    MKAnnotationView *pin = [mapView dequeueReusableAnnotationViewWithIdentifier:s];
+    if (!pin) {
+        pin = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:s];
+        pin.canShowCallout = YES;
+        pin.image = [UIImage imageNamed:@"pin.png"];
+        pin.calloutOffset = CGPointMake(0, 0);
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        [button addTarget:self
+                   action:@selector(checkinButton) forControlEvents:UIControlEventTouchUpInside];
+        pin.rightCalloutAccessoryView = button;
+        
+    }
+    return pin;
+}
 
 @end
