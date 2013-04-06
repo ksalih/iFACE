@@ -115,7 +115,7 @@
 
 - (void) requestCIOData {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
-        ZKQueryResult *qr = [_client query:@"select id,name from account order by SystemModstamp desc LIMIT 50"];
+        ZKQueryResult *qr = [_client query:@"SELECT iface__Agency__c from iface__DCIO__c"];
         self.results = qr;
         
     });
