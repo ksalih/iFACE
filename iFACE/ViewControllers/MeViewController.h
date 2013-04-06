@@ -13,6 +13,9 @@
 
 @property (strong,nonatomic) SlideMenuViewController *slideMenuViewController;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *slideMenuButton;
+@property (weak, nonatomic) IBOutlet UIView *userContainerView;
+@property (weak, nonatomic) IBOutlet UIImageView *userPictureImageView;
+- (IBAction)imageTapped:(id)sender;
 
 - (IBAction)slideMenuAction:(id)sender;
 

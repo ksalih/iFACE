@@ -134,6 +134,37 @@
 		F8F2BBCF1710AB6200D5810E /* IFACECoredataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBCE1710AB6200D5810E /* IFACECoredataHelper.m */; };
 		F8F2BBD21710B23300D5810E /* DPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBD11710B23300D5810E /* DPerson.m */; };
 		F8F2BBD61710B71600D5810E /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBD51710B71600D5810E /* MeViewController.m */; };
+		F8F2BBD91710D21300D5810E /* Checkin Button selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BBD71710D21300D5810E /* Checkin Button selected.png */; };
+		F8F2BBDA1710D21300D5810E /* Checkin Button selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BBD81710D21300D5810E /* Checkin Button selected@2x.png */; };
+		F8F2BBDD1710D4DB00D5810E /* cio connections button.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BBDB1710D4DB00D5810E /* cio connections button.png */; };
+		F8F2BBDE1710D4DB00D5810E /* cio connections button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BBDC1710D4DB00D5810E /* cio connections button@2x.png */; };
+		F8F2BBE11710D52200D5810E /* badges button.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BBDF1710D52200D5810E /* badges button.png */; };
+		F8F2BBE21710D52200D5810E /* badges button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BBE01710D52200D5810E /* badges button@2x.png */; };
+		F8F2BBE51710D5F200D5810E /* deloitte network button.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BBE31710D5F100D5810E /* deloitte network button.png */; };
+		F8F2BBE61710D5F200D5810E /* deloitte network button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BBE41710D5F100D5810E /* deloitte network button@2x.png */; };
+		F8F2BBE91710D62000D5810E /* recent activity button.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BBE71710D62000D5810E /* recent activity button.png */; };
+		F8F2BBEA1710D62000D5810E /* recent activity button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BBE81710D62000D5810E /* recent activity button@2x.png */; };
+		F8F2BBED1710D65F00D5810E /* hot topics added button.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BBEB1710D65F00D5810E /* hot topics added button.png */; };
+		F8F2BBEE1710D65F00D5810E /* hot topics added button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BBEC1710D65F00D5810E /* hot topics added button@2x.png */; };
+		F8F2BBF21710D8C100D5810E /* CheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBF11710D8C100D5810E /* CheckInViewController.m */; };
+		F8F2BC011710E14C00D5810E /* Foursquare2.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBF51710E14C00D5810E /* Foursquare2.m */; };
+		F8F2BC021710E14C00D5810E /* FSRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBF71710E14C00D5810E /* FSRequester.m */; };
+		F8F2BC031710E14C00D5810E /* FSTargetCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBF91710E14C00D5810E /* FSTargetCallback.m */; };
+		F8F2BC041710E14C00D5810E /* FSWebLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBFB1710E14C00D5810E /* FSWebLogin.m */; };
+		F8F2BC051710E14C00D5810E /* FSWebLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BBFC1710E14C00D5810E /* FSWebLogin.xib */; };
+		F8F2BC061710E14C00D5810E /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BBFD1710E14C00D5810E /* pin.png */; };
+		F8F2BC071710E14C00D5810E /* pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BBFE1710E14C00D5810E /* pin@2x.png */; };
+		F8F2BC081710E14C00D5810E /* poweredByFoursquare_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BBFF1710E14C00D5810E /* poweredByFoursquare_gray.png */; };
+		F8F2BC091710E14C00D5810E /* poweredByFoursquare_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BC001710E14C00D5810E /* poweredByFoursquare_gray@2x.png */; };
+		F8F2BC1A1710E16B00D5810E /* CheckinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC0C1710E16B00D5810E /* CheckinViewController.m */; };
+		F8F2BC1B1710E16B00D5810E /* CheckinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BC0D1710E16B00D5810E /* CheckinViewController.xib */; };
+		F8F2BC1C1710E16B00D5810E /* FSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC0F1710E16B00D5810E /* FSAppDelegate.m */; };
+		F8F2BC1D1710E16B00D5810E /* FSConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC111710E16B00D5810E /* FSConverter.m */; };
+		F8F2BC1E1710E16B00D5810E /* FSVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC131710E16B00D5810E /* FSVenue.m */; };
+		F8F2BC1F1710E16B00D5810E /* NearbyVenuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC151710E16B00D5810E /* NearbyVenuesViewController.m */; };
+		F8F2BC201710E16B00D5810E /* NearbyVenuesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BC161710E16B00D5810E /* NearbyVenuesViewController.xib */; };
+		F8F2BC211710E16B00D5810E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC181710E16B00D5810E /* SettingsViewController.m */; };
+		F8F2BC221710E16B00D5810E /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BC191710E16B00D5810E /* SettingsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -556,6 +587,48 @@
 		F8F2BBD11710B23300D5810E /* DPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPerson.m; path = model/DPerson.m; sourceTree = "<group>"; };
 		F8F2BBD41710B71600D5810E /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeViewController.h; path = ViewControllers/MeViewController.h; sourceTree = "<group>"; };
 		F8F2BBD51710B71600D5810E /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MeViewController.m; path = ViewControllers/MeViewController.m; sourceTree = "<group>"; };
+		F8F2BBD71710D21300D5810E /* Checkin Button selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checkin Button selected.png"; sourceTree = "<group>"; };
+		F8F2BBD81710D21300D5810E /* Checkin Button selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checkin Button selected@2x.png"; sourceTree = "<group>"; };
+		F8F2BBDB1710D4DB00D5810E /* cio connections button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cio connections button.png"; sourceTree = "<group>"; };
+		F8F2BBDC1710D4DB00D5810E /* cio connections button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cio connections button@2x.png"; sourceTree = "<group>"; };
+		F8F2BBDF1710D52200D5810E /* badges button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badges button.png"; sourceTree = "<group>"; };
+		F8F2BBE01710D52200D5810E /* badges button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "badges button@2x.png"; sourceTree = "<group>"; };
+		F8F2BBE31710D5F100D5810E /* deloitte network button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deloitte network button.png"; sourceTree = "<group>"; };
+		F8F2BBE41710D5F100D5810E /* deloitte network button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deloitte network button@2x.png"; sourceTree = "<group>"; };
+		F8F2BBE71710D62000D5810E /* recent activity button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recent activity button.png"; sourceTree = "<group>"; };
+		F8F2BBE81710D62000D5810E /* recent activity button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recent activity button@2x.png"; sourceTree = "<group>"; };
+		F8F2BBEB1710D65F00D5810E /* hot topics added button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hot topics added button.png"; sourceTree = "<group>"; };
+		F8F2BBEC1710D65F00D5810E /* hot topics added button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hot topics added button@2x.png"; sourceTree = "<group>"; };
+		F8F2BBF01710D8C100D5810E /* CheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckInViewController.h; path = ViewControllers/CheckInViewController.h; sourceTree = "<group>"; };
+		F8F2BBF11710D8C100D5810E /* CheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckInViewController.m; path = ViewControllers/CheckInViewController.m; sourceTree = "<group>"; };
+		F8F2BBF41710E14C00D5810E /* Foursquare2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Foursquare2.h; sourceTree = "<group>"; };
+		F8F2BBF51710E14C00D5810E /* Foursquare2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Foursquare2.m; sourceTree = "<group>"; };
+		F8F2BBF61710E14C00D5810E /* FSRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSRequester.h; sourceTree = "<group>"; };
+		F8F2BBF71710E14C00D5810E /* FSRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSRequester.m; sourceTree = "<group>"; };
+		F8F2BBF81710E14C00D5810E /* FSTargetCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTargetCallback.h; sourceTree = "<group>"; };
+		F8F2BBF91710E14C00D5810E /* FSTargetCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTargetCallback.m; sourceTree = "<group>"; };
+		F8F2BBFA1710E14C00D5810E /* FSWebLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSWebLogin.h; sourceTree = "<group>"; };
+		F8F2BBFB1710E14C00D5810E /* FSWebLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSWebLogin.m; sourceTree = "<group>"; };
+		F8F2BBFC1710E14C00D5810E /* FSWebLogin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSWebLogin.xib; sourceTree = "<group>"; };
+		F8F2BBFD1710E14C00D5810E /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		F8F2BBFE1710E14C00D5810E /* pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin@2x.png"; sourceTree = "<group>"; };
+		F8F2BBFF1710E14C00D5810E /* poweredByFoursquare_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poweredByFoursquare_gray.png; sourceTree = "<group>"; };
+		F8F2BC001710E14C00D5810E /* poweredByFoursquare_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "poweredByFoursquare_gray@2x.png"; sourceTree = "<group>"; };
+		F8F2BC0B1710E16B00D5810E /* CheckinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckinViewController.h; sourceTree = "<group>"; };
+		F8F2BC0C1710E16B00D5810E /* CheckinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckinViewController.m; sourceTree = "<group>"; };
+		F8F2BC0D1710E16B00D5810E /* CheckinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckinViewController.xib; sourceTree = "<group>"; };
+		F8F2BC0E1710E16B00D5810E /* FSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAppDelegate.h; sourceTree = "<group>"; };
+		F8F2BC0F1710E16B00D5810E /* FSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSAppDelegate.m; sourceTree = "<group>"; };
+		F8F2BC101710E16B00D5810E /* FSConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSConverter.h; sourceTree = "<group>"; };
+		F8F2BC111710E16B00D5810E /* FSConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSConverter.m; sourceTree = "<group>"; };
+		F8F2BC121710E16B00D5810E /* FSVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVenue.h; sourceTree = "<group>"; };
+		F8F2BC131710E16B00D5810E /* FSVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSVenue.m; sourceTree = "<group>"; };
+		F8F2BC141710E16B00D5810E /* NearbyVenuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyVenuesViewController.h; sourceTree = "<group>"; };
+		F8F2BC151710E16B00D5810E /* NearbyVenuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyVenuesViewController.m; sourceTree = "<group>"; };
+		F8F2BC161710E16B00D5810E /* NearbyVenuesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearbyVenuesViewController.xib; sourceTree = "<group>"; };
+		F8F2BC171710E16B00D5810E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		F8F2BC181710E16B00D5810E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		F8F2BC191710E16B00D5810E /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -643,6 +716,7 @@
 		F862581C170E86E400C952A6 /* iFACE */ = {
 			isa = PBXGroup;
 			children = (
+				F8F2BBF31710E14B00D5810E /* Foursquare2 */,
 				F8F2BB591710A1EC00D5810E /* zkSforce */,
 				F879219217106ACC00C8CBE1 /* Remote */,
 				F8792092170F9EFA00C8CBE1 /* dependencies */,
@@ -709,6 +783,7 @@
 		F8625855170E8B7E00C952A6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F8F2BBEF1710D86500D5810E /* checkin */,
 				F8F2BBD31710B6FB00D5810E /* User Profile */,
 				F8792038170F6DD800C8CBE1 /* ChangeUserInfoViewController.h */,
 				F8792039170F6DD800C8CBE1 /* ChangeUserInfoViewController.m */,
@@ -748,6 +823,18 @@
 		F862585D170E8E3800C952A6 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F8F2BBEB1710D65F00D5810E /* hot topics added button.png */,
+				F8F2BBEC1710D65F00D5810E /* hot topics added button@2x.png */,
+				F8F2BBE71710D62000D5810E /* recent activity button.png */,
+				F8F2BBE81710D62000D5810E /* recent activity button@2x.png */,
+				F8F2BBE31710D5F100D5810E /* deloitte network button.png */,
+				F8F2BBE41710D5F100D5810E /* deloitte network button@2x.png */,
+				F8F2BBDF1710D52200D5810E /* badges button.png */,
+				F8F2BBE01710D52200D5810E /* badges button@2x.png */,
+				F8F2BBDB1710D4DB00D5810E /* cio connections button.png */,
+				F8F2BBDC1710D4DB00D5810E /* cio connections button@2x.png */,
+				F8F2BBD71710D21300D5810E /* Checkin Button selected.png */,
+				F8F2BBD81710D21300D5810E /* Checkin Button selected@2x.png */,
 				F87921961710716900C8CBE1 /* TableBG.png */,
 				F87921971710716900C8CBE1 /* TableBG@2x.png */,
 				F8792088170F91E600C8CBE1 /* BlueButtonHighlighted.png */,
@@ -1285,6 +1372,58 @@
 			name = "User Profile";
 			sourceTree = "<group>";
 		};
+		F8F2BBEF1710D86500D5810E /* checkin */ = {
+			isa = PBXGroup;
+			children = (
+				F8F2BBF01710D8C100D5810E /* CheckInViewController.h */,
+				F8F2BBF11710D8C100D5810E /* CheckInViewController.m */,
+			);
+			name = checkin;
+			sourceTree = "<group>";
+		};
+		F8F2BBF31710E14B00D5810E /* Foursquare2 */ = {
+			isa = PBXGroup;
+			children = (
+				F8F2BC0A1710E16B00D5810E /* Classes */,
+				F8F2BBF41710E14C00D5810E /* Foursquare2.h */,
+				F8F2BBF51710E14C00D5810E /* Foursquare2.m */,
+				F8F2BBF61710E14C00D5810E /* FSRequester.h */,
+				F8F2BBF71710E14C00D5810E /* FSRequester.m */,
+				F8F2BBF81710E14C00D5810E /* FSTargetCallback.h */,
+				F8F2BBF91710E14C00D5810E /* FSTargetCallback.m */,
+				F8F2BBFA1710E14C00D5810E /* FSWebLogin.h */,
+				F8F2BBFB1710E14C00D5810E /* FSWebLogin.m */,
+				F8F2BBFC1710E14C00D5810E /* FSWebLogin.xib */,
+				F8F2BBFD1710E14C00D5810E /* pin.png */,
+				F8F2BBFE1710E14C00D5810E /* pin@2x.png */,
+				F8F2BBFF1710E14C00D5810E /* poweredByFoursquare_gray.png */,
+				F8F2BC001710E14C00D5810E /* poweredByFoursquare_gray@2x.png */,
+			);
+			path = Foursquare2;
+			sourceTree = "<group>";
+		};
+		F8F2BC0A1710E16B00D5810E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F8F2BC0B1710E16B00D5810E /* CheckinViewController.h */,
+				F8F2BC0C1710E16B00D5810E /* CheckinViewController.m */,
+				F8F2BC0D1710E16B00D5810E /* CheckinViewController.xib */,
+				F8F2BC0E1710E16B00D5810E /* FSAppDelegate.h */,
+				F8F2BC0F1710E16B00D5810E /* FSAppDelegate.m */,
+				F8F2BC101710E16B00D5810E /* FSConverter.h */,
+				F8F2BC111710E16B00D5810E /* FSConverter.m */,
+				F8F2BC121710E16B00D5810E /* FSVenue.h */,
+				F8F2BC131710E16B00D5810E /* FSVenue.m */,
+				F8F2BC141710E16B00D5810E /* NearbyVenuesViewController.h */,
+				F8F2BC151710E16B00D5810E /* NearbyVenuesViewController.m */,
+				F8F2BC161710E16B00D5810E /* NearbyVenuesViewController.xib */,
+				F8F2BC171710E16B00D5810E /* SettingsViewController.h */,
+				F8F2BC181710E16B00D5810E /* SettingsViewController.m */,
+				F8F2BC191710E16B00D5810E /* SettingsViewController.xib */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1368,6 +1507,26 @@
 				F8792191170F9EFB00C8CBE1 /* LICENSE in Resources */,
 				F87921981710716900C8CBE1 /* TableBG.png in Resources */,
 				F87921991710716900C8CBE1 /* TableBG@2x.png in Resources */,
+				F8F2BBD91710D21300D5810E /* Checkin Button selected.png in Resources */,
+				F8F2BBDA1710D21300D5810E /* Checkin Button selected@2x.png in Resources */,
+				F8F2BBDD1710D4DB00D5810E /* cio connections button.png in Resources */,
+				F8F2BBDE1710D4DB00D5810E /* cio connections button@2x.png in Resources */,
+				F8F2BBE11710D52200D5810E /* badges button.png in Resources */,
+				F8F2BBE21710D52200D5810E /* badges button@2x.png in Resources */,
+				F8F2BBE51710D5F200D5810E /* deloitte network button.png in Resources */,
+				F8F2BBE61710D5F200D5810E /* deloitte network button@2x.png in Resources */,
+				F8F2BBE91710D62000D5810E /* recent activity button.png in Resources */,
+				F8F2BBEA1710D62000D5810E /* recent activity button@2x.png in Resources */,
+				F8F2BBED1710D65F00D5810E /* hot topics added button.png in Resources */,
+				F8F2BBEE1710D65F00D5810E /* hot topics added button@2x.png in Resources */,
+				F8F2BC051710E14C00D5810E /* FSWebLogin.xib in Resources */,
+				F8F2BC061710E14C00D5810E /* pin.png in Resources */,
+				F8F2BC071710E14C00D5810E /* pin@2x.png in Resources */,
+				F8F2BC081710E14C00D5810E /* poweredByFoursquare_gray.png in Resources */,
+				F8F2BC091710E14C00D5810E /* poweredByFoursquare_gray@2x.png in Resources */,
+				F8F2BC1B1710E16B00D5810E /* CheckinViewController.xib in Resources */,
+				F8F2BC201710E16B00D5810E /* NearbyVenuesViewController.xib in Resources */,
+				F8F2BC221710E16B00D5810E /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1446,6 +1605,17 @@
 				F8F2BBCF1710AB6200D5810E /* IFACECoredataHelper.m in Sources */,
 				F8F2BBD21710B23300D5810E /* DPerson.m in Sources */,
 				F8F2BBD61710B71600D5810E /* MeViewController.m in Sources */,
+				F8F2BBF21710D8C100D5810E /* CheckInViewController.m in Sources */,
+				F8F2BC011710E14C00D5810E /* Foursquare2.m in Sources */,
+				F8F2BC021710E14C00D5810E /* FSRequester.m in Sources */,
+				F8F2BC031710E14C00D5810E /* FSTargetCallback.m in Sources */,
+				F8F2BC041710E14C00D5810E /* FSWebLogin.m in Sources */,
+				F8F2BC1A1710E16B00D5810E /* CheckinViewController.m in Sources */,
+				F8F2BC1C1710E16B00D5810E /* FSAppDelegate.m in Sources */,
+				F8F2BC1D1710E16B00D5810E /* FSConverter.m in Sources */,
+				F8F2BC1E1710E16B00D5810E /* FSVenue.m in Sources */,
+				F8F2BC1F1710E16B00D5810E /* NearbyVenuesViewController.m in Sources */,
+				F8F2BC211710E16B00D5810E /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
