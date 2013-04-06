@@ -8,6 +8,12 @@
 
 #import "LoginViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "JYLoadingView.h"
+@interface LoginViewController ()
+
+@property (strong,nonatomic) JYLoadingView *loadingView;
+
+@end
 
 @implementation LoginViewController
 
@@ -17,6 +23,10 @@
 	// Do any additional setup after loading the view.
     [self addShadowAndRoundCornersToLayer:self.credentialsView.layer];
     self.navigationController.navigationBarHidden = NO;
+    self.registerButton.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.registerButton.layer.shadowOpacity = 0.8;
+    self.registerButton.layer.shadowRadius = 8;
+    self.registerButton.layer.shadowOffset = CGSizeMake(8, 8);
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -32,13 +42,20 @@
 - (void) addShadowAndRoundCornersToLayer:(CALayer *)layer{
     [layer setShadowColor:[UIColor blackColor].CGColor];
     [layer setShadowOpacity:0.8];
-    [layer setShadowRadius:10.0];
-    [layer setShadowOffset:CGSizeMake(10.0, 10.0)];
+    [layer setShadowRadius:8];
+    [layer setShadowOffset:CGSizeMake(8, 8)];
     layer.cornerRadius = 10.0;
     
 }
 
 - (IBAction)signinAction:(id)sender {
     NSLog(@"Sign in requested"); //"deloitte123@"
+    CGRect bounds = self.view.bounds;
+    self.loadingView = [JYLoadingView createLoadingView:bounds withMessage:@"Validating Settings..."];
+    [self.view addSubview:self.loadingView];
+    [self.view setUserInteractionEnabled:NO];
+    [self.navigationController.view setUserInteractionEnabled:NO];
+}
+- (IBAction)registerAction:(id)sender {
 }
 @end

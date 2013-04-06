@@ -323,17 +323,11 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzq-rW-sQb">
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="user name" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ats-fB-M5t">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="9xu-mB-z68"/>
-                                        </constraints>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="user name" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ats-fB-M5t">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="password" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SWa-Pu-LH4">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="ldR-BA-QAY"/>
-                                        </constraints>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SWa-Pu-LH4">
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                     </textField>
@@ -348,12 +342,32 @@
                                     <constraint firstItem="SWa-Pu-LH4" firstAttribute="leading" secondItem="Gzq-rW-sQb" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="qGu-EQ-UTg"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ws9-9K-4xq" customClass="GreyImageButton">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="D4t-zG-oeB"/>
+                                    <constraint firstAttribute="height" constant="31" id="yGa-Ui-09T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerAction:" destination="Zjm-wg-XdF" eventType="touchUpInside" id="WOe-NS-UEz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Ws9-9K-4xq" firstAttribute="top" secondItem="Gzq-rW-sQb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="IPf-Em-kf6"/>
+                            <constraint firstItem="Ws9-9K-4xq" firstAttribute="top" secondItem="GuX-2M-R4c" secondAttribute="top" constant="154" id="KyW-Yn-rdO"/>
+                            <constraint firstAttribute="trailing" secondItem="Ws9-9K-4xq" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="SdH-Bf-a1v"/>
                             <constraint firstItem="Gzq-rW-sQb" firstAttribute="leading" secondItem="GuX-2M-R4c" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="UC6-ih-DTf"/>
                             <constraint firstItem="Gzq-rW-sQb" firstAttribute="top" secondItem="GuX-2M-R4c" secondAttribute="top" constant="47" id="doJ-Ga-xYY"/>
-                            <constraint firstAttribute="bottom" secondItem="Gzq-rW-sQb" secondAttribute="bottom" constant="358" id="qsJ-s9-6vB"/>
                             <constraint firstAttribute="trailing" secondItem="Gzq-rW-sQb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="za5-rA-K8a"/>
                         </constraints>
                     </view>
@@ -367,6 +381,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="credentialsView" destination="Gzq-rW-sQb" id="Mnn-ix-7Jr"/>
+                        <outlet property="registerButton" destination="Ws9-9K-4xq" id="Sn3-xy-PJV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLM-9f-fK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -414,61 +429,6 @@
         <image name="search off.png" width="23" height="23"/>
         <image name="settings off.png" width="23" height="23"/>
     </resources>
-    <classes>
-        <class className="BlueButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlueButton.h"/>
-        </class>
-        <class className="JYDarkTranslucentCellHeaderView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JYDarkTranslucentCellHeaderView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="headerText" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="JYTrueEtchedCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JYTrueEtchedCell.h"/>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="signinAction:"/>
-                <relationship kind="outlet" name="credentialsView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ShadowedView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShadowedView.h"/>
-        </class>
-        <class className="SideMenuOptionsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SideMenuOptionsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="jyDarkTranslucentCellHeaderView" candidateClass="JYDarkTranslucentCellHeaderView"/>
-                <relationship kind="outlet" name="userNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SlideMenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlideMenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="panAction:" candidateClass="UIPanGestureRecognizer"/>
-                <relationship kind="outlet" name="containerController" candidateClass="ShadowedView"/>
-                <relationship kind="outlet" name="panGestureRecognizer" candidateClass="UIPanGestureRecognizer"/>
-            </relationships>
-        </class>
-        <class className="TabViewController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="slideMenuAction:"/>
-                <relationship kind="outlet" name="slideMenuButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="WelcomeScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeScreenViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="signInButton:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
