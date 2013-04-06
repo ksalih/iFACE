@@ -8,11 +8,23 @@
 
 #import <Foundation/Foundation.h>
 #import "zkSforceClient.h"
+#import "DPerson.h" 
+
 @class MobileBrokerClient;
+
+typedef enum {
+    MobileBrokerClientErrorUserNotFound,
+    MobileBrokerClientErrorCount
+} MobileBrokerClientErrorCodes;
+
 
 @protocol MobileBrokerClientDelegate <NSObject>
 
 - (void) mobileBrokerClient:(MobileBrokerClient *)caller didFinishLoginWithClient:(ZKSforceClient *) client;
+- (void) mobileBrokerClient:(MobileBrokerClient *)caller didFailTransaction:(MobileBrokerClientErrorCodes) errorCode;
+@optional
+
+-(void) mobileBrokerClient:(MobileBrokerClient *)caller didFinishSynchronizingUser:(DPerson *) person;
 
 @end
 
@@ -31,5 +43,6 @@
 + (MobileBrokerClient *)sharedClient;
 - (NSError *) login:(NSString *) userName password:(NSString *)password;
 - (void) requestCIOData;
+- (void) syncUserInformation;
 
 @end

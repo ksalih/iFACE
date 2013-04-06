@@ -9,9 +9,9 @@
 #import "SideMenuOptionsViewController.h"
 #import "ApplicationPreferences.h"
 #import "AppDelegate.h"
-#import "User.h"
 #import "ChangeUserInfoViewController.h"
 #import "AppDefinitions.h"
+#import "DPerson.h"
 
 NSInteger const SideMenuOptionsActionUser = 0;
 NSInteger const SideMenuOptionsActionSettings = 0;
@@ -21,7 +21,7 @@ NSInteger const SideMenuOptionsSectionUserActions = 1;
 NSInteger const SideMenuOptionsSectionUser = 0;
 
 @interface SideMenuOptionsViewController () 
-@property (strong,nonatomic) User *user;
+@property (strong,nonatomic) DPerson *user;
 @end
 
 @implementation SideMenuOptionsViewController 
@@ -33,7 +33,7 @@ NSInteger const SideMenuOptionsSectionUser = 0;
     
     if ([[self.fetchedResultsController fetchedObjects] count] >0 ) {
         self.user = [[self.fetchedResultsController fetchedObjects] objectAtIndex:0];
-        self.userNameLabel.text = self.user.fullName;
+        self.userNameLabel.text = [NSString stringWithFormat:@"%@ %@",self.user.firstName,self.user.lastName];
     }
     
 }
@@ -119,14 +119,14 @@ NSInteger const SideMenuOptionsSectionUser = 0;
 
 #pragma mark - Table view delegate
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqual:@"userDetailsSegue"]){
-        UINavigationController *navigationViewController = (UINavigationController *) segue.destinationViewController;
-        
-        ChangeUserInfoViewController *changeUserInfoViewController = (ChangeUserInfoViewController *) navigationViewController.topViewController;
-        
-        changeUserInfoViewController.currentUser = self.user;
-        
-    }
+//    if ([segue.identifier isEqual:@"userDetailsSegue"]){
+//        UINavigationController *navigationViewController = (UINavigationController *) segue.destinationViewController;
+//        
+//        ChangeUserInfoViewController *changeUserInfoViewController = (ChangeUserInfoViewController *) navigationViewController.topViewController;
+//        
+//        changeUserInfoViewController.currentUser = self.user;
+//        
+//    }
 }
 /**
  */
@@ -150,9 +150,9 @@ NSInteger const SideMenuOptionsSectionUser = 0;
     //Set the predicate to search for the itinerary and searchbar if text is found on the searchbar
     
     NSPredicate *predicate;
-    predicate = [NSPredicate predicateWithFormat:@"username =[cd] %@ ", [ApplicationPreferences applicationUser]];
+    predicate = [NSPredicate predicateWithFormat:@"email =[cd] %@ ", [ApplicationPreferences applicationUser]];
     
-    [fetchRequest setSortDescriptors:@[[[NSSortDescriptor alloc] initWithKey:@"username" ascending:NO]]];
+    [fetchRequest setSortDescriptors:@[[[NSSortDescriptor alloc] initWithKey:@"email" ascending:NO]]];
     
     [fetchRequest setPredicate:predicate];
     NSError *error = nil;
@@ -190,7 +190,7 @@ NSInteger const SideMenuOptionsSectionUser = 0;
             
         case NSFetchedResultsChangeUpdate:
             self.user = [[self.fetchedResultsController fetchedObjects] objectAtIndex:0];
-            self.userNameLabel.text = self.user.fullName;
+            self.userNameLabel.text = [NSString stringWithFormat:@"%@ %@",self.user.firstName,self.user.lastName];
             break;
             
         case NSFetchedResultsChangeMove:

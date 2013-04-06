@@ -36,7 +36,7 @@
     return dperson;
 }
 
-+ (NSError *) addOrUpdatePerson:(ZKUserInfo *) userInfo withManagedObjectContext:(NSManagedObjectContext *) managedObjectContext{
++ (DPerson *) addOrUpdatePerson:(ZKUserInfo *) userInfo withManagedObjectContext:(NSManagedObjectContext *) managedObjectContext{
     DPerson *newPerson;
     NSError *error = nil;
     if (userInfo && userInfo.email){
@@ -50,7 +50,7 @@
     newPerson.email = userInfo.email;
     newPerson.lastModifiedDate = [NSDate date];
     [managedObjectContext save:&error];
-    return error;
+    return newPerson;
     
     /**
      <element name="accessibilityMode"          type="xsd:boolean"/>
@@ -74,5 +74,6 @@
      <element name="userType"                   type="xsd:string"/>
      <element name="userUiSkin"                 type="xsd:string"/>
      */
+    
 }
 @end

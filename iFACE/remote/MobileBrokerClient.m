@@ -13,6 +13,9 @@
 #import "JYStringHelperFunctions.h"
 #import "ZKUserInfo.h" 
 #import "DPerson.h"
+#import "zkSObject.h"
+#import "zkQueryResult.h"
+#import "IFACECoredataHelper.h" 
 
 @implementation MobileBrokerClient
 
@@ -133,42 +136,47 @@
     NSLog(@"fullName %@",userInfo.fullName);
     NSLog(@"userId %@",userInfo.userId);
     NSLog(@"userName %@",userInfo.userName);
- 
-    /*
-     // API v7.0
-     -(BOOL)accessibilityMode;
-     -(NSString *)currencySymbol;
-     -(NSString *)organizationId;
-     -(NSString *)organizationName;
-     -(BOOL)organizationIsMultiCurrency;
-     -(NSString *)defaultCurrencyIsoCode;
-     -(NSString *)email;
-     -(NSString *)fullName;
-     -(NSString *)userId;
-     -(NSString *)language;
-     -(NSString *)locale;
-     -(NSString *)timeZone;
-     -(NSString *)skin;
-     // API v8.0
-     -(NSString *)licenseType;
-     -(NSString *)profileId;
-     -(NSString *)roleId;
-     -(NSString *)userName;
-     -(NSString *)userType;
-     // v20.0
-     -(BOOL)disallowHtmlAttachments;
-     -(BOOL)hasPersonAccounts;
-     // v21.0
-     -(int)orgAttachmentFileSizeLimit;
-     -(int)sessionSecondsValid;
-     // v23.0
-     -(NSString *)userDefaultCurrencyIsoCode;
-     */
-  
-    
+
     if ([self.delegate respondsToSelector:@selector(mobileBrokerClient:didFinishLoginWithClient:)]){
         [self.delegate mobileBrokerClient:self didFinishLoginWithClient:_client];
     }
+}
+
+#pragma mark - Synchronization methods
+- (void) syncUserInformation {
+    if (!self.client) return;
+    
+    ZKUserInfo *userInfo = self.client.currentUserInfo;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+        NSString *queryString =
+        [NSString stringWithFormat:@"SELECT iface__Cellphone__c,iface__Email__c from iface__DPerson__c where iface__Email__c = '%@'", userInfo.email];
+        NSLog(@"Query string %@",queryString);
+        
+        ZKQueryResult *qr = [_client query:queryString];
+        
+        for (ZKSObject *zkSObject in qr.records){
+            NSLog(@"value = %@",[zkSObject fieldValue:@"iface__Email__c"]);
+        }
+        
+        ZKSObject *zkSObject;
+        
+        if ([qr.records count]>0){
+            zkSObject = [qr.records objectAtIndex:0];
+            DPerson *person = [IFACECoredataHelper addOrUpdatePerson:userInfo withManagedObjectContext:self.managedObjectContext];
+            if (person){
+                if ([self.delegate respondsToSelector:@selector(mobileBrokerClient:didFinishSynchronizingUser:)]){
+                    [self.delegate mobileBrokerClient:self didFinishSynchronizingUser:person];
+                }
+            }else{
+                if ([self.delegate respondsToSelector:@selector(mobileBrokerClient:didFailTransaction:)]){
+                    [self.delegate mobileBrokerClient:self didFailTransaction:MobileBrokerClientErrorUserNotFound];
+                }
+            }
+        }
+        
+    });
+    
 }
 
 

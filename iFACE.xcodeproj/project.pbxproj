@@ -133,6 +133,7 @@
 		F8F2BBC91710AADE00D5810E /* DCIO.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBC81710AADE00D5810E /* DCIO.m */; };
 		F8F2BBCF1710AB6200D5810E /* IFACECoredataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBCE1710AB6200D5810E /* IFACECoredataHelper.m */; };
 		F8F2BBD21710B23300D5810E /* DPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBD11710B23300D5810E /* DPerson.m */; };
+		F8F2BBD61710B71600D5810E /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBD51710B71600D5810E /* MeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -553,6 +554,8 @@
 		F8F2BBCE1710AB6200D5810E /* IFACECoredataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFACECoredataHelper.m; path = model/IFACECoredataHelper.m; sourceTree = "<group>"; };
 		F8F2BBD01710B23300D5810E /* DPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPerson.h; path = model/DPerson.h; sourceTree = "<group>"; };
 		F8F2BBD11710B23300D5810E /* DPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPerson.m; path = model/DPerson.m; sourceTree = "<group>"; };
+		F8F2BBD41710B71600D5810E /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeViewController.h; path = ViewControllers/MeViewController.h; sourceTree = "<group>"; };
+		F8F2BBD51710B71600D5810E /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MeViewController.m; path = ViewControllers/MeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -706,6 +709,7 @@
 		F8625855170E8B7E00C952A6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F8F2BBD31710B6FB00D5810E /* User Profile */,
 				F8792038170F6DD800C8CBE1 /* ChangeUserInfoViewController.h */,
 				F8792039170F6DD800C8CBE1 /* ChangeUserInfoViewController.m */,
 				F8792031170F6D2100C8CBE1 /* SideMenuOptionsViewController.h */,
@@ -1272,6 +1276,15 @@
 			path = zkSforce;
 			sourceTree = "<group>";
 		};
+		F8F2BBD31710B6FB00D5810E /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F8F2BBD41710B71600D5810E /* MeViewController.h */,
+				F8F2BBD51710B71600D5810E /* MeViewController.m */,
+			);
+			name = "User Profile";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1432,6 +1445,7 @@
 				F8F2BBC91710AADE00D5810E /* DCIO.m in Sources */,
 				F8F2BBCF1710AB6200D5810E /* IFACECoredataHelper.m in Sources */,
 				F8F2BBD21710B23300D5810E /* DPerson.m in Sources */,
+				F8F2BBD61710B71600D5810E /* MeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

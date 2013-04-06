@@ -55,11 +55,24 @@
     //TODO: Do Something is the email is not returned
     
     //insert new person if they don't exist
-    NSError *error = [IFACECoredataHelper addOrUpdatePerson:userInfo withManagedObjectContext:self.managedObjectContext];
-    //TODO: display any error and perform the segue
-   [self performSegueWithIdentifier:@"mainApplicationSegue" sender:self];
-    //save the current user
     
+    //TODO: display any error and perform the segue
+    
+    [ApplicationPreferences setApplicationUser:userInfo.email];
+    [[MobileBrokerClient sharedClient] syncUserInformation];
+    //
+    [self performSegueWithIdentifier:@"mainApplicationSegue" sender:self];
+    
+        //save the current user
+    
+}
+
+-(void) mobileBrokerClient:(MobileBrokerClient *)caller didFinishSynchronizingUser:(DPerson *) person {
+    NSLog(@"finished synchronizing user");
+}
+
+- (void) mobileBrokerClient:(MobileBrokerClient *)caller didFailTransaction:(MobileBrokerClientErrorCodes) errorCode{
+    //handle the error
 }
 
 @end
