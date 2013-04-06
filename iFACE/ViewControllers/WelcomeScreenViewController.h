@@ -12,5 +12,6 @@
 @interface WelcomeScreenViewController : UIViewController <MobileBrokerClientDelegate>
 - (IBAction)signInButton:(id)sender;
 
+@property (strong,nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

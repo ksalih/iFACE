@@ -8,6 +8,10 @@
 
 #import "WelcomeScreenViewController.h"
 #import "AppDelegate.h"
+#import "ApplicationPreferences.h"
+#import "IFACECoredataHelper.h"
+#import "DPerson.h"
+#import "ZKUserInfo.h" 
 
 @implementation WelcomeScreenViewController
 
@@ -16,6 +20,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.navigationController.navigationBarHidden = YES;
+    self.managedObjectContext = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectContext;
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -37,13 +42,24 @@
     }else{
         //redirect to the next page and continue
     }
-    
+//    [self performSegueWithIdentifier:@"mainApplicationSegue" sender:self];
+
 }
 
 - (void) mobileBrokerClient:(MobileBrokerClient *)caller didFinishLoginWithClient:(ZKSforceClient *) client{
     NSLog(@"Finished loggin into the application");
-    [[MobileBrokerClient sharedClient] requestCIOData];
-   // [self performSegueWithIdentifier:@"mainApplicationSegue" sender:self];
+   // [[MobileBrokerClient sharedClient] requestCIOData];
+    //check if the user exists in the database
+    ZKUserInfo *userInfo = client.currentUserInfo;
+    
+    //TODO: Do Something is the email is not returned
+    
+    //insert new person if they don't exist
+    NSError *error = [IFACECoredataHelper addOrUpdatePerson:userInfo withManagedObjectContext:self.managedObjectContext];
+    //TODO: display any error and perform the segue
+   [self performSegueWithIdentifier:@"mainApplicationSegue" sender:self];
+    //save the current user
+    
 }
 
 @end

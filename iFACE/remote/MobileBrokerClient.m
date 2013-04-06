@@ -11,6 +11,8 @@
 #import "ApplicationPreferences.h"
 #import "User.h"
 #import "JYStringHelperFunctions.h"
+#import "ZKUserInfo.h" 
+#import "DPerson.h"
 
 @implementation MobileBrokerClient
 
@@ -87,31 +89,31 @@
     return error;
 }
 
-- (NSString *) getSavedPasswordForUser:(NSString *) userName {
-    NSError *error;
-    error = nil;
-    //searches for the user
-    //use the current itinerary to get all companies
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:USERS_TABLE inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"username == %@", userName];
-    [fetchRequest setPredicate:predicate];
-    
-    NSArray *usersList = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-    //checks if the user exists
-    if (!usersList || [usersList count] ==0)
-    {
-        error = [self generateErrorMessage:@"Invalid user name"];
-        return nil;
-    }
-    
-    User *user = [usersList objectAtIndex:0];
-    return user.password;
-}
+//- (NSString *) getSavedPasswordForUser:(NSString *) userName {
+//    NSError *error;
+//    error = nil;
+//    //searches for the user
+//    //use the current itinerary to get all companies
+//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *entity = [NSEntityDescription
+//                                   entityForName:USERS_TABLE inManagedObjectContext:self.managedObjectContext];
+//    [fetchRequest setEntity:entity];
+//    
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"username == %@", userName];
+//    [fetchRequest setPredicate:predicate];
+//    
+//    NSArray *usersList = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+//    
+//    //checks if the user exists
+//    if (!usersList || [usersList count] ==0)
+//    {
+//        error = [self generateErrorMessage:@"Invalid user name"];
+//        return nil;
+//    }
+//    
+//    DPerson *user = [usersList objectAtIndex:0];
+//    return user.password;
+//}
 
 - (void) requestCIOData {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
@@ -125,6 +127,44 @@
 #pragma mark - variables assignment
 - (void) setClient:(ZKSforceClient *) localClient {
     _client = localClient;
+    
+    ZKUserInfo *userInfo = _client.currentUserInfo;
+    NSLog(@"email %@",userInfo.email);
+    NSLog(@"fullName %@",userInfo.fullName);
+    NSLog(@"userId %@",userInfo.userId);
+    NSLog(@"userName %@",userInfo.userName);
+ 
+    /*
+     // API v7.0
+     -(BOOL)accessibilityMode;
+     -(NSString *)currencySymbol;
+     -(NSString *)organizationId;
+     -(NSString *)organizationName;
+     -(BOOL)organizationIsMultiCurrency;
+     -(NSString *)defaultCurrencyIsoCode;
+     -(NSString *)email;
+     -(NSString *)fullName;
+     -(NSString *)userId;
+     -(NSString *)language;
+     -(NSString *)locale;
+     -(NSString *)timeZone;
+     -(NSString *)skin;
+     // API v8.0
+     -(NSString *)licenseType;
+     -(NSString *)profileId;
+     -(NSString *)roleId;
+     -(NSString *)userName;
+     -(NSString *)userType;
+     // v20.0
+     -(BOOL)disallowHtmlAttachments;
+     -(BOOL)hasPersonAccounts;
+     // v21.0
+     -(int)orgAttachmentFileSizeLimit;
+     -(int)sessionSecondsValid;
+     // v23.0
+     -(NSString *)userDefaultCurrencyIsoCode;
+     */
+  
     
     if ([self.delegate respondsToSelector:@selector(mobileBrokerClient:didFinishLoginWithClient:)]){
         [self.delegate mobileBrokerClient:self didFinishLoginWithClient:_client];

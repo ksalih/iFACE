@@ -14,6 +14,8 @@
 #import "MobileBrokerClient.h" 
 #import "AppDelegate.h"
 
+static NSString *OAUTH_CLIENTID = @"3MVG9A2kN3Bn17huH9WYzmSN6futXVxQtE8pCXq5z_15X5326xwIKPq8r47490Y3tBD3bnkbx6rmPiyDbklRr";
+
 
 @interface LoginViewController ()
 
@@ -73,12 +75,14 @@
 //    [self.view setUserInteractionEnabled:NO];
 //    [self.navigationController.view setUserInteractionEnabled:NO];
     
-   
+//    ZKSforceClient *sforce = [[ZKSforceClient alloc] init];
+//   // sforce.clientId = OAUTH_CLIENTID;
+//    ZKLoginResult *result = [sforce login:self.userName.text password:self.password.text];
     
     
 }
 - (IBAction)registerAction:(id)sender {
-    [[MobileBrokerClient sharedClient] requestCIOData];
+  //  [[MobileBrokerClient sharedClient] requestCIOData];
     
 }
 

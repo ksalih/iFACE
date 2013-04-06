@@ -1,10 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Event" representedClassName="Event">
-        <attribute name="timeStamp" optional="YES" attributeType="Date">
-            <userInfo/>
-        </attribute>
-        <userInfo/>
+    <entity name="DCIO" representedClassName="DCIO" syncable="YES">
+        <attribute name="agency" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="budgetAuthority" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currentlyBeenMarked" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="currentlyUnderContract" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="dcioName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="facebookURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="linkedinURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="moneyToSpend" optional="YES" attributeType="Boolean" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sizeOfBudget" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topicsToAvoid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="twitterURL" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cioToPerson" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DPerson" inverseName="personToCIO" inverseEntity="DPerson" syncable="YES"/>
+    </entity>
+    <entity name="DPerson" representedClassName="DPerson" syncable="YES">
+        <attribute name="cellPhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="facebookURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="linkedinURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ppdName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="twitterURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="personToCIO" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DCIO" inverseName="cioToPerson" inverseEntity="DCIO" syncable="YES"/>
+        <relationship name="personToPerson" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DPerson" inverseName="personToPerson" inverseEntity="DPerson" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,7 +43,8 @@
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
-        <element name="User" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="DCIO" positionX="-83" positionY="152" width="128" height="298"/>
+        <element name="DPerson" positionX="106" positionY="155" width="128" height="283"/>
+        <element name="User" positionX="333" positionY="216" width="128" height="90"/>
     </elements>
 </model>
