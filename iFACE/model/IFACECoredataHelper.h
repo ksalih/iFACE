@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "DPerson.h"
 #import "ZKUserInfo.h"
+#import "DPerson.h"
+#import "zkSObject.h"
 
 @interface IFACECoredataHelper : NSObject
 + (DPerson *) getDPersonByEmail:(NSString *) emailAddress withManagedObjectContext:(NSManagedObjectContext *) managedObjectContext;
 + (DPerson *) addOrUpdatePerson:(ZKUserInfo *) userInfo withManagedObjectContext:(NSManagedObjectContext *) managedObjectContext;
++ (void) copyZKSObject:(ZKSObject *)zkSObject toPerson:(DPerson *)person;
 
 @end

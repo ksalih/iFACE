@@ -28,7 +28,7 @@
         <attribute name="lastModifiedDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="linkedinURL" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="ppdName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remoteID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
@@ -44,7 +44,7 @@
     </entity>
     <elements>
         <element name="DCIO" positionX="-83" positionY="152" width="128" height="298"/>
-        <element name="DPerson" positionX="106" positionY="155" width="128" height="283"/>
+        <element name="DPerson" positionX="106" positionY="155" width="128" height="285"/>
         <element name="User" positionX="333" positionY="216" width="128" height="90"/>
     </elements>
 </model>

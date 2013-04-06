@@ -15,7 +15,8 @@
 #import "DPerson.h"
 #import "zkSObject.h"
 #import "zkQueryResult.h"
-#import "IFACECoredataHelper.h" 
+#import "IFACECoredataHelper.h"
+#import "IFACECoredataHelper.h"
 
 @implementation MobileBrokerClient
 
@@ -81,6 +82,21 @@
     
     return error;
 }
+
+- (void)saveContext
+{
+    NSError *error = nil;
+    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    if (managedObjectContext != nil) {
+        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
+}
+
 
 /*
  * Generates a generic error message object
@@ -150,7 +166,7 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
         NSString *queryString =
-        [NSString stringWithFormat:@"SELECT iface__Cellphone__c,iface__Email__c from iface__DPerson__c where iface__Email__c = '%@'", userInfo.email];
+        [NSString stringWithFormat:@"SELECT iface__Cellphone__c,iface__City__c,iface__Email__c, iface__FacebookURL__c,iface__FirstName__c, iface__ID__c, LastModifiedDate,iface__LastName__c, iface__LinkedInURL__c,iface__State__c, iface__Street__c, iface__Title__c, iface__TwitterURL__c, iface__UserName__c from iface__DPerson__c where iface__Email__c = '%@'", userInfo.email];
         NSLog(@"Query string %@",queryString);
         
         ZKQueryResult *qr = [_client query:queryString];
@@ -164,7 +180,15 @@
         if ([qr.records count]>0){
             zkSObject = [qr.records objectAtIndex:0];
             DPerson *person = [IFACECoredataHelper addOrUpdatePerson:userInfo withManagedObjectContext:self.managedObjectContext];
-            //copy data from zkSObject into person and do a managedObjectContext save Karwan
+            
+            // copy the DPerson
+            [IFACECoredataHelper copyZKSObject:zkSObject toPerson:person];
+            
+            // save the context
+            [self saveContext];
+            
+            
+            //copy data from zkSObject into person and do a managedObjectContext save
             
             if (person){
                 if ([self.delegate respondsToSelector:@selector(mobileBrokerClient:didFinishSynchronizingUser:)]){

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F57B3AB1710DDD4001922DB /* DPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F57B3AA1710DDD4001922DB /* DPerson.m */; };
 		F8625815170E86E400C952A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8625814170E86E400C952A6 /* UIKit.framework */; };
 		F8625817170E86E400C952A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8625816170E86E400C952A6 /* Foundation.framework */; };
 		F8625819170E86E400C952A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8625818170E86E400C952A6 /* CoreGraphics.framework */; };
@@ -132,11 +133,12 @@
 		F8F2BBC61710A1EC00D5810E /* zkXmlDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBA21710A1EC00D5810E /* zkXmlDeserializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F8F2BBC91710AADE00D5810E /* DCIO.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBC81710AADE00D5810E /* DCIO.m */; };
 		F8F2BBCF1710AB6200D5810E /* IFACECoredataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBCE1710AB6200D5810E /* IFACECoredataHelper.m */; };
-		F8F2BBD21710B23300D5810E /* DPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBD11710B23300D5810E /* DPerson.m */; };
 		F8F2BBD61710B71600D5810E /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBD51710B71600D5810E /* MeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F57B3A91710DDD4001922DB /* DPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPerson.h; path = model/DPerson.h; sourceTree = "<group>"; };
+		5F57B3AA1710DDD4001922DB /* DPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPerson.m; path = model/DPerson.m; sourceTree = "<group>"; };
 		F8625811170E86E400C952A6 /* iFACE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFACE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8625814170E86E400C952A6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F8625816170E86E400C952A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -552,8 +554,6 @@
 		F8F2BBC81710AADE00D5810E /* DCIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCIO.m; path = model/DCIO.m; sourceTree = "<group>"; };
 		F8F2BBCD1710AB6200D5810E /* IFACECoredataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFACECoredataHelper.h; path = model/IFACECoredataHelper.h; sourceTree = "<group>"; };
 		F8F2BBCE1710AB6200D5810E /* IFACECoredataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFACECoredataHelper.m; path = model/IFACECoredataHelper.m; sourceTree = "<group>"; };
-		F8F2BBD01710B23300D5810E /* DPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPerson.h; path = model/DPerson.h; sourceTree = "<group>"; };
-		F8F2BBD11710B23300D5810E /* DPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPerson.m; path = model/DPerson.m; sourceTree = "<group>"; };
 		F8F2BBD41710B71600D5810E /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeViewController.h; path = ViewControllers/MeViewController.h; sourceTree = "<group>"; };
 		F8F2BBD51710B71600D5810E /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MeViewController.m; path = ViewControllers/MeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -731,8 +731,8 @@
 		F8625856170E8C7C00C952A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F8F2BBD01710B23300D5810E /* DPerson.h */,
-				F8F2BBD11710B23300D5810E /* DPerson.m */,
+				5F57B3A91710DDD4001922DB /* DPerson.h */,
+				5F57B3AA1710DDD4001922DB /* DPerson.m */,
 				F8F2BBC71710AADE00D5810E /* DCIO.h */,
 				F8F2BBC81710AADE00D5810E /* DCIO.m */,
 				F8792048170F6EBE00C8CBE1 /* User.h */,
@@ -1444,8 +1444,8 @@
 				F8F2BBC61710A1EC00D5810E /* zkXmlDeserializer.m in Sources */,
 				F8F2BBC91710AADE00D5810E /* DCIO.m in Sources */,
 				F8F2BBCF1710AB6200D5810E /* IFACECoredataHelper.m in Sources */,
-				F8F2BBD21710B23300D5810E /* DPerson.m in Sources */,
 				F8F2BBD61710B71600D5810E /* MeViewController.m in Sources */,
+				5F57B3AB1710DDD4001922DB /* DPerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

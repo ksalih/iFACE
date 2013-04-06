@@ -76,4 +76,28 @@
      */
     
 }
+
++ (void) copyZKSObject:(ZKSObject *)zkSObject toPerson:(DPerson *)person {
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-ddTHH:mm:ssZ"];
+    
+    person.cellPhone = [zkSObject fieldValue:@"iface__Cellphone__c"];
+    person.city = [zkSObject fieldValue:@"iface__City__c"];
+    person.email = [zkSObject fieldValue:@"iface__Email__c"];
+    person.facebookURL = [zkSObject fieldValue:@"iface__FacebookURL__c"];
+    person.firstName = [zkSObject fieldValue:@"iface__FirstName__c"];
+    
+    person.lastModifiedDate = [dateFormat dateFromString:[zkSObject fieldValue:@"LastModifiedDate"]];
+
+    person.lastName = [zkSObject fieldValue:@"iface__LastName__c"];
+    person.linkedinURL = [zkSObject fieldValue:@"iface__LinkedInURL__c"];
+    person.remoteID = [zkSObject fieldValue:@"iface__ID__c"];
+    person.state = [zkSObject fieldValue:@"iface__State__c"];
+    person.street = [zkSObject fieldValue:@"iface__Street__c"];
+    person.title = [zkSObject fieldValue:@"iface__Title__c"];
+    person.twitterURL = [zkSObject fieldValue:@"iface__Titile__c"];
+    person.userName = [zkSObject fieldValue:@"iface__UserName__c"];
+}
+
 @end
