@@ -164,7 +164,7 @@
         if ([qr.records count]>0){
             zkSObject = [qr.records objectAtIndex:0];
             DPerson *person = [IFACECoredataHelper addOrUpdatePerson:userInfo withManagedObjectContext:self.managedObjectContext];
-            //copy data from zkSObject into person and do a managedObjectContext save
+            //copy data from zkSObject into person and do a managedObjectContext save Karwan
             
             if (person){
                 if ([self.delegate respondsToSelector:@selector(mobileBrokerClient:didFinishSynchronizingUser:)]){
