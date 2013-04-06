@@ -77,6 +77,8 @@
 		F8792087170F902F00C8CBE1 /* BlueButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F8792086170F902F00C8CBE1 /* BlueButton.m */; };
 		F879208A170F91E700C8CBE1 /* BlueButtonHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = F8792088170F91E600C8CBE1 /* BlueButtonHighlighted.png */; };
 		F879208B170F91E700C8CBE1 /* BlueButtonHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8792089170F91E600C8CBE1 /* BlueButtonHighlighted@2x.png */; };
+		F879208E170F968D00C8CBE1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F879208D170F968D00C8CBE1 /* LoginViewController.m */; };
+		F8792091170F999800C8CBE1 /* JYLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F879208F170F999800C8CBE1 /* JYLoadingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,6 +178,10 @@
 		F8792086170F902F00C8CBE1 /* BlueButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlueButton.m; path = components/BlueButton.m; sourceTree = "<group>"; };
 		F8792088170F91E600C8CBE1 /* BlueButtonHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueButtonHighlighted.png; sourceTree = "<group>"; };
 		F8792089170F91E600C8CBE1 /* BlueButtonHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BlueButtonHighlighted@2x.png"; sourceTree = "<group>"; };
+		F879208C170F968D00C8CBE1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ViewControllers/LoginViewController.h; sourceTree = "<group>"; };
+		F879208D170F968D00C8CBE1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ViewControllers/LoginViewController.m; sourceTree = "<group>"; };
+		F879208F170F999800C8CBE1 /* JYLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYLoadingView.m; sourceTree = "<group>"; };
+		F8792090170F999800C8CBE1 /* JYLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYLoadingView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +298,8 @@
 		F8625846170E8A2800C952A6 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				F879208F170F999800C8CBE1 /* JYLoadingView.m */,
+				F8792090170F999800C8CBE1 /* JYLoadingView.h */,
 				F879203B170F6E2900C8CBE1 /* JYStringHelperFunctions.h */,
 				F879203C170F6E2900C8CBE1 /* JYStringHelperFunctions.m */,
 				F8792028170F2BCE00C8CBE1 /* Table */,
@@ -323,6 +331,8 @@
 				F8625869170E92BF00C952A6 /* TabViewController.m */,
 				F879207A170F851C00C8CBE1 /* WelcomeScreenViewController.h */,
 				F879207B170F851C00C8CBE1 /* WelcomeScreenViewController.m */,
+				F879208C170F968D00C8CBE1 /* LoginViewController.h */,
+				F879208D170F968D00C8CBE1 /* LoginViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -526,6 +536,8 @@
 				F879204A170F6EBE00C8CBE1 /* User.m in Sources */,
 				F879207C170F851C00C8CBE1 /* WelcomeScreenViewController.m in Sources */,
 				F8792087170F902F00C8CBE1 /* BlueButton.m in Sources */,
+				F879208E170F968D00C8CBE1 /* LoginViewController.m in Sources */,
+				F8792091170F999800C8CBE1 /* JYLoadingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

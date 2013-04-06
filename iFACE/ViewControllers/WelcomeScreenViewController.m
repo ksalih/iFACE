@@ -19,6 +19,10 @@
     self.navigationController.navigationBarHidden = YES;
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = YES;
+
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
