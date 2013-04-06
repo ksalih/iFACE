@@ -15,4 +15,7 @@
 
 + (void) roundlayer:(CALayer *) layer withRadius:(float) radius;
 + (JYDarkView *) addDarkView:(UIView *)view animated:(BOOL) animated;
++ (void) addRoundCornersToLayer:(CALayer *)layer withRadious:(float)radious;
++ (void) addShadowAndRoundCornersToLayer:(CALayer *)layer withRadious:(float)radious;
+
 @end

@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "MobileBrokerClient.h"
+#import "zkSforceClient.h"
+
+static NSString *OAUTH_CLIENTID = @"3MVG9A2kN3Bn17huH9WYzmSN6futXVxQtE8pCXq5z_15X5326xwIKPq8r47490Y3tBD3bnkbx6rmPiyDbklRr";
+static NSString *OAUTH_CALLBACK = @"compocketsoapoauthdemo:///done";
 
 @implementation AppDelegate
 
@@ -20,6 +25,9 @@
 //    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
 //    MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
 //    controller.managedObjectContext = self.managedObjectContext;
+    
+    [MobileBrokerClient sharedClient].managedObjectContext = self.managedObjectContext;
+    
     return YES;
 }
 							
@@ -144,6 +152,29 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+- (void) startLogin {
+    NSString *login = [NSString stringWithFormat:@"https://login.salesforce.com/services/oauth2/authorize?display=touch&response_type=token&client_id=%@&redirect_uri=%@",[OAUTH_CLIENTID stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[OAUTH_CALLBACK stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:login]];
+}
+
+
+// When the oauth flow completes, this will get called.
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    NSString *u = [url absoluteString];
+    if (![u hasPrefix:OAUTH_CALLBACK]) return FALSE;
+    
+    // In a real app, at this point you'd save the refresh_token & authHost to the keychain
+    // and on restart, initialize your client from that instead of doing the login flow again.
+    
+    ZKSforceClient *client = [[ZKSforceClient alloc] init];
+    [client loginFromOAuthCallbackUrl:u oAuthConsumerKey:OAUTH_CLIENTID];
+    //((RootViewController *)self.navigationController.topViewController).client =client;
+    [MobileBrokerClient sharedClient].client = client;
+    
+    return TRUE;
 }
 
 @end

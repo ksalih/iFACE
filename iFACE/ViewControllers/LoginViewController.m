@@ -9,6 +9,11 @@
 #import "LoginViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "JYLoadingView.h"
+#import "JYGraphicsHelper.h"
+#import "zkSforceClient.h"
+#import "MobileBrokerClient.h" 
+#import "AppDelegate.h"
+
 @interface LoginViewController ()
 
 @property (strong,nonatomic) JYLoadingView *loadingView;
@@ -16,6 +21,7 @@
 @end
 
 @implementation LoginViewController
+
 
 - (void)viewDidLoad
 {
@@ -27,7 +33,17 @@
     self.registerButton.layer.shadowOpacity = 0.8;
     self.registerButton.layer.shadowRadius = 8;
     self.registerButton.layer.shadowOffset = CGSizeMake(8, 8);
+    
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"TableBG.png"]];
+    self.view.backgroundColor = background;
+    
+    [JYGraphicsHelper addRoundCornersToLayer:self.userName.layer withRadious:5];
+    [JYGraphicsHelper addRoundCornersToLayer:self.password.layer withRadious:5];
+
+
+    
 }
+
 
 - (void) viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = NO;
@@ -49,13 +65,24 @@
 }
 
 - (IBAction)signinAction:(id)sender {
-    NSLog(@"Sign in requested"); //"deloitte123@"
-    CGRect bounds = self.view.bounds;
-    self.loadingView = [JYLoadingView createLoadingView:bounds withMessage:@"Validating Settings..."];
-    [self.view addSubview:self.loadingView];
-    [self.view setUserInteractionEnabled:NO];
-    [self.navigationController.view setUserInteractionEnabled:NO];
+//    NSLog(@"Sign in requested"); 
+//    CGRect bounds = self.view.bounds;
+//    self.loadingView = [JYLoadingView createLoadingView:bounds withMessage:@"Validating Settings..."];
+//    [self.view addSubview:self.loadingView];
+//    [self.view setUserInteractionEnabled:NO];
+//    [self.navigationController.view setUserInteractionEnabled:NO];
+    
+    AppDelegate *myAppDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    [myAppDelegate startLogin];
+    
+    
 }
 - (IBAction)registerAction:(id)sender {
+    [[MobileBrokerClient sharedClient] requestCIOData];
+    
 }
+
+
+
 @end

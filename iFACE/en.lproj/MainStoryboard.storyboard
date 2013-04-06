@@ -323,16 +323,22 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzq-rW-sQb">
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="user name" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ats-fB-M5t">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="user name" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Ats-fB-M5t">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="8ro-dq-z7a"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SWa-Pu-LH4">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SWa-Pu-LH4">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="jJH-yJ-fcV"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.87603956653225812" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Ats-fB-M5t" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="0Tp-Ph-Kt3"/>
                                     <constraint firstAttribute="bottom" secondItem="SWa-Pu-LH4" secondAttribute="bottom" constant="19" id="EZq-z1-2l7"/>
@@ -349,7 +355,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Register">
+                                <state key="normal" title="Get Data">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -361,7 +367,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ws9-9K-4xq" firstAttribute="top" secondItem="Gzq-rW-sQb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="IPf-Em-kf6"/>
                             <constraint firstItem="Ws9-9K-4xq" firstAttribute="top" secondItem="GuX-2M-R4c" secondAttribute="top" constant="154" id="KyW-Yn-rdO"/>
@@ -381,7 +386,9 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="credentialsView" destination="Gzq-rW-sQb" id="Mnn-ix-7Jr"/>
+                        <outlet property="password" destination="SWa-Pu-LH4" id="6Qb-Fu-0Dg"/>
                         <outlet property="registerButton" destination="Ws9-9K-4xq" id="Sn3-xy-PJV"/>
+                        <outlet property="userName" destination="Ats-fB-M5t" id="Esl-hH-b8k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oLM-9f-fK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -396,6 +403,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jfl-cQ-uSq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

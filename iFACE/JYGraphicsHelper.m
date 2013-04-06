@@ -34,4 +34,19 @@
     return loadingView;
 }
 
++ (void) addShadowAndRoundCornersToLayer:(CALayer *)layer withRadious:(float)radious{
+    [layer setShadowColor:[UIColor blackColor].CGColor];
+    [layer setShadowOpacity:0.8];
+    [layer setShadowRadius:radious];
+    [layer setShadowOffset:CGSizeMake(radious, radious)];
+    layer.cornerRadius = radious;
+    
+}
+
++ (void) addRoundCornersToLayer:(CALayer *)layer withRadious:(float)radious{
+    layer.cornerRadius = radious;
+    layer.borderWidth = 1;
+    layer.borderColor = [UIColor grayColor].CGColor;
+    
+}
 @end
