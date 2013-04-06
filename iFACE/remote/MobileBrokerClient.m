@@ -115,11 +115,21 @@
 
 - (void) requestCIOData {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
-        ZKQueryResult *qr = [_client query:@"SELECT iface__Agency__c from iface__DCIO__c"];
+        ZKQueryResult *qr = [_client query:@"SELECT iface__RelationshipLength__c from iface__PPDCIOAssoc__c"];
         self.results = qr;
         
     });
 
 }
+
+#pragma mark - variables assignment
+- (void) setClient:(ZKSforceClient *) localClient {
+    _client = localClient;
+    
+    if ([self.delegate respondsToSelector:@selector(mobileBrokerClient:didFinishLoginWithClient:)]){
+        [self.delegate mobileBrokerClient:self didFinishLoginWithClient:_client];
+    }
+}
+
 
 @end

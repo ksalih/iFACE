@@ -14,6 +14,7 @@
 #import "MobileBrokerClient.h" 
 #import "AppDelegate.h"
 
+
 @interface LoginViewController ()
 
 @property (strong,nonatomic) JYLoadingView *loadingView;
@@ -72,9 +73,7 @@
 //    [self.view setUserInteractionEnabled:NO];
 //    [self.navigationController.view setUserInteractionEnabled:NO];
     
-    AppDelegate *myAppDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    [myAppDelegate startLogin];
+   
     
     
 }

@@ -7,10 +7,9 @@
 //
 
 #import "WelcomeScreenViewController.h"
+#import "AppDelegate.h"
 
 @implementation WelcomeScreenViewController
-
-
 
 - (void)viewDidLoad
 {
@@ -30,5 +29,21 @@
 }
 
 - (IBAction)signInButton:(id)sender {
+    //check if we have a client, if not, redirect to the salesforce site to login
+    if (![MobileBrokerClient sharedClient].client){
+        AppDelegate *myAppDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [MobileBrokerClient sharedClient].delegate = self;
+        [myAppDelegate startLogin];
+    }else{
+        //redirect to the next page and continue
+    }
+    
 }
+
+- (void) mobileBrokerClient:(MobileBrokerClient *)caller didFinishLoginWithClient:(ZKSforceClient *) client{
+    NSLog(@"Finished loggin into the application");
+    [[MobileBrokerClient sharedClient] requestCIOData];
+   // [self performSegueWithIdentifier:@"mainApplicationSegue" sender:self];
+}
+
 @end

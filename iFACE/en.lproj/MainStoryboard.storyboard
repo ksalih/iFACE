@@ -17,7 +17,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKO-fz-yls" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1371" y="421"/>
+            <point key="canvasLocation" x="2061" y="255"/>
         </scene>
         <!--View Controller - Item 1-->
         <scene sceneID="RCd-dC-7n9">
@@ -32,7 +32,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0O0-V6-HIV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1371" y="-231"/>
+            <point key="canvasLocation" x="2061" y="-397"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YOr-t5-S2G">
@@ -47,7 +47,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cNb-ay-qph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="366" y="95"/>
+            <point key="canvasLocation" x="1056" y="-71"/>
         </scene>
         <!--Tab View Controller-->
         <scene sceneID="6Xa-zD-A0b">
@@ -74,7 +74,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xy0-9N-GBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837" y="94"/>
+            <point key="canvasLocation" x="1527" y="-72"/>
         </scene>
         <!--Slide Menu View Controller-->
         <scene sceneID="osE-oE-r7Z">
@@ -285,7 +285,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Zjm-wg-XdF" kind="push" identifier="loginSegue" id="qe2-xs-o9k"/>
+                                    <action selector="signInButton:" destination="nYW-JD-ZFU" eventType="touchUpInside" id="Wb7-Kq-quA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -307,14 +307,18 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="gbU-RL-ihl"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="Zjm-wg-XdF" kind="push" identifier="mainApplicationSegue" id="YmY-or-Mga"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEa-tx-qC5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746" y="1668"/>
+            <point key="canvasLocation" x="-1157" y="482"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="xgs-NK-zVL">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oLM-9f-fK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Zjm-wg-XdF" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GuX-2M-R4c">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
@@ -390,9 +394,8 @@
                         <outlet property="userName" destination="Ats-fB-M5t" id="Esl-hH-b8k"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oLM-9f-fK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1158" y="1668"/>
+            <point key="canvasLocation" x="-745" y="482"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U75-B1-cKV">
@@ -411,7 +414,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mr3-dz-WpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="211" y="1668"/>
+            <point key="canvasLocation" x="-1692" y="482"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="12J-tM-uw5">
@@ -436,68 +439,6 @@
         <image name="search off.png" width="23" height="23"/>
         <image name="settings off.png" width="23" height="23"/>
     </resources>
-    <classes>
-        <class className="BlueButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlueButton.h"/>
-        </class>
-        <class className="GreyImageButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GreyImageButton.h"/>
-        </class>
-        <class className="JYDarkTranslucentCellHeaderView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JYDarkTranslucentCellHeaderView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="headerText" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="JYTrueEtchedCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JYTrueEtchedCell.h"/>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="registerAction:"/>
-                <relationship kind="action" name="signinAction:"/>
-                <relationship kind="outlet" name="credentialsView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="registerButton" candidateClass="GreyImageButton"/>
-                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ShadowedView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShadowedView.h"/>
-        </class>
-        <class className="SideMenuOptionsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SideMenuOptionsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="jyDarkTranslucentCellHeaderView" candidateClass="JYDarkTranslucentCellHeaderView"/>
-                <relationship kind="outlet" name="userNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SlideMenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlideMenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="panAction:" candidateClass="UIPanGestureRecognizer"/>
-                <relationship kind="outlet" name="containerController" candidateClass="ShadowedView"/>
-                <relationship kind="outlet" name="panGestureRecognizer" candidateClass="UIPanGestureRecognizer"/>
-            </relationships>
-        </class>
-        <class className="TabViewController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TabViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="slideMenuAction:"/>
-                <relationship kind="outlet" name="slideMenuButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="WelcomeScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeScreenViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="signInButton:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

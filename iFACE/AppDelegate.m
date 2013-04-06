@@ -13,6 +13,7 @@
 static NSString *OAUTH_CLIENTID = @"3MVG9A2kN3Bn17huH9WYzmSN6futXVxQtE8pCXq5z_15X5326xwIKPq8r47490Y3tBD3bnkbx6rmPiyDbklRr";
 static NSString *OAUTH_CALLBACK = @"compocketsoapoauthdemo:///done";
 
+
 @implementation AppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;

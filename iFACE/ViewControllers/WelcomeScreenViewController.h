@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MobileBrokerClient.h"
 
-@interface WelcomeScreenViewController : UIViewController
+@interface WelcomeScreenViewController : UIViewController <MobileBrokerClientDelegate>
 - (IBAction)signInButton:(id)sender;
+
 
 @end

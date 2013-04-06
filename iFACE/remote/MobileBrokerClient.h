@@ -8,8 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "zkSforceClient.h"
+@class MobileBrokerClient;
+
+@protocol MobileBrokerClientDelegate <NSObject>
+
+- (void) mobileBrokerClient:(MobileBrokerClient *)caller didFinishLoginWithClient:(ZKSforceClient *) client;
+
+@end
+
 
 @interface MobileBrokerClient : NSObject
+
 
 #pragma mark - Login Information
 @property (strong,nonatomic) NSString *userName;
@@ -17,7 +26,7 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong,nonatomic) ZKSforceClient *client;
 @property (nonatomic, strong) ZKQueryResult  *results;
-
+@property (weak,nonatomic) id<MobileBrokerClientDelegate> delegate;
 //singleton class
 + (MobileBrokerClient *)sharedClient;
 - (NSError *) login:(NSString *) userName password:(NSString *)password;
