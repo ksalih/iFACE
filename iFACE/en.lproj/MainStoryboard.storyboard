@@ -585,7 +585,7 @@
                     <connections>
                         <outlet property="mapView" destination="EF6-ZI-v8B" id="hp2-LQ-VEa"/>
                         <outlet property="tableView" destination="hag-Q3-aqQ" id="C3S-Kl-Zuz"/>
-                        <segue destination="Qlr-IU-NHa" kind="push" id="TX6-d1-6qe"/>
+                        <segue destination="Qlr-IU-NHa" kind="push" identifier="CIOCheckinSegue" id="TX6-d1-6qe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kOk-mw-fcb" userLabel="First Responder" sceneMemberID="firstResponder"/>

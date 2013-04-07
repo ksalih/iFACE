@@ -13,7 +13,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
-@interface CheckInViewController : UIViewController <CLLocationManagerDelegate>{
+@interface CheckInViewController : UIViewController <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>{
     CLLocationManager *_locationManager;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

@@ -22,6 +22,7 @@ static NSString * const APPLICATION_SEND_PUSH_KEY= @"APPLICATION_SEND_PUSH";
 static NSString * const APPLICATION_PLAY_SOUNDS_KEY= @"APPLICATION_PLAY_SOUNDS_KEY";
 static NSString * const APPLICATION_LAST_USER= @"APPLICATION_LAST_USER";
 static NSString * const APPLICATION_PUSH_TOKEN= @"APPLICATION_PUSH_TOKEN";
+static NSString * const MOBILE_BROKER_LAST_SYNC= @"MOBILE_BROKER_LAST_SYNC";
 
 
 
@@ -33,6 +34,18 @@ static NSString * const APPLICATION_PUSH_TOKEN= @"APPLICATION_PUSH_TOKEN";
         return YES;
     }
     return NO;
+}
+
++ (NSDate *) lastSyncDate {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs synchronize];
+    return [prefs objectForKey:MOBILE_BROKER_URL_KEY];
+}
+
++ (void) setLastSyncDate:(NSDate *)lastSyncDate {
+     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setObject:lastSyncDate forKey:MOBILE_BROKER_URL_KEY];
+    [prefs synchronize];
 }
 
 + (NSURL *) mobileBrokerURL{
