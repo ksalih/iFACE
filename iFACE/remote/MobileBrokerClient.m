@@ -278,7 +278,7 @@
             
             ZKSObject *activityObject = [ZKSObject withType:@"iforce__Activity__c"];
             
-            [activityObject setFieldValue:activity.dcioInfo field:@"iface__DPerson__c"];
+            [activityObject setFieldValue:activity.dPerson field:@"iface__DPerson__c"];
             [activityObject setFieldValue:activity.dCIO field:@"iface__DCIO__c"];
             [activityObject setFieldValue:activity.activityType field:@"iface__ActivityType__c"];
             [activityObject setFieldValue:activity.badgeAwarded field:@"iface__BadgeAwarded__c"];
