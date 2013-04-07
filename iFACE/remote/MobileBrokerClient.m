@@ -20,6 +20,7 @@
 #import "zkQueryResult.h"
 #import "IFACECoredataHelper.h"
 #import "IFACECoredataHelper.h"
+#import "ZKSObject.h"
 
 @implementation MobileBrokerClient
 
@@ -223,7 +224,7 @@
         NSLog(@"UTC date %@",utcDate);
         
         NSString *queryString =
-        [NSString stringWithFormat:@"SELECT iface__FirstName__c,iface__LastName__c, iface__Title__c, iface__Email__c, iface__Phone__c, iface__TwitterURL__c, iface__FacebookURL__c, iface__LinkedInURL__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__MoneyToSpend__c, iface__BudgetAuthority__c, iface__CurrentlyBeingMarketed__c, iface__CurrentlyUnderContract__c, iface__Agency__c, LastModifiedDate FROM iface__DCIO__c where LastModifiedDate > %@ order by id ASC", utcDate];
+        [NSString stringWithFormat:@"SELECT Id, iface__FirstName__c,iface__LastName__c, iface__Title__c, iface__Email__c, iface__Phone__c, iface__TwitterURL__c, iface__FacebookURL__c, iface__LinkedInURL__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__MoneyToSpend__c, iface__BudgetAuthority__c, iface__CurrentlyBeingMarketed__c, iface__CurrentlyUnderContract__c, iface__Agency__c, LastModifiedDate FROM iface__DCIO__c where LastModifiedDate > %@ order by id ASC", utcDate];
         
         NSLog(@"Query string %@",queryString);
         
@@ -474,7 +475,7 @@
         NSLog(@"UTC date %@",utcDate);
         
         NSString *queryString =
-        [NSString stringWithFormat:@"SELECT ID, iface__DPerson__c,iface__DPersonRelated__c, LastModifiedDate FROM iface__DPPDAssoc__c where LastModifiedDate > %@ order by ID ASC", utcDate];
+        [NSString stringWithFormat:@"SELECT Id, iface__DPerson__c,iface__DPersonRelated__c, LastModifiedDate FROM iface__DPPDAssoc__c where LastModifiedDate > %@ order by ID ASC", utcDate];
         
         NSLog(@"Query string %@",queryString);
         
@@ -511,21 +512,24 @@
     NSEnumerator *zkSObjectsEnumerator = [zkSObjectsArray objectEnumerator];
     NSEnumerator *cioManagedObjectsEnumerator = [cioManagedObjects objectEnumerator];
     
-    id object;
+    ZKSObject *zkObject;
     DCIO *currentCIO = [cioManagedObjectsEnumerator nextObject];
     DCIO *cioToUpdate;
     
-    while (object = [zkSObjectsEnumerator nextObject]) {
-        NSString *remoteID = [object fieldValue:@"id"];
+    while (zkObject = [zkSObjectsEnumerator nextObject]) {
+        
+        NSString *remoteID = [zkObject id];
+        
         NSLog(@"CIO ID %@",remoteID);
         if ([remoteID isEqualToString:currentCIO.remoteID]){
             cioToUpdate = currentCIO;
             currentCIO = [cioManagedObjectsEnumerator nextObject];
         }else{
             cioToUpdate = [NSEntityDescription insertNewObjectForEntityForName:CIO_TABLE inManagedObjectContext:self.managedObjectContext];
+            [IFACECoredataHelper copyZKSObject:zkObject toCIO:cioToUpdate];
         }
         
-        [IFACECoredataHelper copyZKSObject:object toCIO:cioToUpdate];
+        
         
     }
     
@@ -540,12 +544,12 @@
     NSEnumerator *zkSObjectsEnumerator = [zkSObjectsArray objectEnumerator];
     NSEnumerator *activityManagedObjectsEnumerator = [activityManagedObjects objectEnumerator];
     
-    id object;
+    ZKSObject *zkObject;
     DActivity *currentActivity = [activityManagedObjectsEnumerator nextObject];
     DActivity *activityToUpdate;
     
-    while (object = [zkSObjectsEnumerator nextObject]) {
-        NSString *remoteID = [object fieldValue:@"ID"];
+    while (zkObject = [zkSObjectsEnumerator nextObject]) {
+        NSString *remoteID = [zkObject id];
         NSLog(@"Activity ID %@",remoteID);
         
         if ([remoteID isEqualToString:currentActivity.remoteID]){
@@ -555,7 +559,7 @@
             activityToUpdate = [NSEntityDescription insertNewObjectForEntityForName:ACTIVITY_TABLE inManagedObjectContext:self.managedObjectContext];
         }
         
-        [IFACECoredataHelper copyZKSObject:object toActivity:activityToUpdate];
+        [IFACECoredataHelper copyZKSObject:zkObject toActivity:activityToUpdate];
         
     }
     
@@ -570,12 +574,12 @@
     NSEnumerator *zkSObjectsEnumerator = [zkSObjectsArray objectEnumerator];
     NSEnumerator *ppdCIOAssocManagedObjectsEnumerator = [ppdCIOAssocManagedObjects objectEnumerator];
     
-    id object;
+    ZKSObject *zkObject;
     PPDCIOAssoc *currentPPDCIOAssoc = [ppdCIOAssocManagedObjectsEnumerator nextObject];
     PPDCIOAssoc *ppdCIOAssocToUpdate;
     
-    while (object = [zkSObjectsEnumerator nextObject]) {
-        NSString *remoteID = [object fieldValue:@"ID"];
+    while (zkObject = [zkSObjectsEnumerator nextObject]) {
+        NSString *remoteID = [zkObject id];
         NSLog(@"PPDCIOAssoc %@",remoteID);
         
         if ([remoteID isEqualToString:currentPPDCIOAssoc.remoteID]){
@@ -585,7 +589,7 @@
             ppdCIOAssocToUpdate = [NSEntityDescription insertNewObjectForEntityForName:PPDCIOASSOC_TABLE inManagedObjectContext:self.managedObjectContext];
         }
         
-        [IFACECoredataHelper copyZKSObject:object toPPDCIOAssoc:ppdCIOAssocToUpdate];
+        [IFACECoredataHelper copyZKSObject:zkObject toPPDCIOAssoc:ppdCIOAssocToUpdate];
         
     }
     
@@ -600,12 +604,12 @@
     NSEnumerator *zkSObjectsEnumerator = [zkSObjectsArray objectEnumerator];
     NSEnumerator *ppdAssocManagedObjectsEnumerator = [ppdAssocManagedObjects objectEnumerator];
     
-    id object;
+    ZKSObject *zkObject;
     PPDAssoc *currentPPDAssoc = [ppdAssocManagedObjectsEnumerator nextObject];
     PPDAssoc *ppdAssocToUpdate;
     
-    while (object = [zkSObjectsEnumerator nextObject]) {
-        NSString *remoteID = [object fieldValue:@"ID"];
+    while (zkObject = [zkSObjectsEnumerator nextObject]) {
+        NSString *remoteID = [zkObject id];
         NSLog(@"PPDAssoc %@",remoteID);
         
         if ([remoteID isEqualToString:currentPPDAssoc.remoteID]){
@@ -615,7 +619,7 @@
             ppdAssocToUpdate = [NSEntityDescription insertNewObjectForEntityForName:PPDASSOC_TABLE inManagedObjectContext:self.managedObjectContext];
         }
         
-        [IFACECoredataHelper copyZKSObject:object toPPDAssoc:ppdAssocToUpdate];
+        [IFACECoredataHelper copyZKSObject:zkObject toPPDAssoc:ppdAssocToUpdate];
         
     }
     
