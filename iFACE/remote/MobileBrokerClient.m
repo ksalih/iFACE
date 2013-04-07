@@ -223,7 +223,7 @@
         NSLog(@"UTC date %@",utcDate);
         
         NSString *queryString =
-        [NSString stringWithFormat:@"SELECT ID, iface__FirstName__c,iface__LastName__c, iface__Title__c, iface__Email__c, iface__Phone__c, iface__TwitterURL__c, iface__FacebookURL__c, iface__LinkedInURL__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__MoneyToSpend__c, iface__BudgetAuthority__c, iface__CurrentlyBeingMarketed__c, iface__CurrentlyUnderContract__c, iface__Agency__c, LastModifiedDate FROM iface__DCIO__c where LastModifiedDate > %@ order by ID ASC", utcDate];
+        [NSString stringWithFormat:@"SELECT iface__ID__c, iface__FirstName__c,iface__LastName__c, iface__Title__c, iface__Email__c, iface__Phone__c, iface__TwitterURL__c, iface__FacebookURL__c, iface__LinkedInURL__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__MoneyToSpend__c, iface__BudgetAuthority__c, iface__CurrentlyBeingMarketed__c, iface__CurrentlyUnderContract__c, iface__Agency__c, LastModifiedDate FROM iface__DCIO__c where LastModifiedDate > %@ order by iface__ID__c ASC", utcDate];
         
         NSLog(@"Query string %@",queryString);
         
@@ -516,7 +516,7 @@
     DCIO *cioToUpdate;
     
     while (object = [zkSObjectsEnumerator nextObject]) {
-        NSString *remoteID = [object fieldValue:@"ID"];
+        NSString *remoteID = [object fieldValue:@"iface__ID__c"];
         NSLog(@"CIO ID %@",remoteID);
         if ([remoteID isEqualToString:currentCIO.remoteID]){
             cioToUpdate = currentCIO;
