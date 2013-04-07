@@ -141,7 +141,7 @@
 //}
 
 - (void) requestCIOData {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
         ZKQueryResult *qr = [_client query:@"SELECT iface__RelationshipLength__c from iface__PPDCIOAssoc__c"];
         self.results = qr;
         
@@ -170,7 +170,7 @@
     
     ZKUserInfo *userInfo = self.client.currentUserInfo;
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
         NSString *queryString =
         [NSString stringWithFormat:@"SELECT iface__Cellphone__c,iface__City__c,iface__Email__c, iface__FacebookURL__c,iface__FirstName__c, Id, LastModifiedDate,iface__LastName__c, iface__LinkedInURL__c,iface__State__c, iface__Street__c, iface__Title__c, iface__TwitterURL__c, iface__UserName__c from iface__DPerson__c where iface__Email__c = '%@'", userInfo.email];
         NSLog(@"Query string %@",queryString);
@@ -223,7 +223,7 @@
         NSLog(@"UTC date %@",utcDate);
         
         NSString *queryString =
-        [NSString stringWithFormat:@"SELECT Id, iface__FirstName__c,iface__LastName__c, iface__Title__c, iface__Email__c, iface__Phone__c, iface__TwitterURL__c, iface__FacebookURL__c, iface__LinkedInURL__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__MoneyToSpend__c, iface__BudgetAuthority__c, iface__CurrentlyBeingMarketed__c, iface__CurrentlyUnderContract__c, iface__Agency__c, LastModifiedDate FROM iface__DCIO__c where LastModifiedDate > %@ order by Id ASC", utcDate];
+        [NSString stringWithFormat:@"SELECT id, iface__FirstName__c,iface__LastName__c, iface__Title__c, iface__Email__c, iface__Phone__c, iface__TwitterURL__c, iface__FacebookURL__c, iface__LinkedInURL__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__MoneyToSpend__c, iface__BudgetAuthority__c, iface__CurrentlyBeingMarketed__c, iface__CurrentlyUnderContract__c, iface__Agency__c, LastModifiedDate FROM iface__DCIO__c where LastModifiedDate > %@ order by id ASC", utcDate];
         
         NSLog(@"Query string %@",queryString);
         
@@ -256,7 +256,7 @@
     if (!self.client) return;
     
     // save the new activities
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
         
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
         // Edit the entity name as appropriate.
@@ -304,7 +304,7 @@
     // pull the non-existent activities
     NSDate *lastActivitiesSyncDate = [ApplicationPreferences lastActivitiesSyncDate];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
         
         NSString *utcDate = [IFACECoredataHelper getUTCString:lastActivitiesSyncDate];
         
@@ -343,7 +343,7 @@
     if (!self.client) return;
     
     // save the new activities
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
         
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
         // Edit the entity name as appropriate.
@@ -387,14 +387,14 @@
     // pull the non-existent activities
     NSDate *lastPPDCIOAssocSyncDate = [ApplicationPreferences lastPPDCIOAssocSyncDate];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
         
         NSString *utcDate = [IFACECoredataHelper getUTCString:lastPPDCIOAssocSyncDate];
         
         NSLog(@"UTC date %@",utcDate);
         
         NSString *queryString =
-        [NSString stringWithFormat:@"SELECT ID, iface__DPerson__c,iface__DCIO__c, iface__RelationshipLength__c, iface__RelationshipType__c, iface__BadgeType__c, iface__GeoLat__c, iface__GeoLong__c, iface__Message__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__Strength__c, LastModifiedDate FROM iface__DPPDCIOAssoc__c where LastModifiedDate > %@ order by ID ASC", utcDate];
+        [NSString stringWithFormat:@"SELECT id, iface__DPerson__c,iface__DCIO__c, iface__RelationshipLength__c, iface__RelationshipType__c, iface__BadgeType__c, iface__GeoLat__c, iface__GeoLong__c, iface__Message__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__Strength__c, LastModifiedDate FROM iface__DPPDCIOAssoc__c where LastModifiedDate > %@ order by id ASC", utcDate];
         
         NSLog(@"Query string %@",queryString);
         
@@ -426,7 +426,7 @@
     if (!self.client) return;
     
     // save the new activities
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
         
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
         // Edit the entity name as appropriate.
@@ -467,7 +467,7 @@
     // pull the non-existent activities
     NSDate *lastPPDAssocSyncDate = [ApplicationPreferences lastPPDAssocSyncDate];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
         
         NSString *utcDate = [IFACECoredataHelper getUTCString:lastPPDAssocSyncDate];
         
@@ -516,7 +516,7 @@
     DCIO *cioToUpdate;
     
     while (object = [zkSObjectsEnumerator nextObject]) {
-        NSString *remoteID = [object fieldValue:@"ID"];
+        NSString *remoteID = [object fieldValue:@"id"];
         NSLog(@"CIO ID %@",remoteID);
         if ([remoteID isEqualToString:currentCIO.remoteID]){
             cioToUpdate = currentCIO;

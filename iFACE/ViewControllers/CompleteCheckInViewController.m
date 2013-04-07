@@ -61,7 +61,9 @@
         NSLog(@"Error saving activity");
     }
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    // [self.navigationController popViewControllerAnimated:YES];
     /**
      @dynamic activityType;
      @dynamic badgeAwarded;
