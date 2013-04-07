@@ -11,6 +11,7 @@
 #import "ZKUserInfo.h"
 #import "DPerson.h"
 #import "DCIO.h"
+#import "DActivity.h"
 #import "zkSObject.h"
 
 @interface IFACECoredataHelper : NSObject
@@ -18,5 +19,6 @@
 + (DPerson *) addOrUpdatePerson:(ZKUserInfo *) userInfo withManagedObjectContext:(NSManagedObjectContext *) managedObjectContext;
 + (void) copyZKSObject:(ZKSObject *)zkSObject toPerson:(DPerson *)person;
 + (void) copyZKSObject:(ZKSObject *)zkSObject toCIO:(DCIO *)cio;
++ (void) copyZKSObject:(ZKSObject *)zkSObject toActivity:(DActivity *)activity;
 + (NSString *) getUTCString:(NSDate *) date;
 @end

@@ -35,6 +35,9 @@
 //database
 #define USERS_TABLE @"DPerson"
 #define CIO_TABLE @"DCIO"
+#define ACTIVITY_TABLE @"DActivity"
+#define PPDASSOC_TABLE @"PPDAssoc"
+#define PPDCIOASSOC_TABLE @"PPDCIOAssoc"
 #define MAILBOX_INBOX_TABLE @"Inbox"
 #define MAILBOX_OUTBOX_TABLE @"Outbox"
 #define MAILBOX_SENT_TABLE @"Sent"

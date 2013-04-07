@@ -36,4 +36,7 @@
 
 + (NSDate *) lastSyncDate;
 + (void) setLastSyncDate:(NSDate *)lastSyncDate;
+
++ (NSDate *) lastActivitiesSyncDate;
++ (void) setLastActivitiesSyncDate:(NSDate *)lastSyncDate;
 @end

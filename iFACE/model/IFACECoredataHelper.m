@@ -126,6 +126,27 @@
     cio.twitterURL = [zkSObject fieldValue:@"iface__Titile__c"];
 }
 
++ (void) copyZKSObject:(ZKSObject *)zkSObject toActivity:(DActivity *)activity {
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-ddTHH:mm:ssZ"];
+    
+    activity.dPerson = [zkSObject fieldValue:@"iface__DPerson__c"];
+    activity.dCIO = [zkSObject fieldValue:@"iface__DCIO__c"];
+    activity.activityType = [zkSObject fieldValue:@"iface__ActivityType__c"];
+    activity.badgeAwarded = [zkSObject fieldValue:@"iface__BadgeAwarded__c"];
+    activity.badgeType = [zkSObject fieldValue:@"iface__BadgeType__c"];
+    activity.geoLat = [zkSObject fieldValue:@"iface__GeoLat__c"];
+    activity.geoLong = [zkSObject fieldValue:@"iface__GeoLong__c"];
+    activity.message = [zkSObject fieldValue:@"iface__Message__c"];
+    
+    activity.lastModifiedDate = [dateFormat dateFromString:[zkSObject fieldValue:@"LastModifiedDate"]];
+    activity.remoteID = [zkSObject fieldValue:@"iface__ID__c"];
+    activity.message = [zkSObject fieldValue:@"iface__Message__c"];
+    activity.venue = [zkSObject fieldValue:@"iface__Venue__c"];
+}
+
+
 + (NSString *) getUTCString:(NSDate *) date{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZ";

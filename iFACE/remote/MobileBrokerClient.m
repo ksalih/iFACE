@@ -12,8 +12,10 @@
 #import "User.h"
 #import "JYStringHelperFunctions.h"
 #import "ZKUserInfo.h"
+#import "zkSaveResult.h"
 #import "DPerson.h"
 #import "DCIO.h"
+#import "DActivity.h"
 #import "zkSObject.h"
 #import "zkQueryResult.h"
 #import "IFACECoredataHelper.h"
@@ -272,10 +274,103 @@
     });
     
 }
+
+- (void) syncActivityInformation {
+    if (!self.client) return;
+    
+    // save the new activities
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+        
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        // Edit the entity name as appropriate.
+        NSEntityDescription *entity = [NSEntityDescription entityForName:ACTIVITY_TABLE inManagedObjectContext:self.managedObjectContext];
+        [fetchRequest setEntity:entity];
+        
+        // Edit the predicate
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"remoteID == %@", nil];
+        [fetchRequest setPredicate:predicate];
+        
+        
+        NSError *error = nil;
+        NSArray *activityList = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        
+        for (DActivity *activity in activityList) {
+            
+            NSLog(@"Activity value = %@", activity);
+            
+            ZKSObject *activityObject = [ZKSObject withType:@"iforce__Activity__c"];
+            
+            [activityObject setFieldValue:activity.dcioInfo field:@"iface__DPerson__c"];
+            [activityObject setFieldValue:activity.dCIO field:@"iface__DCIO__c"];
+            [activityObject setFieldValue:activity.activityType field:@"iface__ActivityType__c"];
+            [activityObject setFieldValue:activity.badgeAwarded field:@"iface__BadgeAwarded__c"];
+            [activityObject setFieldValue:activity.badgeType field:@"iface__BadgeType__c"];
+            [activityObject setFieldValue:activity.geoLat field:@"iface__GeoLat__c"];
+            [activityObject setFieldValue:activity.geoLong field:@"iface__GeoLong__c"];
+            [activityObject setFieldValue:activity.message field:@"iface__Message__c"];
+            [activityObject setFieldValue:activity.venue field:@"iface__Venue__c"];
+            
+            NSArray *results = [self.client create:[NSArray arrayWithObject:activity]];
+            
+            ZKSaveResult *sr = [results objectAtIndex:0];
+            if ([sr success]) {
+                NSLog(@"New activity id %@", [sr id]);
+                activity.remoteID = [sr id];
+                [self saveContext];
+            } else {
+                NSLog(@"Error creating activity %@ %@", [sr statusCode], [sr message]);
+            }
+            
+        }
+    });
+    
+    // pull the non-existent activities
+    NSDate *lastActivitiesSyncDate = [ApplicationPreferences lastActivitiesSyncDate];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+        
+        NSString *utcDate = [IFACECoredataHelper getUTCString:lastActivitiesSyncDate];
+        
+        NSLog(@"UTC date %@",utcDate);
+        
+        NSString *queryString =
+        [NSString stringWithFormat:@"SELECT iface__ID__c, iface__DPerson__c,iface__DCIO__c, iface__ActivityType__c, iface__BadgeAwarded__c, iface__BadgeType__c, iface__GeoLat__c, iface__GeoLong__c, iface__Message__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__MoneyToSpend__c, iface__BudgetAuthority__c, iface__Venue__c, LastModifiedDate FROM iface__DActivity__c where LastModifiedDate > %@ order by iface__ID__c ASC", utcDate];
+        
+        NSLog(@"Query string %@",queryString);
+        
+        ZKQueryResult *qr = [_client query:queryString];
+        
+        ZKSObject *zkSObject;
+        
+        if ([qr.records count] > 0 ) {
+            
+            NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+            // Edit the entity name as appropriate.
+            NSEntityDescription *entity = [NSEntityDescription entityForName:ACTIVITY_TABLE inManagedObjectContext:self.managedObjectContext];
+            [fetchRequest setEntity:entity];
+            
+            // Edit the sort key as appropriate.
+            NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"remoteID" ascending:YES];
+            NSArray *sortDescriptors = @[sortDescriptor];
+            
+            [fetchRequest setSortDescriptors:sortDescriptors];
+            
+            NSError *error = nil;
+            NSArray *activitiesList = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+            
+            [self mergeDataFrom:qr.records to:activitiesList];
+        }
+    });
+    
+}
+
+
+
+
 /**
  Merges data following find-and-update from apple
  */
--(void) mergeDataFrom:(NSArray *) zkSObjectsArray to:(NSArray *) cioManagedObjects{
+-(void) mergeDataFrom:(NSArray *) zkSObjectsArray to:(NSArray *) cioManagedObjects {
     NSEnumerator *zkSObjectsEnumerator = [zkSObjectsArray objectEnumerator];
     NSEnumerator *cioManagedObjectsEnumerator = [cioManagedObjects objectEnumerator];
     
@@ -298,8 +393,39 @@
     }
     
     [self saveContext];
-
     
 }
 
+/**
+ Merges data following find-and-update from apple
+ */
+-(void) mergeActivityFrom:(NSArray *) zkSObjectsArray to:(NSArray *) activityManagedObjects {
+    NSEnumerator *zkSObjectsEnumerator = [zkSObjectsArray objectEnumerator];
+    NSEnumerator *activityManagedObjectsEnumerator = [activityManagedObjects objectEnumerator];
+    
+    id object;
+    DActivity *currentActivity = [activityManagedObjectsEnumerator nextObject];
+    DActivity *activityToUpdate;
+    
+    while (object = [zkSObjectsEnumerator nextObject]) {
+        NSString *remoteID = [object fieldValue:@"iface__ID__c"];
+        NSLog(@"Compary %@",remoteID);
+        
+        if ([remoteID isEqualToString:currentActivity.remoteID]){
+            activityToUpdate = currentActivity;
+            currentActivity = [activityManagedObjectsEnumerator nextObject];
+        }else{
+            activityToUpdate = [NSEntityDescription insertNewObjectForEntityForName:ACTIVITY_TABLE inManagedObjectContext:self.managedObjectContext];
+        }
+        
+        [IFACECoredataHelper copyZKSObject:object toActivity:activityToUpdate];
+        
+    }
+    
+    [self saveContext];
+    
+}
+
+
 @end
+                   

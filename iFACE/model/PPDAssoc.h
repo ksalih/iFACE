@@ -2,7 +2,7 @@
 //  PPDAssoc.h
 //  iFACE
 //
-//  Created by Jorge Carvallo on 4/7/13.
+//  Created by Karwan Salih on 4/7/13.
 //  Copyright (c) 2013 Deloitte. All rights reserved.
 //
 
@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSString * dPerson;
 @property (nonatomic, retain) NSString * dPersonRelated;
+@property (nonatomic, retain) NSDate * lastModifiedDate;
 @property (nonatomic, retain) NSSet *dpersonInfo;
 @end
 

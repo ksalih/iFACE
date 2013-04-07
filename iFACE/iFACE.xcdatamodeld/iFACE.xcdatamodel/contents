@@ -8,6 +8,7 @@
         <attribute name="dPerson" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="geoLat" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="geoLong" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="remoteID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="venue" optional="YES" attributeType="String" syncable="YES"/>
@@ -58,11 +59,13 @@
     <entity name="PPDAssoc" representedClassName="PPDAssoc" syncable="YES">
         <attribute name="dPerson" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dPersonRelated" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="dpersonInfo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DPerson" inverseName="ppdAssocs" inverseEntity="DPerson" syncable="YES"/>
     </entity>
     <entity name="PPDCIOAssoc" representedClassName="PPDCIOAssoc" syncable="YES">
         <attribute name="dCIO" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dPerson" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="relationshipLength" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="relationshipType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="strength" optional="YES" attributeType="String" syncable="YES"/>
@@ -75,11 +78,11 @@
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DActivity" positionX="-90" positionY="36" width="128" height="223"/>
+        <element name="DActivity" positionX="-90" positionY="36" width="128" height="238"/>
         <element name="DCIO" positionX="-288" positionY="20" width="128" height="328"/>
         <element name="DPerson" positionX="126" positionY="-16" width="128" height="313"/>
-        <element name="PPDAssoc" positionX="315" positionY="200" width="128" height="88"/>
-        <element name="PPDCIOAssoc" positionX="-99" positionY="311" width="128" height="148"/>
+        <element name="PPDAssoc" positionX="315" positionY="200" width="128" height="103"/>
+        <element name="PPDCIOAssoc" positionX="-99" positionY="311" width="128" height="163"/>
         <element name="User" positionX="360" positionY="-0" width="128" height="90"/>
     </elements>
 </model>

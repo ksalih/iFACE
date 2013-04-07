@@ -2,7 +2,7 @@
 //  PPDAssoc.m
 //  iFACE
 //
-//  Created by Jorge Carvallo on 4/7/13.
+//  Created by Karwan Salih on 4/7/13.
 //  Copyright (c) 2013 Deloitte. All rights reserved.
 //
 
@@ -14,6 +14,7 @@
 
 @dynamic dPerson;
 @dynamic dPersonRelated;
+@dynamic lastModifiedDate;
 @dynamic dpersonInfo;
 
 @end

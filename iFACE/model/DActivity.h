@@ -2,7 +2,7 @@
 //  DActivity.h
 //  iFACE
 //
-//  Created by Jorge Carvallo on 4/7/13.
+//  Created by Karwan Salih on 4/7/13.
 //  Copyright (c) 2013 Deloitte. All rights reserved.
 //
 
@@ -23,6 +23,7 @@
 @property (nonatomic, retain) NSString * message;
 @property (nonatomic, retain) NSString * remoteID;
 @property (nonatomic, retain) NSString * venue;
+@property (nonatomic, retain) NSDate * lastModifiedDate;
 @property (nonatomic, retain) DCIO *dcioInfo;
 @property (nonatomic, retain) DPerson *dpersonInfo;
 

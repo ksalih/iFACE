@@ -10,6 +10,7 @@
 #import "zkSforceClient.h"
 #import "DPerson.h"
 #import "DCIO.h"
+#import "DActivity.h"
 
 @class MobileBrokerClient;
 
@@ -46,5 +47,6 @@ typedef enum {
 - (void) requestCIOData;
 - (void) syncUserInformation;
 - (void) syncCIOInformation;
+- (void) syncActivityInformation;
 
 @end
