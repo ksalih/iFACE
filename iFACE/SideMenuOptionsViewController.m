@@ -101,6 +101,9 @@ NSInteger const SideMenuOptionsSectionUser = 0;
 //                    [alertView show];
 //                }
                     break;
+                case 1:
+                    [self.slideMenuViewController switchMasterToStoryboardID:@"searchStoryboard"];
+                    break;
            }
             break;
 //            

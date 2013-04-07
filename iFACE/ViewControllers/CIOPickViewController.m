@@ -14,7 +14,6 @@
 #import "CompleteCheckInViewController.h" 
 
 @interface CIOPickViewController ()
-@property (strong,nonatomic) DCIO *selectedDCIO;
 @end
 
 @implementation CIOPickViewController

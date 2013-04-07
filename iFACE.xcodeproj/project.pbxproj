@@ -184,6 +184,8 @@
 		F8F2BCA917119A4700D5810E /* defaultImageGroupIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BCA717119A4700D5810E /* defaultImageGroupIcon@2x.png */; };
 		F8F2BCAC1711A12400D5810E /* missingPicture.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BCAA1711A12400D5810E /* missingPicture.png */; };
 		F8F2BCAD1711A12400D5810E /* missingPicture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BCAB1711A12400D5810E /* missingPicture@2x.png */; };
+		F8F2BCB11711A49500D5810E /* CIOSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BCB01711A49500D5810E /* CIOSearchViewController.m */; };
+		F8F2BCB41711A9E000D5810E /* CIOProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BCB31711A9DF00D5810E /* CIOProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -675,6 +677,10 @@
 		F8F2BCA717119A4700D5810E /* defaultImageGroupIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "defaultImageGroupIcon@2x.png"; sourceTree = "<group>"; };
 		F8F2BCAA1711A12400D5810E /* missingPicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missingPicture.png; sourceTree = "<group>"; };
 		F8F2BCAB1711A12400D5810E /* missingPicture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "missingPicture@2x.png"; sourceTree = "<group>"; };
+		F8F2BCAF1711A49500D5810E /* CIOSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CIOSearchViewController.h; path = ViewControllers/CIOSearchViewController.h; sourceTree = "<group>"; };
+		F8F2BCB01711A49500D5810E /* CIOSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CIOSearchViewController.m; path = ViewControllers/CIOSearchViewController.m; sourceTree = "<group>"; };
+		F8F2BCB21711A9DF00D5810E /* CIOProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CIOProfileViewController.h; path = ViewControllers/CIOProfileViewController.h; sourceTree = "<group>"; };
+		F8F2BCB31711A9DF00D5810E /* CIOProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CIOProfileViewController.m; path = ViewControllers/CIOProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -834,6 +840,7 @@
 		F8625855170E8B7E00C952A6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F8F2BCAE1711A46000D5810E /* CIO  */,
 				F8F2BBEF1710D86500D5810E /* checkin */,
 				F8F2BBD31710B6FB00D5810E /* User Profile */,
 				F8792038170F6DD800C8CBE1 /* ChangeUserInfoViewController.h */,
@@ -1497,6 +1504,17 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		F8F2BCAE1711A46000D5810E /* CIO  */ = {
+			isa = PBXGroup;
+			children = (
+				F8F2BCAF1711A49500D5810E /* CIOSearchViewController.h */,
+				F8F2BCB01711A49500D5810E /* CIOSearchViewController.m */,
+				F8F2BCB21711A9DF00D5810E /* CIOProfileViewController.h */,
+				F8F2BCB31711A9DF00D5810E /* CIOProfileViewController.m */,
+			);
+			name = "CIO ";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1708,6 +1726,8 @@
 				F8F2BC99171179E500D5810E /* PPDCIOAssoc.m in Sources */,
 				F8F2BC9C171179E500D5810E /* DActivity.m in Sources */,
 				F8F2BC9F17117D7100D5810E /* ActivityCell.m in Sources */,
+				F8F2BCB11711A49500D5810E /* CIOSearchViewController.m in Sources */,
+				F8F2BCB41711A9E000D5810E /* CIOProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

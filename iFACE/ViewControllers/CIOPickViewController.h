@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FSVenue.h"
+#import "DCIO.h"
 
 @interface CIOPickViewController : UIViewController <UISearchDisplayDelegate, UISearchBarDelegate, UITableViewDelegate,UIActionSheetDelegate,NSFetchedResultsControllerDelegate,UITableViewDataSource>
 
@@ -21,6 +22,7 @@
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong,nonatomic) DCIO *selectedDCIO;
 
 @property (strong,nonatomic) FSVenue *venue;
 @end
