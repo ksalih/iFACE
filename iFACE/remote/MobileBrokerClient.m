@@ -172,7 +172,7 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
         NSString *queryString =
-        [NSString stringWithFormat:@"SELECT iface__Cellphone__c,iface__City__c,iface__Email__c, iface__FacebookURL__c,iface__FirstName__c, ID, LastModifiedDate,iface__LastName__c, iface__LinkedInURL__c,iface__State__c, iface__Street__c, iface__Title__c, iface__TwitterURL__c, iface__UserName__c from iface__DPerson__c where iface__Email__c = '%@'", userInfo.email];
+        [NSString stringWithFormat:@"SELECT iface__Cellphone__c,iface__City__c,iface__Email__c, iface__FacebookURL__c,iface__FirstName__c, Id, LastModifiedDate,iface__LastName__c, iface__LinkedInURL__c,iface__State__c, iface__Street__c, iface__Title__c, iface__TwitterURL__c, iface__UserName__c from iface__DPerson__c where iface__Email__c = '%@'", userInfo.email];
         NSLog(@"Query string %@",queryString);
         
         ZKQueryResult *qr = [_client query:queryString];
@@ -217,13 +217,13 @@
     NSDate *lastSyncDate = [ApplicationPreferences lastSyncDate];
     
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
         NSString *utcDate = [IFACECoredataHelper getUTCString:lastSyncDate];
         
         NSLog(@"UTC date %@",utcDate);
         
         NSString *queryString =
-        [NSString stringWithFormat:@"SELECT iface__ID__c, iface__FirstName__c,iface__LastName__c, iface__Title__c, iface__Email__c, iface__Phone__c, iface__TwitterURL__c, iface__FacebookURL__c, iface__LinkedInURL__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__MoneyToSpend__c, iface__BudgetAuthority__c, iface__CurrentlyBeingMarketed__c, iface__CurrentlyUnderContract__c, iface__Agency__c, LastModifiedDate FROM iface__DCIO__c where LastModifiedDate > %@ order by iface__ID__c ASC", utcDate];
+        [NSString stringWithFormat:@"SELECT Id, iface__FirstName__c,iface__LastName__c, iface__Title__c, iface__Email__c, iface__Phone__c, iface__TwitterURL__c, iface__FacebookURL__c, iface__LinkedInURL__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__MoneyToSpend__c, iface__BudgetAuthority__c, iface__CurrentlyBeingMarketed__c, iface__CurrentlyUnderContract__c, iface__Agency__c, LastModifiedDate FROM iface__DCIO__c where LastModifiedDate > %@ order by Id ASC", utcDate];
         
         NSLog(@"Query string %@",queryString);
         
@@ -311,7 +311,7 @@
         NSLog(@"UTC date %@",utcDate);
         
         NSString *queryString =
-        [NSString stringWithFormat:@"SELECT iface__ID__c, iface__DPerson__c,iface__DCIO__c, iface__ActivityType__c, iface__BadgeAwarded__c, iface__BadgeType__c, iface__GeoLat__c, iface__GeoLong__c, iface__Message__c, iface__Venue__c, LastModifiedDate FROM iface__DActivity__c where LastModifiedDate > %@ order by iface__ID__c ASC", utcDate];
+        [NSString stringWithFormat:@"SELECT Id, iface__DPerson__c,iface__DCIO__c, iface__ActivityType__c, iface__BadgeAwarded__c, iface__BadgeType__c, iface__GeoLat__c, iface__GeoLong__c, iface__Message__c, iface__Venue__c, LastModifiedDate FROM iface__DActivity__c where LastModifiedDate > %@ order by Id ASC", utcDate];
         
         NSLog(@"Query string %@",queryString);
         
@@ -394,7 +394,7 @@
         NSLog(@"UTC date %@",utcDate);
         
         NSString *queryString =
-        [NSString stringWithFormat:@"SELECT iface__ID__c, iface__DPerson__c,iface__DCIO__c, iface__RelationshipLength__c, iface__RelationshipType__c, iface__BadgeType__c, iface__GeoLat__c, iface__GeoLong__c, iface__Message__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__Strength__c, LastModifiedDate FROM iface__DPPDCIOAssoc__c where LastModifiedDate > %@ order by iface__ID__c ASC", utcDate];
+        [NSString stringWithFormat:@"SELECT ID, iface__DPerson__c,iface__DCIO__c, iface__RelationshipLength__c, iface__RelationshipType__c, iface__BadgeType__c, iface__GeoLat__c, iface__GeoLong__c, iface__Message__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__Strength__c, LastModifiedDate FROM iface__DPPDCIOAssoc__c where LastModifiedDate > %@ order by ID ASC", utcDate];
         
         NSLog(@"Query string %@",queryString);
         
@@ -474,7 +474,7 @@
         NSLog(@"UTC date %@",utcDate);
         
         NSString *queryString =
-        [NSString stringWithFormat:@"SELECT iface__ID__c, iface__DPerson__c,iface__DPersonRelated__c, LastModifiedDate FROM iface__DPPDAssoc__c where LastModifiedDate > %@ order by iface__ID__c ASC", utcDate];
+        [NSString stringWithFormat:@"SELECT ID, iface__DPerson__c,iface__DPersonRelated__c, LastModifiedDate FROM iface__DPPDAssoc__c where LastModifiedDate > %@ order by ID ASC", utcDate];
         
         NSLog(@"Query string %@",queryString);
         
@@ -516,7 +516,7 @@
     DCIO *cioToUpdate;
     
     while (object = [zkSObjectsEnumerator nextObject]) {
-        NSString *remoteID = [object fieldValue:@"iface__ID__c"];
+        NSString *remoteID = [object fieldValue:@"ID"];
         NSLog(@"CIO ID %@",remoteID);
         if ([remoteID isEqualToString:currentCIO.remoteID]){
             cioToUpdate = currentCIO;
@@ -545,7 +545,7 @@
     DActivity *activityToUpdate;
     
     while (object = [zkSObjectsEnumerator nextObject]) {
-        NSString *remoteID = [object fieldValue:@"iface__ID__c"];
+        NSString *remoteID = [object fieldValue:@"ID"];
         NSLog(@"Activity ID %@",remoteID);
         
         if ([remoteID isEqualToString:currentActivity.remoteID]){
@@ -575,7 +575,7 @@
     PPDCIOAssoc *ppdCIOAssocToUpdate;
     
     while (object = [zkSObjectsEnumerator nextObject]) {
-        NSString *remoteID = [object fieldValue:@"iface__ID__c"];
+        NSString *remoteID = [object fieldValue:@"ID"];
         NSLog(@"PPDCIOAssoc %@",remoteID);
         
         if ([remoteID isEqualToString:currentPPDCIOAssoc.remoteID]){
@@ -605,7 +605,7 @@
     PPDAssoc *ppdAssocToUpdate;
     
     while (object = [zkSObjectsEnumerator nextObject]) {
-        NSString *remoteID = [object fieldValue:@"iface__ID__c"];
+        NSString *remoteID = [object fieldValue:@"ID"];
         NSLog(@"PPDAssoc %@",remoteID);
         
         if ([remoteID isEqualToString:currentPPDAssoc.remoteID]){

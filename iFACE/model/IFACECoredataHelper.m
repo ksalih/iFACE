@@ -92,7 +92,7 @@
 
     person.lastName = [zkSObject fieldValue:@"iface__LastName__c"];
     person.linkedinURL = [zkSObject fieldValue:@"iface__LinkedInURL__c"];
-    person.remoteID = [zkSObject fieldValue:@"ID"];
+    person.remoteID = [zkSObject fieldValue:@"Id"];
     person.state = [zkSObject fieldValue:@"iface__State__c"];
     person.street = [zkSObject fieldValue:@"iface__Street__c"];
     person.title = [zkSObject fieldValue:@"iface__Title__c"];
