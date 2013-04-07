@@ -45,5 +45,6 @@ typedef enum {
 - (NSError *) login:(NSString *) userName password:(NSString *)password;
 - (void) requestCIOData;
 - (void) syncUserInformation;
+- (void) syncCIOInformation;
 
 @end

@@ -9,6 +9,7 @@
 #import "CIOPickViewController.h"
 #import "AppDefinitions.h"
 #import "AppDelegate.h"
+#import "MobileBrokerClient.h"
 
 @interface CIOPickViewController ()
 
@@ -23,6 +24,7 @@
 	// Do any additional setup after loading the view.
     self.title = self.venue.name;
     self.managedObjectContext = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+    [[MobileBrokerClient sharedClient] syncCIOInformation];
 }
 
 - (void)didReceiveMemoryWarning

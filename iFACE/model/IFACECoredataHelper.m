@@ -107,7 +107,8 @@
     
     cio.agency = [zkSObject fieldValue:@"iface__Agency__c"];
     cio.budgetAuthority = [zkSObject fieldValue:@"iface__BudgetAuthority__c"];
-    cio.currentlyBeenMarked = [zkSObject fieldValue:@"iface__CurrentlyBeingMarketed__c"];
+    cio.currentlyBeenMarked = [NSNumber numberWithInt:[(NSString *)[zkSObject fieldValue:@"iface__CurrentlyBeingMarketed__c"] integerValue]];
+    
     cio.currentlyUnderContract = [zkSObject fieldValue:@"iface__CurrentlyUnderContract__c"];
     cio.topicsToAvoid = [zkSObject fieldValue:@"iface__TopicsToAvoid__c"];
     cio.sizeOfBudget = [zkSObject fieldValue:@"iface__SizeOfBudget__c"];
@@ -124,7 +125,16 @@
     cio.remoteID = [zkSObject fieldValue:@"iface__ID__c"];
     cio.title = [zkSObject fieldValue:@"iface__Title__c"];
     cio.twitterURL = [zkSObject fieldValue:@"iface__Titile__c"];
-    }
+}
 
++ (NSString *) getUTCString:(NSDate *) date{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ssZ";
+    
+    NSTimeZone *gmt = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    [dateFormatter setTimeZone:gmt];
+    NSString *timeStamp = [dateFormatter stringFromDate:date];
+    return timeStamp;
+}
 
 @end

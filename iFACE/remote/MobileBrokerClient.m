@@ -93,7 +93,10 @@
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
+            if ([self.delegate respondsToSelector:@selector(mobileBrokerClient:didFailTransaction:)]){
+                [self.delegate mobileBrokerClient:self didFailTransaction:MobileBrokerClientErrorUserNotFound];
+            }
+            //abort();
         }
     }
 }
@@ -213,8 +216,12 @@
     
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+        NSString *utcDate = [IFACECoredataHelper getUTCString:lastSyncDate];
+        
+        NSLog(@"UTC date %@",utcDate);
+        
         NSString *queryString =
-        [NSString stringWithFormat:@"SELECT iface__ID__c, iface__FirstName__c,iface__LastName__c, iface__Title__c, iface__Email__c, iface__Phone__c, iface__TwitterURL__c, iface__FacebookURL__c, iface__LinkedInURL__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__MoneyToSpend__c, iface__BudgetAuthority__c, iface__CurrentlyBeingMarketed__c, iface__CurrentlyUnderContract__c, iface__Agency__c, LastModifiedDate FROM iface__DCIO__c where LastModifiedDate > '%@'", lastSyncDate];
+        [NSString stringWithFormat:@"SELECT iface__ID__c, iface__FirstName__c,iface__LastName__c, iface__Title__c, iface__Email__c, iface__Phone__c, iface__TwitterURL__c, iface__FacebookURL__c, iface__LinkedInURL__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__MoneyToSpend__c, iface__BudgetAuthority__c, iface__CurrentlyBeingMarketed__c, iface__CurrentlyUnderContract__c, iface__Agency__c, LastModifiedDate FROM iface__DCIO__c where LastModifiedDate > %@ order by iface__ID__c ASC", utcDate];
         
         NSLog(@"Query string %@",queryString);
         
@@ -230,7 +237,7 @@
             [fetchRequest setEntity:entity];
             
             // Edit the sort key as appropriate.
-            NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"email" ascending:YES];
+            NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"remoteID" ascending:YES];
             NSArray *sortDescriptors = @[sortDescriptor];
             
             [fetchRequest setSortDescriptors:sortDescriptors];
@@ -239,15 +246,16 @@
             NSArray *cioList = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
             
             
-            for (ZKSObject *zkSObject in qr.records){
-                NSLog(@"value = %@",[zkSObject fieldValue:@"iface__Email__c"]);
-                
-            }
-            
-            // save the context
-            [self saveContext];
-            
-            
+//            for (ZKSObject *zkSObject in qr.records){
+//                NSLog(@"value = %@",[zkSObject fieldValue:@"iface__Email__c"]);
+//                
+//            }
+            [self mergeDataFrom:qr.records to:cioList];
+        }
+        // save the context
+       // [self saveContext];
+        
+        
             //copy data from zkSObject into person and do a managedObjectContext save
             
 //            if (person){
@@ -259,12 +267,39 @@
 //                    [self.delegate mobileBrokerClient:self didFailTransaction:MobileBrokerClientErrorUserNotFound];
 //                }
 //            }
-        }
+       // }
         
     });
     
 }
+/**
+ Merges data following find-and-update from apple
+ */
+-(void) mergeDataFrom:(NSArray *) zkSObjectsArray to:(NSArray *) cioManagedObjects{
+    NSEnumerator *zkSObjectsEnumerator = [zkSObjectsArray objectEnumerator];
+    NSEnumerator *cioManagedObjectsEnumerator = [cioManagedObjects objectEnumerator];
+    
+    id object;
+    DCIO *currentCIO = [cioManagedObjectsEnumerator nextObject];
+    DCIO *cioToUpdate;
+    
+    while (object = [zkSObjectsEnumerator nextObject]) {
+        NSString *remoteID = [object fieldValue:@"iface__ID__c"];
+        NSLog(@"Compary %@",remoteID);
+        if ([remoteID isEqualToString:currentCIO.remoteID]){
+            cioToUpdate = currentCIO;
+            currentCIO = [cioManagedObjectsEnumerator nextObject];
+        }else{
+            cioToUpdate = [NSEntityDescription insertNewObjectForEntityForName:CIO_TABLE inManagedObjectContext:self.managedObjectContext];
+        }
+        
+        [IFACECoredataHelper copyZKSObject:object toCIO:cioToUpdate];
+        
+    }
+    
+    [self saveContext];
 
-
+    
+}
 
 @end

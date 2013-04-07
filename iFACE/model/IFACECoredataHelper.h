@@ -18,5 +18,5 @@
 + (DPerson *) addOrUpdatePerson:(ZKUserInfo *) userInfo withManagedObjectContext:(NSManagedObjectContext *) managedObjectContext;
 + (void) copyZKSObject:(ZKSObject *)zkSObject toPerson:(DPerson *)person;
 + (void) copyZKSObject:(ZKSObject *)zkSObject toCIO:(DCIO *)cio;
-
++ (NSString *) getUTCString:(NSDate *) date;
 @end
