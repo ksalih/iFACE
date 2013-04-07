@@ -89,7 +89,6 @@
     person.firstName = [zkSObject fieldValue:@"iface__FirstName__c"];
     
     person.lastModifiedDate = [dateFormat dateFromString:[zkSObject fieldValue:@"LastModifiedDate"]];
-     
     person.lastName = [zkSObject fieldValue:@"iface__LastName__c"];
     person.linkedinURL = [zkSObject fieldValue:@"iface__LinkedInURL__c"];
     person.remoteID = [zkSObject fieldValue:@"iface__ID__c"];
