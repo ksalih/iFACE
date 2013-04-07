@@ -311,7 +311,7 @@
         NSLog(@"UTC date %@",utcDate);
         
         NSString *queryString =
-        [NSString stringWithFormat:@"SELECT ID, iface__DPerson__c,iface__DCIO__c, iface__ActivityType__c, iface__BadgeAwarded__c, iface__BadgeType__c, iface__GeoLat__c, iface__GeoLong__c, iface__Message__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__MoneyToSpend__c, iface__BudgetAuthority__c, iface__Venue__c, LastModifiedDate FROM iface__DActivity__c where LastModifiedDate > %@ order by ID ASC", utcDate];
+        [NSString stringWithFormat:@"SELECT ID, iface__DPerson__c,iface__DCIO__c, iface__ActivityType__c, iface__BadgeAwarded__c, iface__BadgeType__c, iface__GeoLat__c, iface__GeoLong__c, iface__Message__c, iface__Venue__c, LastModifiedDate FROM iface__DActivity__c where LastModifiedDate > %@ order by ID ASC", utcDate];
         
         NSLog(@"Query string %@",queryString);
         
@@ -517,7 +517,7 @@
     
     while (object = [zkSObjectsEnumerator nextObject]) {
         NSString *remoteID = [object fieldValue:@"ID"];
-        NSLog(@"Compary %@",remoteID);
+        NSLog(@"CIO ID %@",remoteID);
         if ([remoteID isEqualToString:currentCIO.remoteID]){
             cioToUpdate = currentCIO;
             currentCIO = [cioManagedObjectsEnumerator nextObject];
@@ -546,7 +546,7 @@
     
     while (object = [zkSObjectsEnumerator nextObject]) {
         NSString *remoteID = [object fieldValue:@"ID"];
-        NSLog(@"Compary %@",remoteID);
+        NSLog(@"Activity ID %@",remoteID);
         
         if ([remoteID isEqualToString:currentActivity.remoteID]){
             activityToUpdate = currentActivity;
@@ -576,7 +576,7 @@
     
     while (object = [zkSObjectsEnumerator nextObject]) {
         NSString *remoteID = [object fieldValue:@"ID"];
-        NSLog(@"Compary %@",remoteID);
+        NSLog(@"PPDCIOAssoc %@",remoteID);
         
         if ([remoteID isEqualToString:currentPPDCIOAssoc.remoteID]){
             ppdCIOAssocToUpdate = currentPPDCIOAssoc;
@@ -606,7 +606,7 @@
     
     while (object = [zkSObjectsEnumerator nextObject]) {
         NSString *remoteID = [object fieldValue:@"ID"];
-        NSLog(@"Compary %@",remoteID);
+        NSLog(@"PPDAssoc %@",remoteID);
         
         if ([remoteID isEqualToString:currentPPDAssoc.remoteID]){
             ppdAssocToUpdate = currentPPDAssoc;
