@@ -34,4 +34,6 @@
 + (void) setPushToken:(NSData *) pushToken;
 + (NSData *) pushToken;
 
++ (NSDate *) lastSyncDate;
++ (void) setLastSyncDate:(NSDate *)lastSyncDate;
 @end
