@@ -11,9 +11,10 @@
 #import "AppDelegate.h"
 #import "MobileBrokerClient.h"
 #import "NSString+FetchedGroupByString.h"
+#import "CompleteCheckInViewController.h" 
 
 @interface CIOPickViewController ()
-
+@property (strong,nonatomic) DCIO *selectedDCIO;
 @end
 
 @implementation CIOPickViewController
@@ -22,6 +23,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"TableBG"]];
+    self.view.backgroundColor = background;
+
 	// Do any additional setup after loading the view.
     self.title = self.venue.name;
     self.managedObjectContext = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
@@ -62,7 +66,8 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    self.selectedDCIO = (DCIO *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"compleCheckInSegue" sender:self];
 }
 /**
  * enable editing on the table content
@@ -246,7 +251,15 @@
     [self.tableView endUpdates];
 }
 
+#pragma mark - navigation
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"compleCheckInSegue"]){
+        CompleteCheckInViewController *completeCheckInViewController = (CompleteCheckInViewController *) segue.destinationViewController;
+        completeCheckInViewController.seletedVenue = self.venue;
+        completeCheckInViewController.selectedCIO = self.selectedDCIO;
+    }
+}
 
 /** This gets called when user cancels or closes the search bar */
 

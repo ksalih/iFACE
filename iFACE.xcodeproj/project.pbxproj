@@ -174,6 +174,7 @@
 		F8F2BC6317113C9500D5810E /* DActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC6217113C9500D5810E /* DActivity.m */; };
 		F8F2BC6617113C9600D5810E /* PPDCIOAssoc.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC6517113C9600D5810E /* PPDCIOAssoc.m */; };
 		F8F2BC69171148A300D5810E /* NSString+FetchedGroupByString.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC68171148A300D5810E /* NSString+FetchedGroupByString.m */; };
+		F8F2BC6C1711509200D5810E /* CompleteCheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC6B1711509200D5810E /* CompleteCheckInViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -652,6 +653,8 @@
 		F8F2BC6517113C9600D5810E /* PPDCIOAssoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPDCIOAssoc.m; path = model/PPDCIOAssoc.m; sourceTree = "<group>"; };
 		F8F2BC67171148A300D5810E /* NSString+FetchedGroupByString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+FetchedGroupByString.h"; path = "categories/NSString+FetchedGroupByString.h"; sourceTree = "<group>"; };
 		F8F2BC68171148A300D5810E /* NSString+FetchedGroupByString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+FetchedGroupByString.m"; path = "categories/NSString+FetchedGroupByString.m"; sourceTree = "<group>"; };
+		F8F2BC6A1711509200D5810E /* CompleteCheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompleteCheckInViewController.h; path = ViewControllers/CompleteCheckInViewController.h; sourceTree = "<group>"; };
+		F8F2BC6B1711509200D5810E /* CompleteCheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompleteCheckInViewController.m; path = ViewControllers/CompleteCheckInViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1414,6 +1417,8 @@
 			children = (
 				F8F2BBF01710D8C100D5810E /* CheckInViewController.h */,
 				F8F2BBF11710D8C100D5810E /* CheckInViewController.m */,
+				F8F2BC6A1711509200D5810E /* CompleteCheckInViewController.h */,
+				F8F2BC6B1711509200D5810E /* CompleteCheckInViewController.m */,
 			);
 			name = checkin;
 			sourceTree = "<group>";
@@ -1662,6 +1667,7 @@
 				F8F2BC6317113C9500D5810E /* DActivity.m in Sources */,
 				F8F2BC6617113C9600D5810E /* PPDCIOAssoc.m in Sources */,
 				F8F2BC69171148A300D5810E /* NSString+FetchedGroupByString.m in Sources */,
+				F8F2BC6C1711509200D5810E /* CompleteCheckInViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -463,7 +463,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="B4Y-qW-TIU">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" textLabel="yc2-qv-ipO" detailTextLabel="dq0-Ip-On1" style="IBUITableViewCellStyleSubtitle" id="TyV-5W-KKr">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" textLabel="yc2-qv-ipO" detailTextLabel="dq0-Ip-On1" style="IBUITableViewCellStyleSubtitle" id="TyV-5W-KKr">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -514,6 +514,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="6J6-lj-z4g" id="C6v-st-pnj"/>
+                        <segue destination="Mrn-tA-Ma3" kind="push" identifier="compleCheckInSegue" id="VgJ-kl-iaA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqG-GE-CuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -529,6 +530,97 @@
             </objects>
             <point key="canvasLocation" x="1874" y="-18"/>
         </scene>
+        <!--Complete Check In View Controller-->
+        <scene sceneID="cvZ-Yc-gl0">
+            <objects>
+                <viewController id="Mrn-tA-Ma3" customClass="CompleteCheckInViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zTv-cP-9GD">
+                        <rect key="frame" x="0.0" y="64" width="320" height="484"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JOg-P5-FbC">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="GIB-b8-Nbv"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="zEB-ZB-Umy" id="uKa-yz-qcV"/>
+                                </connections>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dq1-kM-O4R">
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJE-T8-WYk">
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="274" id="QIW-wz-KUw"/>
+                                            <constraint firstAttribute="height" constant="144" id="dsO-oy-jm6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="lJE-T8-WYk" firstAttribute="top" secondItem="dq1-kM-O4R" secondAttribute="top" constant="6" id="Ki8-jb-kxR"/>
+                                    <constraint firstItem="lJE-T8-WYk" firstAttribute="centerX" secondItem="dq1-kM-O4R" secondAttribute="centerX" type="default" id="pBQ-bO-Qv2"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCf-R1-Y1Q">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Lgf-pH-gHz"/>
+                                    <constraint firstAttribute="width" constant="280" id="fUQ-cP-Q5R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Check-in Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIl-7Y-5wb">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="4an-s2-bY8"/>
+                                    <constraint firstAttribute="height" constant="21" id="pnv-4x-a7p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dq1-kM-O4R" firstAttribute="leading" secondItem="zTv-cP-9GD" secondAttribute="leading" constant="16" id="4gw-se-GcG"/>
+                            <constraint firstItem="XCf-R1-Y1Q" firstAttribute="leading" secondItem="dq1-kM-O4R" secondAttribute="leading" type="default" id="6pg-Mv-joI"/>
+                            <constraint firstItem="dq1-kM-O4R" firstAttribute="top" secondItem="zTv-cP-9GD" secondAttribute="top" constant="27" id="9dW-u6-wVx"/>
+                            <constraint firstAttribute="bottom" secondItem="JOg-P5-FbC" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="AeY-GL-V97"/>
+                            <constraint firstItem="dq1-kM-O4R" firstAttribute="centerX" secondItem="JOg-P5-FbC" secondAttribute="centerX" type="default" id="Gnp-fa-7Zg"/>
+                            <constraint firstItem="JOg-P5-FbC" firstAttribute="trailing" secondItem="zTv-cP-9GD" secondAttribute="trailing" type="default" id="QFm-fs-Upw"/>
+                            <constraint firstItem="JOg-P5-FbC" firstAttribute="top" secondItem="XCf-R1-Y1Q" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Tfn-bi-Xkk"/>
+                            <constraint firstItem="DIl-7Y-5wb" firstAttribute="top" secondItem="zTv-cP-9GD" secondAttribute="top" type="default" id="WpG-NA-1P9"/>
+                            <constraint firstItem="JOg-P5-FbC" firstAttribute="leading" secondItem="zTv-cP-9GD" secondAttribute="leading" type="default" id="cr0-Ab-2TW"/>
+                            <constraint firstAttribute="bottom" secondItem="dq1-kM-O4R" secondAttribute="bottom" constant="302" id="i9J-XZ-xIu"/>
+                            <constraint firstItem="DIl-7Y-5wb" firstAttribute="centerX" secondItem="dq1-kM-O4R" secondAttribute="centerX" type="default" id="p00-WH-2L3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OWt-1o-RIY">
+                        <barButtonItem key="rightBarButtonItem" title="Check in" id="mUE-sC-gvn">
+                            <color key="tintColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
+                            <connections>
+                                <action selector="checkInAction:" destination="Mrn-tA-Ma3" id="SSv-H0-UqV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="checkinMessageLabel" destination="XCf-R1-Y1Q" id="vln-3x-Z1k"/>
+                        <outlet property="mapView" destination="JOg-P5-FbC" id="NUG-Jb-UQY"/>
+                        <outlet property="messageTextView" destination="lJE-T8-WYk" id="CAI-Oi-5t3"/>
+                        <outlet property="textView" destination="dq1-kM-O4R" id="PkK-Zw-ayA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ytl-J6-54y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2294" y="-18"/>
+        </scene>
         <!--Check In View Controller - Check-in-->
         <scene sceneID="wIT-Ht-W83">
             <objects>
@@ -537,10 +629,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="484"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jMe-gm-CmC">
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EF6-ZI-v8B">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="118" id="Ek8-P5-2ay"/>
@@ -552,7 +640,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hag-Q3-aqQ">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" textLabel="rsX-O3-nns" detailTextLabel="wPR-hc-9wf" style="IBUITableViewCellStyleSubtitle" id="UsM-cp-oqY">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="Cell" textLabel="rsX-O3-nns" detailTextLabel="wPR-hc-9wf" style="IBUITableViewCellStyleSubtitle" id="UsM-cp-oqY">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -590,20 +678,27 @@
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="i5K-84-YST">
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zEB-ZB-Umy" id="xxg-xV-mL7"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jMe-gm-CmC" firstAttribute="trailing" secondItem="hu0-4o-8vO" secondAttribute="trailing" type="default" id="01C-6i-n80"/>
+                            <constraint firstItem="i5K-84-YST" firstAttribute="bottom" secondItem="EF6-ZI-v8B" secondAttribute="top" type="default" id="1Rv-kk-vbf"/>
                             <constraint firstItem="hag-Q3-aqQ" firstAttribute="trailing" secondItem="hu0-4o-8vO" secondAttribute="trailing" type="default" id="AMN-rQ-nRr"/>
                             <constraint firstItem="EF6-ZI-v8B" firstAttribute="trailing" secondItem="hu0-4o-8vO" secondAttribute="trailing" type="default" id="FLo-hE-8ii"/>
                             <constraint firstItem="hag-Q3-aqQ" firstAttribute="leading" secondItem="hu0-4o-8vO" secondAttribute="leading" type="default" id="FeE-OS-97W"/>
-                            <constraint firstItem="EF6-ZI-v8B" firstAttribute="top" secondItem="jMe-gm-CmC" secondAttribute="bottom" type="default" id="Kcd-9e-Ovo"/>
+                            <constraint firstItem="i5K-84-YST" firstAttribute="leading" secondItem="hu0-4o-8vO" secondAttribute="leading" type="default" id="L8C-Te-pGI"/>
                             <constraint firstItem="hag-Q3-aqQ" firstAttribute="bottom" secondItem="hu0-4o-8vO" secondAttribute="bottom" type="default" id="W7c-QX-1Le"/>
-                            <constraint firstItem="jMe-gm-CmC" firstAttribute="top" secondItem="hu0-4o-8vO" secondAttribute="top" type="default" id="Yld-yz-kqb"/>
+                            <constraint firstItem="i5K-84-YST" firstAttribute="trailing" secondItem="hu0-4o-8vO" secondAttribute="trailing" type="default" id="XTf-Zd-Kke"/>
                             <constraint firstItem="Bpj-i6-WXM" firstAttribute="top" secondItem="EF6-ZI-v8B" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dCX-yY-Bbw"/>
                             <constraint firstItem="hag-Q3-aqQ" firstAttribute="top" secondItem="Bpj-i6-WXM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hV9-vQ-0lL"/>
+                            <constraint firstItem="i5K-84-YST" firstAttribute="top" secondItem="hu0-4o-8vO" secondAttribute="top" type="default" id="kjF-Mm-koN"/>
                             <constraint firstItem="Bpj-i6-WXM" firstAttribute="centerX" secondItem="EF6-ZI-v8B" secondAttribute="centerX" type="default" id="nIi-TC-02Z"/>
-                            <constraint firstItem="jMe-gm-CmC" firstAttribute="leading" secondItem="hu0-4o-8vO" secondAttribute="leading" type="default" id="nza-Sj-DqY"/>
                             <constraint firstItem="EF6-ZI-v8B" firstAttribute="leading" secondItem="hu0-4o-8vO" secondAttribute="leading" type="default" id="zRQ-AW-yry"/>
                         </constraints>
                     </view>
@@ -612,11 +707,21 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="EF6-ZI-v8B" id="hp2-LQ-VEa"/>
+                        <outlet property="searchDisplayController" destination="G7C-7m-liF" id="jcj-Bx-FKW"/>
                         <outlet property="tableView" destination="hag-Q3-aqQ" id="C3S-Kl-Zuz"/>
                         <segue destination="Qlr-IU-NHa" kind="push" identifier="CIOCheckinSegue" id="TX6-d1-6qe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kOk-mw-fcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="G7C-7m-liF">
+                    <connections>
+                        <outlet property="delegate" destination="zEB-ZB-Umy" id="JwF-w5-WJe"/>
+                        <outlet property="searchBar" destination="i5K-84-YST" id="Tv3-iF-9sU"/>
+                        <outlet property="searchContentsController" destination="zEB-ZB-Umy" id="PZI-sn-8Mf"/>
+                        <outlet property="searchResultsDataSource" destination="zEB-ZB-Umy" id="rsE-44-ZXp"/>
+                        <outlet property="searchResultsDelegate" destination="zEB-ZB-Umy" id="G9I-2i-b2L"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1409" y="-18"/>
         </scene>
@@ -670,6 +775,16 @@
             <relationships>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CompleteCheckInViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompleteCheckInViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="checkInAction:"/>
+                <relationship kind="outlet" name="checkinMessageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="messageTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="textView" candidateClass="UIView"/>
             </relationships>
         </class>
         <class className="JYDarkTranslucentCellHeaderView" superclassName="UIView">
