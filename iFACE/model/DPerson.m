@@ -2,12 +2,10 @@
 //  DPerson.m
 //  iFACE
 //
-//  Created by Karwan Salih on 4/6/13.
+//  Created by Jorge Carvallo on 4/6/13.
 //  Copyright (c) 2013 Deloitte. All rights reserved.
 //
 
-#import "DPerson.h"
-#import "DCIO.h"
 #import "DPerson.h"
 
 
@@ -22,12 +20,14 @@
 @dynamic lastName;
 @dynamic linkedinURL;
 @dynamic remoteID;
+@dynamic serviceArea;
 @dynamic state;
 @dynamic street;
 @dynamic title;
 @dynamic twitterURL;
 @dynamic userName;
-@dynamic personToCIO;
-@dynamic personToPerson;
+@dynamic personToActivity;
+@dynamic personToPersonAssoc;
+@dynamic personToPPDCIOAssoc;
 
 @end

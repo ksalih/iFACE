@@ -15,7 +15,6 @@
 @dynamic budgetAuthority;
 @dynamic currentlyBeenMarked;
 @dynamic currentlyUnderContract;
-@dynamic dcioName;
 @dynamic email;
 @dynamic facebookURL;
 @dynamic firstName;
@@ -23,10 +22,12 @@
 @dynamic linkedinURL;
 @dynamic moneyToSpend;
 @dynamic phone;
+@dynamic remoteID;
 @dynamic sizeOfBudget;
 @dynamic title;
 @dynamic topicsToAvoid;
 @dynamic twitterURL;
-@dynamic cioToPerson;
+@dynamic cioToActivity;
+@dynamic cioToPPDCIOAssoc;
 
 @end

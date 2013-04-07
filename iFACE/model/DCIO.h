@@ -16,7 +16,6 @@
 @property (nonatomic, retain) NSString * budgetAuthority;
 @property (nonatomic, retain) NSNumber * currentlyBeenMarked;
 @property (nonatomic, retain) NSNumber * currentlyUnderContract;
-@property (nonatomic, retain) NSString * dcioName;
 @property (nonatomic, retain) NSString * email;
 @property (nonatomic, retain) NSString * facebookURL;
 @property (nonatomic, retain) NSString * firstName;
@@ -24,10 +23,12 @@
 @property (nonatomic, retain) NSString * linkedinURL;
 @property (nonatomic, retain) NSNumber * moneyToSpend;
 @property (nonatomic, retain) NSString * phone;
+@property (nonatomic, retain) NSString * remoteID;
 @property (nonatomic, retain) NSDecimalNumber * sizeOfBudget;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * topicsToAvoid;
 @property (nonatomic, retain) NSString * twitterURL;
-@property (nonatomic, retain) NSManagedObject *cioToPerson;
+@property (nonatomic, retain) NSManagedObject *cioToActivity;
+@property (nonatomic, retain) NSManagedObject *cioToPPDCIOAssoc;
 
 @end

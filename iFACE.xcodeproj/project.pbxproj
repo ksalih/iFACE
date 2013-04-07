@@ -130,7 +130,6 @@
 		F8F2BBC41710A1EC00D5810E /* zkSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BB9E1710A1EC00D5810E /* zkSObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F8F2BBC51710A1EC00D5810E /* zkUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBA01710A1EC00D5810E /* zkUserInfo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F8F2BBC61710A1EC00D5810E /* zkXmlDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBA21710A1EC00D5810E /* zkXmlDeserializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F8F2BBC91710AADE00D5810E /* DCIO.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBC81710AADE00D5810E /* DCIO.m */; };
 		F8F2BBCF1710AB6200D5810E /* IFACECoredataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBCE1710AB6200D5810E /* IFACECoredataHelper.m */; };
 		F8F2BBD61710B71600D5810E /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BBD51710B71600D5810E /* MeViewController.m */; };
 		F8F2BBD91710D21300D5810E /* Checkin Button selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BBD71710D21300D5810E /* Checkin Button selected.png */; };
@@ -166,8 +165,12 @@
 		F8F2BC221710E16B00D5810E /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BC191710E16B00D5810E /* SettingsViewController.xib */; };
 		F8F2BC261710EACF00D5810E /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BC241710EACF00D5810E /* pin.png */; };
 		F8F2BC271710EACF00D5810E /* pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BC251710EACF00D5810E /* pin@2x.png */; };
-		F8F2BC2E1710F06B00D5810E /* DPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC2D1710F06B00D5810E /* DPerson.m */; };
 		F8F2BC311711019500D5810E /* CIOPickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC301711019500D5810E /* CIOPickViewController.m */; };
+		F8F2BC35171105C500D5810E /* DPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC34171105C500D5810E /* DPerson.m */; };
+		F8F2BC38171105C600D5810E /* DCIO.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC37171105C600D5810E /* DCIO.m */; };
+		F8F2BC3B171105C600D5810E /* PPDAssoc.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC3A171105C600D5810E /* PPDAssoc.m */; };
+		F8F2BC3E171105C600D5810E /* PPDCIOAssoc.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC3D171105C600D5810E /* PPDCIOAssoc.m */; };
+		F8F2BC41171105C600D5810E /* DActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC40171105C600D5810E /* DActivity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -582,8 +585,6 @@
 		F8F2BBA01710A1EC00D5810E /* zkUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zkUserInfo.m; sourceTree = "<group>"; };
 		F8F2BBA11710A1EC00D5810E /* zkXmlDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zkXmlDeserializer.h; sourceTree = "<group>"; };
 		F8F2BBA21710A1EC00D5810E /* zkXmlDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = zkXmlDeserializer.m; sourceTree = "<group>"; };
-		F8F2BBC71710AADE00D5810E /* DCIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCIO.h; path = model/DCIO.h; sourceTree = "<group>"; };
-		F8F2BBC81710AADE00D5810E /* DCIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCIO.m; path = model/DCIO.m; sourceTree = "<group>"; };
 		F8F2BBCD1710AB6200D5810E /* IFACECoredataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFACECoredataHelper.h; path = model/IFACECoredataHelper.h; sourceTree = "<group>"; };
 		F8F2BBCE1710AB6200D5810E /* IFACECoredataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFACECoredataHelper.m; path = model/IFACECoredataHelper.m; sourceTree = "<group>"; };
 		F8F2BBD41710B71600D5810E /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeViewController.h; path = ViewControllers/MeViewController.h; sourceTree = "<group>"; };
@@ -632,10 +633,18 @@
 		F8F2BC191710E16B00D5810E /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		F8F2BC241710EACF00D5810E /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 		F8F2BC251710EACF00D5810E /* pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin@2x.png"; sourceTree = "<group>"; };
-		F8F2BC2C1710F06B00D5810E /* DPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPerson.h; path = model/DPerson.h; sourceTree = "<group>"; };
-		F8F2BC2D1710F06B00D5810E /* DPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPerson.m; path = model/DPerson.m; sourceTree = "<group>"; };
 		F8F2BC2F1711019500D5810E /* CIOPickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CIOPickViewController.h; path = ViewControllers/CIOPickViewController.h; sourceTree = "<group>"; };
 		F8F2BC301711019500D5810E /* CIOPickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CIOPickViewController.m; path = ViewControllers/CIOPickViewController.m; sourceTree = "<group>"; };
+		F8F2BC33171105C500D5810E /* DPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPerson.h; path = model/DPerson.h; sourceTree = "<group>"; };
+		F8F2BC34171105C500D5810E /* DPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPerson.m; path = model/DPerson.m; sourceTree = "<group>"; };
+		F8F2BC36171105C600D5810E /* DCIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCIO.h; path = model/DCIO.h; sourceTree = "<group>"; };
+		F8F2BC37171105C600D5810E /* DCIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCIO.m; path = model/DCIO.m; sourceTree = "<group>"; };
+		F8F2BC39171105C600D5810E /* PPDAssoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPDAssoc.h; path = model/PPDAssoc.h; sourceTree = "<group>"; };
+		F8F2BC3A171105C600D5810E /* PPDAssoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPDAssoc.m; path = model/PPDAssoc.m; sourceTree = "<group>"; };
+		F8F2BC3C171105C600D5810E /* PPDCIOAssoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPDCIOAssoc.h; path = model/PPDCIOAssoc.h; sourceTree = "<group>"; };
+		F8F2BC3D171105C600D5810E /* PPDCIOAssoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPDCIOAssoc.m; path = model/PPDCIOAssoc.m; sourceTree = "<group>"; };
+		F8F2BC3F171105C600D5810E /* DActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DActivity.h; path = model/DActivity.h; sourceTree = "<group>"; };
+		F8F2BC40171105C600D5810E /* DActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DActivity.m; path = model/DActivity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -815,10 +824,16 @@
 		F8625856170E8C7C00C952A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F8F2BC2C1710F06B00D5810E /* DPerson.h */,
-				F8F2BC2D1710F06B00D5810E /* DPerson.m */,
-				F8F2BBC71710AADE00D5810E /* DCIO.h */,
-				F8F2BBC81710AADE00D5810E /* DCIO.m */,
+				F8F2BC3F171105C600D5810E /* DActivity.h */,
+				F8F2BC40171105C600D5810E /* DActivity.m */,
+				F8F2BC3C171105C600D5810E /* PPDCIOAssoc.h */,
+				F8F2BC3D171105C600D5810E /* PPDCIOAssoc.m */,
+				F8F2BC39171105C600D5810E /* PPDAssoc.h */,
+				F8F2BC3A171105C600D5810E /* PPDAssoc.m */,
+				F8F2BC36171105C600D5810E /* DCIO.h */,
+				F8F2BC37171105C600D5810E /* DCIO.m */,
+				F8F2BC33171105C500D5810E /* DPerson.h */,
+				F8F2BC34171105C500D5810E /* DPerson.m */,
 				F8792048170F6EBE00C8CBE1 /* User.h */,
 				F8792049170F6EBE00C8CBE1 /* User.m */,
 				F862585A170E8D2C00C952A6 /* Event.h */,
@@ -1614,7 +1629,6 @@
 				F8F2BBC41710A1EC00D5810E /* zkSObject.m in Sources */,
 				F8F2BBC51710A1EC00D5810E /* zkUserInfo.m in Sources */,
 				F8F2BBC61710A1EC00D5810E /* zkXmlDeserializer.m in Sources */,
-				F8F2BBC91710AADE00D5810E /* DCIO.m in Sources */,
 				F8F2BBCF1710AB6200D5810E /* IFACECoredataHelper.m in Sources */,
 				F8F2BBD61710B71600D5810E /* MeViewController.m in Sources */,
 				F8F2BBF21710D8C100D5810E /* CheckInViewController.m in Sources */,
@@ -1628,8 +1642,12 @@
 				F8F2BC1E1710E16B00D5810E /* FSVenue.m in Sources */,
 				F8F2BC1F1710E16B00D5810E /* NearbyVenuesViewController.m in Sources */,
 				F8F2BC211710E16B00D5810E /* SettingsViewController.m in Sources */,
-				F8F2BC2E1710F06B00D5810E /* DPerson.m in Sources */,
 				F8F2BC311711019500D5810E /* CIOPickViewController.m in Sources */,
+				F8F2BC35171105C500D5810E /* DPerson.m in Sources */,
+				F8F2BC38171105C600D5810E /* DCIO.m in Sources */,
+				F8F2BC3B171105C600D5810E /* PPDAssoc.m in Sources */,
+				F8F2BC3E171105C600D5810E /* PPDCIOAssoc.m in Sources */,
+				F8F2BC41171105C600D5810E /* DActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

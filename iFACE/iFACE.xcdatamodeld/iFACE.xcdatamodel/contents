@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="DActivity" syncable="YES">
+    <entity name="DActivity" representedClassName="DActivity" syncable="YES">
         <attribute name="activityType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="badgeAwarded" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="badgeType" optional="YES" attributeType="String" syncable="YES"/>
@@ -52,12 +52,12 @@
         <relationship name="personToPersonAssoc" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PPDAssoc" syncable="YES"/>
         <relationship name="personToPPDCIOAssoc" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="PPDCIOAssoc" syncable="YES"/>
     </entity>
-    <entity name="PPDAssoc" syncable="YES">
+    <entity name="PPDAssoc" representedClassName="PPDAssoc" syncable="YES">
         <attribute name="dPerson" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dPersonRelated" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="personAssocToPerson" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DPerson" syncable="YES"/>
     </entity>
-    <entity name="PPDCIOAssoc" syncable="YES">
+    <entity name="PPDCIOAssoc" representedClassName="PPDCIOAssoc" syncable="YES">
         <attribute name="dCIO" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dPerson" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="relationshipLength" optional="YES" attributeType="String" syncable="YES"/>
@@ -70,11 +70,11 @@
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="DActivity" positionX="-81" positionY="374" width="128" height="193"/>
         <element name="DCIO" positionX="-288" positionY="32" width="128" height="313"/>
         <element name="DPerson" positionX="126" positionY="38" width="128" height="313"/>
-        <element name="User" positionX="360" positionY="-0" width="128" height="90"/>
-        <element name="DActivity" positionX="-81" positionY="374" width="128" height="193"/>
-        <element name="PPDCIOAssoc" positionX="-99" positionY="36" width="128" height="120"/>
         <element name="PPDAssoc" positionX="295" positionY="126" width="128" height="88"/>
+        <element name="PPDCIOAssoc" positionX="-99" positionY="36" width="128" height="120"/>
+        <element name="User" positionX="360" positionY="-0" width="128" height="90"/>
     </elements>
 </model>
