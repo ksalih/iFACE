@@ -130,7 +130,7 @@
     cell.cioFullName.text = [NSString stringWithFormat:@"%@ %@", dactivity.dcioInfo.firstName,dactivity.dcioInfo.lastName ];
     cell.cioTitle.text = dactivity.dcioInfo.title;
     cell.lastUpdated.text = [formatter stringFromDate:dactivity.lastModifiedDate];
-    
+    cell.activityName.text = dactivity.activityType;
     /*
      @property (weak, nonatomic) IBOutlet UILabel *ppdFullName;
      @property (weak, nonatomic) IBOutlet UILabel *ppdPosition;

@@ -15,5 +15,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *cioTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lastUpdated;
 @property (weak, nonatomic) IBOutlet UIImageView *ppdImage;
-
+@property (weak,nonatomic) IBOutlet UILabel *activityName;
 @end
