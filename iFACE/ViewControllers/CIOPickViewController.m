@@ -26,12 +26,20 @@
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"TableBG"]];
     self.view.backgroundColor = background;
 
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refreshFromServer) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    [self.tableView addSubview: refreshControl];
+
 	// Do any additional setup after loading the view.
     self.title = self.venue.name;
     self.managedObjectContext = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
     [[MobileBrokerClient sharedClient] syncCIOInformation];
 }
 
+- (void) refreshFromServer {
+    [self.refreshControl endRefreshing];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

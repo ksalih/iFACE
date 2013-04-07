@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ActivityCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *ppdFullName;
+@property (weak, nonatomic) IBOutlet UILabel *ppdPosition;
+@property (weak, nonatomic) IBOutlet UILabel *cioFullName;
+@property (weak, nonatomic) IBOutlet UILabel *cioTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lastUpdated;
+@property (weak, nonatomic) IBOutlet UIImageView *ppdImage;
 
 @end

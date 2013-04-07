@@ -22,6 +22,11 @@
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"TableBG"]];
     self.tableView.backgroundColor = background;
     
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refreshFromServer) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    [self.tableView addSubview: refreshControl];
+    
     //synchronize
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -29,6 +34,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
    // [[MobileBrokerClient sharedClient] syncActivityInformation];
+}
+
+- (void) refreshFromServer {
+    [self.refreshControl endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning
