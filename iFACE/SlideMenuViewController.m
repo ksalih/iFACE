@@ -220,14 +220,16 @@ NSString * const SMSideMenuSegue =@"sideMenuSegue";
         [slideMenuViewController registerSlideMenuViewController:self];
     }
     
-    if (destViewController.navigationController != self.masterViewController.navigationController){
-        [self addChildViewController:destViewController];
-        UINavigationController *navigation = self.masterViewController.navigationController;
+    
+    //if (destViewController.navigationController != self.masterViewController.navigationController){
+       // [self addChildViewController:destViewController];
+    UINavigationController *navigation = self.masterViewController.navigationController;
         
-        navigation.viewControllers = @[destViewController];
+    navigation.viewControllers = @[destViewController];
+    self.masterViewController = destViewController;
         //[self moveToNewController:destViewController fromController:self.masterViewController.navigationController];
         
-    }
+    //}
 }
 
 -(void)moveToNewController:(UIViewController *) newController fromController:(UIViewController *) currentVC {

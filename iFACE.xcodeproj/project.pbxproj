@@ -176,6 +176,8 @@
 		F8F2BC96171179E500D5810E /* PPDAssoc.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC95171179E500D5810E /* PPDAssoc.m */; };
 		F8F2BC99171179E500D5810E /* PPDCIOAssoc.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC98171179E500D5810E /* PPDCIOAssoc.m */; };
 		F8F2BC9C171179E500D5810E /* DActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC9B171179E500D5810E /* DActivity.m */; };
+		F8F2BC9F17117D7100D5810E /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC9E17117D7100D5810E /* ActivityCell.m */; };
+		F8F2BCA117117D9200D5810E /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BCA017117D9200D5810E /* ActivityCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -658,6 +660,9 @@
 		F8F2BC98171179E500D5810E /* PPDCIOAssoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPDCIOAssoc.m; path = model/PPDCIOAssoc.m; sourceTree = "<group>"; };
 		F8F2BC9A171179E500D5810E /* DActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DActivity.h; path = model/DActivity.h; sourceTree = "<group>"; };
 		F8F2BC9B171179E500D5810E /* DActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DActivity.m; path = model/DActivity.m; sourceTree = "<group>"; };
+		F8F2BC9D17117D7100D5810E /* ActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActivityCell.h; path = components/ActivityCell.h; sourceTree = "<group>"; };
+		F8F2BC9E17117D7100D5810E /* ActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActivityCell.m; path = components/ActivityCell.m; sourceTree = "<group>"; };
+		F8F2BCA017117D9200D5810E /* ActivityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ActivityCell.xib; path = components/ActivityCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -807,6 +812,9 @@
 				F8625848170E8A8800C952A6 /* BackgroundLayer.m */,
 				F8625843170E8A2200C952A6 /* ShadowedView.h */,
 				F8625844170E8A2200C952A6 /* ShadowedView.m */,
+				F8F2BC9D17117D7100D5810E /* ActivityCell.h */,
+				F8F2BC9E17117D7100D5810E /* ActivityCell.m */,
+				F8F2BCA017117D9200D5810E /* ActivityCell.xib */,
 			);
 			name = components;
 			sourceTree = "<group>";
@@ -1578,6 +1586,7 @@
 				F8F2BC271710EACF00D5810E /* pin@2x.png in Resources */,
 				F8F2BC5517111AD500D5810E /* IFACEAppIcon.png in Resources */,
 				F8F2BC5717111B0300D5810E /* IFACEAppIconSmall.png in Resources */,
+				F8F2BCA117117D9200D5810E /* ActivityCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1674,6 +1683,7 @@
 				F8F2BC96171179E500D5810E /* PPDAssoc.m in Sources */,
 				F8F2BC99171179E500D5810E /* PPDCIOAssoc.m in Sources */,
 				F8F2BC9C171179E500D5810E /* DActivity.m in Sources */,
+				F8F2BC9F17117D7100D5810E /* ActivityCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

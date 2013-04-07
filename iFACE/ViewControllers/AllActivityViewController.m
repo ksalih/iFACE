@@ -19,13 +19,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"TableBG"]];
+    self.tableView.backgroundColor = background;
+    
     //synchronize
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [[MobileBrokerClient sharedClient] syncActivityInformation];
+   // [[MobileBrokerClient sharedClient] syncActivityInformation];
 }
 
 - (void)didReceiveMemoryWarning
