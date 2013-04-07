@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F6D54CF171119B90039A083 /* DCIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6D54CE171119B90039A083 /* DCIO.m */; };
 		F8625815170E86E400C952A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8625814170E86E400C952A6 /* UIKit.framework */; };
 		F8625817170E86E400C952A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8625816170E86E400C952A6 /* Foundation.framework */; };
 		F8625819170E86E400C952A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8625818170E86E400C952A6 /* CoreGraphics.framework */; };
@@ -167,13 +168,14 @@
 		F8F2BC311711019500D5810E /* CIOPickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC301711019500D5810E /* CIOPickViewController.m */; };
 		F8F2BC4417110A1D00D5810E /* DActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC4317110A1D00D5810E /* DActivity.m */; };
 		F8F2BC4717110A1D00D5810E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC4617110A1D00D5810E /* User.m */; };
-		F8F2BC4A17110A1D00D5810E /* DCIO.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC4917110A1D00D5810E /* DCIO.m */; };
 		F8F2BC4D17110A1D00D5810E /* DPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC4C17110A1D00D5810E /* DPerson.m */; };
 		F8F2BC5017110A1D00D5810E /* PPDAssoc.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC4F17110A1D00D5810E /* PPDAssoc.m */; };
 		F8F2BC5317110A1D00D5810E /* PPDCIOAssoc.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC5217110A1D00D5810E /* PPDCIOAssoc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F6D54CD171119B90039A083 /* DCIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCIO.h; path = model/DCIO.h; sourceTree = "<group>"; };
+		5F6D54CE171119B90039A083 /* DCIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCIO.m; path = model/DCIO.m; sourceTree = "<group>"; };
 		F8625811170E86E400C952A6 /* iFACE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFACE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8625814170E86E400C952A6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F8625816170E86E400C952A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -637,8 +639,6 @@
 		F8F2BC4317110A1D00D5810E /* DActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DActivity.m; path = model/DActivity.m; sourceTree = "<group>"; };
 		F8F2BC4517110A1D00D5810E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = model/User.h; sourceTree = "<group>"; };
 		F8F2BC4617110A1D00D5810E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = model/User.m; sourceTree = "<group>"; };
-		F8F2BC4817110A1D00D5810E /* DCIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCIO.h; path = model/DCIO.h; sourceTree = "<group>"; };
-		F8F2BC4917110A1D00D5810E /* DCIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCIO.m; path = model/DCIO.m; sourceTree = "<group>"; };
 		F8F2BC4B17110A1D00D5810E /* DPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPerson.h; path = model/DPerson.h; sourceTree = "<group>"; };
 		F8F2BC4C17110A1D00D5810E /* DPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPerson.m; path = model/DPerson.m; sourceTree = "<group>"; };
 		F8F2BC4E17110A1D00D5810E /* PPDAssoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPDAssoc.h; path = model/PPDAssoc.h; sourceTree = "<group>"; };
@@ -824,14 +824,14 @@
 		F8625856170E8C7C00C952A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5F6D54CD171119B90039A083 /* DCIO.h */,
+				5F6D54CE171119B90039A083 /* DCIO.m */,
 				F8F2BC5117110A1D00D5810E /* PPDCIOAssoc.h */,
 				F8F2BC5217110A1D00D5810E /* PPDCIOAssoc.m */,
 				F8F2BC4E17110A1D00D5810E /* PPDAssoc.h */,
 				F8F2BC4F17110A1D00D5810E /* PPDAssoc.m */,
 				F8F2BC4B17110A1D00D5810E /* DPerson.h */,
 				F8F2BC4C17110A1D00D5810E /* DPerson.m */,
-				F8F2BC4817110A1D00D5810E /* DCIO.h */,
-				F8F2BC4917110A1D00D5810E /* DCIO.m */,
 				F8F2BC4517110A1D00D5810E /* User.h */,
 				F8F2BC4617110A1D00D5810E /* User.m */,
 				F8F2BC4217110A1D00D5810E /* DActivity.h */,
@@ -1644,10 +1644,10 @@
 				F8F2BC311711019500D5810E /* CIOPickViewController.m in Sources */,
 				F8F2BC4417110A1D00D5810E /* DActivity.m in Sources */,
 				F8F2BC4717110A1D00D5810E /* User.m in Sources */,
-				F8F2BC4A17110A1D00D5810E /* DCIO.m in Sources */,
 				F8F2BC4D17110A1D00D5810E /* DPerson.m in Sources */,
 				F8F2BC5017110A1D00D5810E /* PPDAssoc.m in Sources */,
 				F8F2BC5317110A1D00D5810E /* PPDCIOAssoc.m in Sources */,
+				5F6D54CF171119B90039A083 /* DCIO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

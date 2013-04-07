@@ -100,4 +100,31 @@
     person.userName = [zkSObject fieldValue:@"iface__UserName__c"];
 }
 
++ (void) copyZKSObject:(ZKSObject *)zkSObject toCIO:(DCIO *)cio {
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-ddTHH:mm:ssZ"];
+    
+    cio.agency = [zkSObject fieldValue:@"iface__Agency__c"];
+    cio.budgetAuthority = [zkSObject fieldValue:@"iface__BudgetAuthority__c"];
+    cio.currentlyBeenMarked = [zkSObject fieldValue:@"iface__CurrentlyBeingMarketed__c"];
+    cio.currentlyUnderContract = [zkSObject fieldValue:@"iface__CurrentlyUnderContract__c"];
+    cio.topicsToAvoid = [zkSObject fieldValue:@"iface__TopicsToAvoid__c"];
+    cio.sizeOfBudget = [zkSObject fieldValue:@"iface__SizeOfBudget__c"];
+    cio.moneyToSpend = [zkSObject fieldValue:@"iface__MoneyToSpend__c"];
+    cio.phone = [zkSObject fieldValue:@"iface__Phone__c"];
+    cio.email = [zkSObject fieldValue:@"iface__Email__c"];
+    cio.facebookURL = [zkSObject fieldValue:@"iface__FacebookURL__c"];
+    cio.firstName = [zkSObject fieldValue:@"iface__FirstName__c"];
+    
+    cio.lastModifiedDate = [dateFormat dateFromString:[zkSObject fieldValue:@"LastModifiedDate"]];
+    
+    cio.lastName = [zkSObject fieldValue:@"iface__LastName__c"];
+    cio.linkedinURL = [zkSObject fieldValue:@"iface__LinkedInURL__c"];
+    cio.remoteID = [zkSObject fieldValue:@"iface__ID__c"];
+    cio.title = [zkSObject fieldValue:@"iface__Title__c"];
+    cio.twitterURL = [zkSObject fieldValue:@"iface__Titile__c"];
+    }
+
+
 @end

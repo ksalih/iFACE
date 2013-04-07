@@ -2,7 +2,7 @@
 //  DCIO.m
 //  iFACE
 //
-//  Created by Jorge Carvallo on 4/6/13.
+//  Created by Karwan Salih on 4/6/13.
 //  Copyright (c) 2013 Deloitte. All rights reserved.
 //
 
@@ -29,6 +29,7 @@
 @dynamic title;
 @dynamic topicsToAvoid;
 @dynamic twitterURL;
+@dynamic lastModifiedDate;
 @dynamic dActivities;
 @dynamic ppdCIOAssocs;
 

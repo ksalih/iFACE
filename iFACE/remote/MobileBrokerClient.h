@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "zkSforceClient.h"
-#import "DPerson.h" 
+#import "DPerson.h"
+#import "DCIO.h"
 
 @class MobileBrokerClient;
 

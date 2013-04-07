@@ -22,6 +22,7 @@
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="facebookURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="linkedinURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="moneyToSpend" optional="YES" attributeType="Boolean" defaultValueString="0.0" syncable="YES"/>
@@ -75,7 +76,7 @@
     </entity>
     <elements>
         <element name="DActivity" positionX="-90" positionY="36" width="128" height="223"/>
-        <element name="DCIO" positionX="-288" positionY="20" width="128" height="313"/>
+        <element name="DCIO" positionX="-288" positionY="20" width="128" height="328"/>
         <element name="DPerson" positionX="126" positionY="-16" width="128" height="313"/>
         <element name="PPDAssoc" positionX="315" positionY="200" width="128" height="88"/>
         <element name="PPDCIOAssoc" positionX="-99" positionY="311" width="128" height="148"/>

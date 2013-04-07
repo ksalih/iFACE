@@ -2,7 +2,7 @@
 //  DCIO.h
 //  iFACE
 //
-//  Created by Jorge Carvallo on 4/6/13.
+//  Created by Karwan Salih on 4/6/13.
 //  Copyright (c) 2013 Deloitte. All rights reserved.
 //
 
@@ -29,6 +29,7 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * topicsToAvoid;
 @property (nonatomic, retain) NSString * twitterURL;
+@property (nonatomic, retain) NSDate * lastModifiedDate;
 @property (nonatomic, retain) NSSet *dActivities;
 @property (nonatomic, retain) NSSet *ppdCIOAssocs;
 @end
