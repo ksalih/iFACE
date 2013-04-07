@@ -11,7 +11,7 @@
 #import "ApplicationPreferences.h"
 #import "User.h"
 #import "JYStringHelperFunctions.h"
-#import "ZKUserInfo.h" 
+#import "ZKUserInfo.h"
 #import "DPerson.h"
 #import "zkSObject.h"
 #import "zkQueryResult.h"
@@ -117,19 +117,19 @@
 //    NSEntityDescription *entity = [NSEntityDescription
 //                                   entityForName:USERS_TABLE inManagedObjectContext:self.managedObjectContext];
 //    [fetchRequest setEntity:entity];
-//    
+//
 //    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"username == %@", userName];
 //    [fetchRequest setPredicate:predicate];
-//    
+//
 //    NSArray *usersList = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-//    
+//
 //    //checks if the user exists
 //    if (!usersList || [usersList count] ==0)
 //    {
 //        error = [self generateErrorMessage:@"Invalid user name"];
 //        return nil;
 //    }
-//    
+//
 //    DPerson *user = [usersList objectAtIndex:0];
 //    return user.password;
 //}
@@ -140,7 +140,7 @@
         self.results = qr;
         
     });
-
+    
 }
 
 #pragma mark - variables assignment
@@ -152,7 +152,7 @@
     NSLog(@"fullName %@",userInfo.fullName);
     NSLog(@"userId %@",userInfo.userId);
     NSLog(@"userName %@",userInfo.userName);
-
+    
     if ([self.delegate respondsToSelector:@selector(mobileBrokerClient:didFinishLoginWithClient:)]){
         [self.delegate mobileBrokerClient:self didFinishLoginWithClient:_client];
     }
