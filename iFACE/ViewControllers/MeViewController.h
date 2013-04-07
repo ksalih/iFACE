@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SlideMenuViewController.h"
+#import "DPerson.h"
 
 @interface MeViewController : UIViewController <SlideMenuViewControllerClient,NSFetchedResultsControllerDelegate>
 
@@ -19,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *titlePositionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *serviceAreaLabel;
+
+@property (strong,nonatomic) DPerson *user;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

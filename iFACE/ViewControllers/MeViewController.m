@@ -10,6 +10,7 @@
 #import "JYGraphicsHelper.h" 
 #import "AppDefinitions.h"
 #import "ApplicationPreferences.h"
+#import "AppDelegate.h"
 
 @implementation MeViewController
 
@@ -20,7 +21,27 @@
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"TableBG"]];
     self.view.backgroundColor = background;
     [JYGraphicsHelper addShadowAndRoundCornersToLayer:self.userContainerView.layer withRadious:5];
+    self.managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    if ([[self.fetchedResultsController fetchedObjects] count] >0 ) {
+        self.user = [[self.fetchedResultsController fetchedObjects] objectAtIndex:0];
+        [self updateUserUIComponent:self.user];
+
+    }
+
+}
+
+- (void) updateUserUIComponent:(DPerson *)person {
+    /*
+     @property (weak, nonatomic) IBOutlet UILabel *fullNameLabel;
+     @property (weak, nonatomic) IBOutlet UILabel *titlePositionLabel;
+     @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+     @property (weak, nonatomic) IBOutlet UILabel *serviceAreaLabel;
+     */
     
+    self.fullNameLabel.text = [NSString stringWithFormat:@"%@ %@",person.firstName,person.lastName];
+    self.titlePositionLabel.text = person.title;
+    self.locationLabel.text = [NSString stringWithFormat:@"%@, %@",person.city, person.state];
+    self.serviceAreaLabel.text = person.serviceArea;
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,7 +56,11 @@
 
 #pragma mark - actions
 - (IBAction)imageTapped:(id)sender {
-    [self performSegueWithIdentifier:@"checkInSegue" sender:self];
+    if (sender == self.userPictureImageView){
+        
+    }else{
+        [self performSegueWithIdentifier:@"checkInSegue" sender:self];
+    }
 }
 
 - (IBAction)slideMenuAction:(id)sender{
@@ -98,7 +123,9 @@
             break;
             
         case NSFetchedResultsChangeUpdate:
-//            self.user = [[self.fetchedResultsController fetchedObjects] objectAtIndex:0];
+            
+            //self.user = (DPerson *)anObject;
+            [self updateUserUIComponent:(DPerson *)anObject];
 //            self.userNameLabel.text = [NSString stringWithFormat:@"%@ %@",self.user.firstName,self.user.lastName];
             break;
             
