@@ -8,6 +8,8 @@
 
 #import "MeViewController.h"
 #import "JYGraphicsHelper.h" 
+#import "AppDefinitions.h"
+#import "ApplicationPreferences.h"
 
 @implementation MeViewController
 
@@ -39,4 +41,71 @@
 - (IBAction)slideMenuAction:(id)sender{
     [self.slideMenuViewController slideMenu];
 }
+#pragma mark - fetchedResultsController delegate
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    //we do nothing if we don't have an itinerary to search on
+    
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Edit the entity name as appropriate.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:USERS_TABLE inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    //Set the predicate to search for the itinerary and searchbar if text is found on the searchbar
+    
+    NSPredicate *predicate;
+    predicate = [NSPredicate predicateWithFormat:@"email =[cd] %@ ", [ApplicationPreferences applicationUser]];
+    
+    [fetchRequest setSortDescriptors:@[[[NSSortDescriptor alloc] initWithKey:@"email" ascending:NO]]];
+    
+    [fetchRequest setPredicate:predicate];
+    NSError *error = nil;
+    
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    aFetchedResultsController.delegate = self;
+    self.fetchedResultsController = aFetchedResultsController;
+    
+    
+	if (![self.fetchedResultsController performFetch:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+#ifdef DEBUG
+	    abort();
+#endif
+	}
+    
+    return _fetchedResultsController;
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath
+{
+    
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+//            self.user = [[self.fetchedResultsController fetchedObjects] objectAtIndex:0];
+//            self.userNameLabel.text = [NSString stringWithFormat:@"%@ %@",self.user.firstName,self.user.lastName];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            
+            break;
+    }
+}
+
 @end

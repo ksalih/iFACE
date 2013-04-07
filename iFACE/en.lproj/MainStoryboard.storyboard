@@ -431,6 +431,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="fullNameLabel" destination="pYv-BP-Mgb" id="nGX-pH-Rmx"/>
+                        <outlet property="locationLabel" destination="1CM-z0-fsX" id="ucU-Kh-veH"/>
+                        <outlet property="serviceAreaLabel" destination="OEL-0f-dFc" id="qLq-sy-F7q"/>
+                        <outlet property="titlePositionLabel" destination="A5z-uy-iQy" id="Mvz-hj-QEN"/>
                         <outlet property="userContainerView" destination="8FP-an-IIr" id="RSC-Iy-KeQ"/>
                         <outlet property="userPictureImageView" destination="jed-is-9Zn" id="5if-Tc-Bm9"/>
                         <segue destination="zEB-ZB-Umy" kind="push" identifier="checkInSegue" id="9jS-Ta-qbo"/>
@@ -658,7 +662,11 @@
             <relationships>
                 <relationship kind="action" name="imageTapped:"/>
                 <relationship kind="action" name="slideMenuAction:"/>
+                <relationship kind="outlet" name="fullNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="serviceAreaLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="slideMenuButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="titlePositionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="userContainerView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="userPictureImageView" candidateClass="UIImageView"/>
             </relationships>

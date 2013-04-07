@@ -9,7 +9,13 @@
 #import "CheckInViewController.h"
 #import "JYGraphicsHelper.h"
 #import "ApplicationPreferences.h"
+#import "CIOPickViewController.h" 
 
+@interface CheckInViewController (){
+    FSVenue *selectedVenue;
+}
+
+@end
 @implementation CheckInViewController
 
 
@@ -146,6 +152,21 @@
     return cell;
 }
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //get the venue from the cell
+    FSVenue *venue = [self.nearbyVenues objectAtIndex:indexPath.row];
+    selectedVenue = venue;
+    
+    NSLog(@"Venue %@",venue.name);
+    [self performSegueWithIdentifier:@"CIOCheckinSegue" sender:self];
+}
+#pragma mark - navigation
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"CIOCheckinSegue"]){
+        CIOPickViewController *cioPickViewController = (CIOPickViewController *) segue.destinationViewController;
+        cioPickViewController.venue = selectedVenue;
+    }
+}
 
 #pragma mark  - mapview delegate
 

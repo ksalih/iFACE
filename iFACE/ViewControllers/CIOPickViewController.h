@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FSVenue.h"
 
 @interface CIOPickViewController : UIViewController <UISearchDisplayDelegate, UISearchBarDelegate, UITableViewDelegate,UIActionSheetDelegate,NSFetchedResultsControllerDelegate>
 
@@ -21,4 +22,5 @@
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+@property (strong,nonatomic) FSVenue *venue;
 @end

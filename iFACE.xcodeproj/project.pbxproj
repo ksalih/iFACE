@@ -171,6 +171,8 @@
 		F8F2BC4D17110A1D00D5810E /* DPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC4C17110A1D00D5810E /* DPerson.m */; };
 		F8F2BC5017110A1D00D5810E /* PPDAssoc.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC4F17110A1D00D5810E /* PPDAssoc.m */; };
 		F8F2BC5317110A1D00D5810E /* PPDCIOAssoc.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC5217110A1D00D5810E /* PPDCIOAssoc.m */; };
+		F8F2BC5517111AD500D5810E /* IFACEAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BC5417111AD500D5810E /* IFACEAppIcon.png */; };
+		F8F2BC5717111B0300D5810E /* IFACEAppIconSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BC5617111B0300D5810E /* IFACEAppIconSmall.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -645,6 +647,8 @@
 		F8F2BC4F17110A1D00D5810E /* PPDAssoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPDAssoc.m; path = model/PPDAssoc.m; sourceTree = "<group>"; };
 		F8F2BC5117110A1D00D5810E /* PPDCIOAssoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPDCIOAssoc.h; path = model/PPDCIOAssoc.h; sourceTree = "<group>"; };
 		F8F2BC5217110A1D00D5810E /* PPDCIOAssoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPDCIOAssoc.m; path = model/PPDCIOAssoc.m; sourceTree = "<group>"; };
+		F8F2BC5417111AD500D5810E /* IFACEAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IFACEAppIcon.png; sourceTree = "<group>"; };
+		F8F2BC5617111B0300D5810E /* IFACEAppIconSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IFACEAppIconSmall.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -688,6 +692,8 @@
 		F8625808170E86E400C952A6 = {
 			isa = PBXGroup;
 			children = (
+				F8F2BC5617111B0300D5810E /* IFACEAppIconSmall.png */,
+				F8F2BC5417111AD500D5810E /* IFACEAppIcon.png */,
 				F8F2BAD21710804700D5810E /* libxml2.2.dylib */,
 				F862581C170E86E400C952A6 /* iFACE */,
 				F8625813170E86E400C952A6 /* Frameworks */,
@@ -1555,6 +1561,8 @@
 				F8F2BC221710E16B00D5810E /* SettingsViewController.xib in Resources */,
 				F8F2BC261710EACF00D5810E /* pin.png in Resources */,
 				F8F2BC271710EACF00D5810E /* pin@2x.png in Resources */,
+				F8F2BC5517111AD500D5810E /* IFACEAppIcon.png in Resources */,
+				F8F2BC5717111B0300D5810E /* IFACEAppIconSmall.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
