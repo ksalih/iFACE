@@ -173,6 +173,7 @@
 		F8F2BC6017113C9500D5810E /* PPDAssoc.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC5F17113C9500D5810E /* PPDAssoc.m */; };
 		F8F2BC6317113C9500D5810E /* DActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC6217113C9500D5810E /* DActivity.m */; };
 		F8F2BC6617113C9600D5810E /* PPDCIOAssoc.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC6517113C9600D5810E /* PPDCIOAssoc.m */; };
+		F8F2BC69171148A300D5810E /* NSString+FetchedGroupByString.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC68171148A300D5810E /* NSString+FetchedGroupByString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -649,6 +650,8 @@
 		F8F2BC6217113C9500D5810E /* DActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DActivity.m; path = model/DActivity.m; sourceTree = "<group>"; };
 		F8F2BC6417113C9600D5810E /* PPDCIOAssoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPDCIOAssoc.h; path = model/PPDCIOAssoc.h; sourceTree = "<group>"; };
 		F8F2BC6517113C9600D5810E /* PPDCIOAssoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPDCIOAssoc.m; path = model/PPDCIOAssoc.m; sourceTree = "<group>"; };
+		F8F2BC67171148A300D5810E /* NSString+FetchedGroupByString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+FetchedGroupByString.h"; path = "categories/NSString+FetchedGroupByString.h"; sourceTree = "<group>"; };
+		F8F2BC68171148A300D5810E /* NSString+FetchedGroupByString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+FetchedGroupByString.m"; path = "categories/NSString+FetchedGroupByString.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -937,6 +940,8 @@
 				F8792042170F6E6600C8CBE1 /* DirectoryWatcher.m */,
 				F8792043170F6E6600C8CBE1 /* NSString+UUID.h */,
 				F8792044170F6E6600C8CBE1 /* NSString+UUID.m */,
+				F8F2BC67171148A300D5810E /* NSString+FetchedGroupByString.h */,
+				F8F2BC68171148A300D5810E /* NSString+FetchedGroupByString.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1656,6 +1661,7 @@
 				F8F2BC6017113C9500D5810E /* PPDAssoc.m in Sources */,
 				F8F2BC6317113C9500D5810E /* DActivity.m in Sources */,
 				F8F2BC6617113C9600D5810E /* PPDCIOAssoc.m in Sources */,
+				F8F2BC69171148A300D5810E /* NSString+FetchedGroupByString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

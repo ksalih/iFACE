@@ -10,6 +10,7 @@
 #import "AppDefinitions.h"
 #import "AppDelegate.h"
 #import "MobileBrokerClient.h"
+#import "NSString+FetchedGroupByString.h"
 
 @interface CIOPickViewController ()
 
@@ -71,6 +72,16 @@
     // Return NO if you do not want the specified item to be editable.
     return NO;
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo name];
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return [NSArray arrayWithObjects:@"A",@"B",@"C",@"D",@"E",@"F",@"G",@"H",@"I",@"J",@"K",@"L",@"M",@"N",@"O",@"P",@"Q",@"R",@"S",@"T",@"U",@"V",@"W",@"X",@"Y",@"Z",@"#",nil];
+}
+
 #pragma mark - Fetched results controller
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -107,14 +118,14 @@
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"firstName.stringGroupByFirstInitial" cacheName:nil];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
@@ -166,8 +177,25 @@
  */
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
+    cell.textLabel.font = [UIFont boldSystemFontOfSize:15];
+    cell.detailTextLabel.font = [UIFont systemFontOfSize:15];
+    cell.detailTextLabel.textColor = [UIColor lightGrayColor];
+    
+    DCIO *dcio = (DCIO *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@",dcio.firstName,dcio.lastName];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@",dcio.title,dcio.agency];
     
 }
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
+    }
+    [self configureCell:cell atIndexPath:indexPath];
+    return cell;
+}
+//
 
 /**
  * This gets called when the user starts typing text into the search bar
@@ -217,6 +245,10 @@
 {
     [self.tableView endUpdates];
 }
+
+
+
+/** This gets called when user cancels or closes the search bar */
 
 
 @end

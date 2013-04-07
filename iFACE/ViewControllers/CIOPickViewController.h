@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FSVenue.h"
 
-@interface CIOPickViewController : UIViewController <UISearchDisplayDelegate, UISearchBarDelegate, UITableViewDelegate,UIActionSheetDelegate,NSFetchedResultsControllerDelegate>
+@interface CIOPickViewController : UIViewController <UISearchDisplayDelegate, UISearchBarDelegate, UITableViewDelegate,UIActionSheetDelegate,NSFetchedResultsControllerDelegate,UITableViewDataSource>
 
 @property (weak,nonatomic) IBOutlet UISearchBar *searchBar;
 #pragma mark - Core Data
