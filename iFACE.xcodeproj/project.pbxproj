@@ -167,6 +167,7 @@
 		F8F2BC261710EACF00D5810E /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BC241710EACF00D5810E /* pin.png */; };
 		F8F2BC271710EACF00D5810E /* pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F2BC251710EACF00D5810E /* pin@2x.png */; };
 		F8F2BC2E1710F06B00D5810E /* DPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC2D1710F06B00D5810E /* DPerson.m */; };
+		F8F2BC311711019500D5810E /* CIOPickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F2BC301711019500D5810E /* CIOPickViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -633,6 +634,8 @@
 		F8F2BC251710EACF00D5810E /* pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin@2x.png"; sourceTree = "<group>"; };
 		F8F2BC2C1710F06B00D5810E /* DPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPerson.h; path = model/DPerson.h; sourceTree = "<group>"; };
 		F8F2BC2D1710F06B00D5810E /* DPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPerson.m; path = model/DPerson.m; sourceTree = "<group>"; };
+		F8F2BC2F1711019500D5810E /* CIOPickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CIOPickViewController.h; path = ViewControllers/CIOPickViewController.h; sourceTree = "<group>"; };
+		F8F2BC301711019500D5810E /* CIOPickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CIOPickViewController.m; path = ViewControllers/CIOPickViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -803,6 +806,8 @@
 				F879207B170F851C00C8CBE1 /* WelcomeScreenViewController.m */,
 				F879208C170F968D00C8CBE1 /* LoginViewController.h */,
 				F879208D170F968D00C8CBE1 /* LoginViewController.m */,
+				F8F2BC2F1711019500D5810E /* CIOPickViewController.h */,
+				F8F2BC301711019500D5810E /* CIOPickViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -1624,6 +1629,7 @@
 				F8F2BC1F1710E16B00D5810E /* NearbyVenuesViewController.m in Sources */,
 				F8F2BC211710E16B00D5810E /* SettingsViewController.m in Sources */,
 				F8F2BC2E1710F06B00D5810E /* DPerson.m in Sources */,
+				F8F2BC311711019500D5810E /* CIOPickViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

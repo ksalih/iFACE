@@ -445,18 +445,57 @@
             </objects>
             <point key="canvasLocation" x="886" y="-18"/>
         </scene>
-        <!--View Controller - CIO-->
+        <!--Pick View Controller - CIO-->
         <scene sceneID="04M-3U-6QI">
             <objects>
-                <viewController id="Qlr-IU-NHa" sceneMemberID="viewController">
+                <viewController id="Qlr-IU-NHa" customClass="CIOPickViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cIB-vO-myi">
                         <rect key="frame" x="0.0" y="64" width="320" height="484"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="B4Y-qW-TIU">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="TyV-5W-KKr">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Qlr-IU-NHa" id="gpl-R5-g6K"/>
+                                    <outlet property="delegate" destination="Qlr-IU-NHa" id="uYw-iM-yno"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dvn-Zf-mkR">
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Qlr-IU-NHa" id="skY-cg-MRq"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dvn-Zf-mkR" firstAttribute="top" secondItem="cIB-vO-myi" secondAttribute="top" type="default" id="7w7-qf-kKi"/>
+                            <constraint firstItem="dvn-Zf-mkR" firstAttribute="leading" secondItem="cIB-vO-myi" secondAttribute="leading" type="default" id="FoZ-nB-Mep"/>
+                            <constraint firstItem="B4Y-qW-TIU" firstAttribute="leading" secondItem="cIB-vO-myi" secondAttribute="leading" type="default" id="Mxz-0p-tQX"/>
+                            <constraint firstItem="B4Y-qW-TIU" firstAttribute="top" secondItem="dvn-Zf-mkR" secondAttribute="bottom" type="default" id="PbA-z9-c5i"/>
+                            <constraint firstItem="dvn-Zf-mkR" firstAttribute="trailing" secondItem="cIB-vO-myi" secondAttribute="trailing" type="default" id="XkT-df-FQL"/>
+                            <constraint firstItem="B4Y-qW-TIU" firstAttribute="bottom" secondItem="cIB-vO-myi" secondAttribute="bottom" type="default" id="anN-hr-Bwn"/>
+                            <constraint firstItem="B4Y-qW-TIU" firstAttribute="trailing" secondItem="cIB-vO-myi" secondAttribute="trailing" type="default" id="xhh-Dw-uz3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="CIO" id="Dps-Dg-B9Q">
                         <barButtonItem key="backBarButtonItem" title="CIOs" id="vxp-2E-eOD"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="dvn-Zf-mkR" id="Itu-1x-biK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqG-GE-CuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -590,6 +629,13 @@
     <classes>
         <class className="BlueButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BlueButton.h"/>
+        </class>
+        <class className="CIOPickViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CIOPickViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="CheckInViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CheckInViewController.h"/>
