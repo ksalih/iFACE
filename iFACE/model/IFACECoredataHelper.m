@@ -107,12 +107,11 @@
     
     cio.agency = [zkSObject fieldValue:@"iface__Agency__c"];
     cio.budgetAuthority = [zkSObject fieldValue:@"iface__BudgetAuthority__c"];
-    cio.currentlyBeenMarked = [NSNumber numberWithInt:[(NSString *)[zkSObject fieldValue:@"iface__CurrentlyBeingMarketed__c"] integerValue]];
-    
-    cio.currentlyUnderContract = [zkSObject fieldValue:@"iface__CurrentlyUnderContract__c"];
+    cio.currentlyBeenMarked = [NSNumber numberWithBool:[(NSString *)[zkSObject fieldValue:@"iface__CurrentlyBeingMarketed__c"] boolValue]];
+    cio.currentlyUnderContract = [NSNumber numberWithBool:[(NSString *)[zkSObject fieldValue:@"iface__CurrentlyUnderContract__c"] boolValue]];
     cio.topicsToAvoid = [zkSObject fieldValue:@"iface__TopicsToAvoid__c"];
     cio.sizeOfBudget = [zkSObject fieldValue:@"iface__SizeOfBudget__c"];
-    cio.moneyToSpend = [zkSObject fieldValue:@"iface__MoneyToSpend__c"];
+    cio.moneyToSpend = [NSNumber numberWithBool:[(NSString *)[zkSObject fieldValue:@"iface__MoneyToSpend__c"] boolValue]];
     cio.phone = [zkSObject fieldValue:@"iface__Phone__c"];
     cio.email = [zkSObject fieldValue:@"iface__Email__c"];
     cio.facebookURL = [zkSObject fieldValue:@"iface__FacebookURL__c"];
