@@ -18,11 +18,8 @@
 @property (nonatomic, retain) NSDate * lastModifiedDate;
 @property (nonatomic, retain) NSString * relationshipLength;
 @property (nonatomic, retain) NSString * relationshipType;
-@property (nonatomic, retain) NSString * strength;
-<<<<<<< HEAD
-=======
 @property (nonatomic, retain) NSString * remoteID;
->>>>>>> Added PPDCIPAssoc and PPDAssoc mappings.
+@property (nonatomic, retain) NSString * strength;
 @property (nonatomic, retain) DCIO *dcioInfo;
 @property (nonatomic, retain) DPerson *dpersonInfo;
 

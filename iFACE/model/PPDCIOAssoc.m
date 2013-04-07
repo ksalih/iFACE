@@ -18,11 +18,8 @@
 @dynamic lastModifiedDate;
 @dynamic relationshipLength;
 @dynamic relationshipType;
-@dynamic strength;
-<<<<<<< HEAD
-=======
 @dynamic remoteID;
->>>>>>> Added PPDCIPAssoc and PPDAssoc mappings.
+@dynamic strength;
 @dynamic dcioInfo;
 @dynamic dpersonInfo;
 
