@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MobileBrokerClient.h"
 #import "zkSforceClient.h"
+#import "ApplicationPreferences.h" 
 
 static NSString *OAUTH_CLIENTID = @"3MVG9A2kN3Bn17huH9WYzmSN6futXVxQtE8pCXq5z_15X5326xwIKPq8r47490Y3tBD3bnkbx6rmPiyDbklRr";
 static NSString *OAUTH_CALLBACK = @"compocketsoapoauthdemo:///done";
@@ -29,6 +30,20 @@ static NSString *OAUTH_CALLBACK = @"compocketsoapoauthdemo:///done";
     
     [MobileBrokerClient sharedClient].managedObjectContext = self.managedObjectContext;
     
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    if ([prefs boolForKey:@"hasRunBefore"] != YES)
+    {
+        [prefs setBool:YES forKey:@"hasRunBefore"];
+        [prefs synchronize];
+        
+        NSDateComponents *comps = [[NSDateComponents alloc] init];
+        [comps setDay:12];
+        [comps setMonth:12];
+        [comps setYear:1974];
+        NSDate *oldDate = [[NSCalendar currentCalendar] dateFromComponents:comps];
+        [ApplicationPreferences setLastSyncDate:oldDate];
+        
+    }
     return YES;
 }
 							

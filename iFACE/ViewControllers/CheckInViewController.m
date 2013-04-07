@@ -142,7 +142,7 @@
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@m",
                                      venue.location.distance];
     }
-    NSLog(@"lastUpdate %@",[ApplicationPreferences lastSyncDate]);
+    
     return cell;
 }
 
