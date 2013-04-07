@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSString * dPerson;
 @property (nonatomic, retain) NSString * dPersonRelated;
 @property (nonatomic, retain) NSDate * lastModifiedDate;
+@property (nonatomic, retain) NSString * remoteID;
 @property (nonatomic, retain) NSSet *dpersonInfo;
 @end
 

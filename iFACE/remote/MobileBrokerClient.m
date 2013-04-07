@@ -172,7 +172,7 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
         NSString *queryString =
-        [NSString stringWithFormat:@"SELECT iface__Cellphone__c,iface__City__c,iface__Email__c, iface__FacebookURL__c,iface__FirstName__c, iface__ID__c, LastModifiedDate,iface__LastName__c, iface__LinkedInURL__c,iface__State__c, iface__Street__c, iface__Title__c, iface__TwitterURL__c, iface__UserName__c from iface__DPerson__c where iface__Email__c = '%@'", userInfo.email];
+        [NSString stringWithFormat:@"SELECT iface__Cellphone__c,iface__City__c,iface__Email__c, iface__FacebookURL__c,iface__FirstName__c, ID, LastModifiedDate,iface__LastName__c, iface__LinkedInURL__c,iface__State__c, iface__Street__c, iface__Title__c, iface__TwitterURL__c, iface__UserName__c from iface__DPerson__c where iface__Email__c = '%@'", userInfo.email];
         NSLog(@"Query string %@",queryString);
         
         ZKQueryResult *qr = [_client query:queryString];
@@ -223,13 +223,11 @@
         NSLog(@"UTC date %@",utcDate);
         
         NSString *queryString =
-        [NSString stringWithFormat:@"SELECT iface__ID__c, iface__FirstName__c,iface__LastName__c, iface__Title__c, iface__Email__c, iface__Phone__c, iface__TwitterURL__c, iface__FacebookURL__c, iface__LinkedInURL__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__MoneyToSpend__c, iface__BudgetAuthority__c, iface__CurrentlyBeingMarketed__c, iface__CurrentlyUnderContract__c, iface__Agency__c, LastModifiedDate FROM iface__DCIO__c where LastModifiedDate > %@ order by iface__ID__c ASC", utcDate];
+        [NSString stringWithFormat:@"SELECT ID, iface__FirstName__c,iface__LastName__c, iface__Title__c, iface__Email__c, iface__Phone__c, iface__TwitterURL__c, iface__FacebookURL__c, iface__LinkedInURL__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__MoneyToSpend__c, iface__BudgetAuthority__c, iface__CurrentlyBeingMarketed__c, iface__CurrentlyUnderContract__c, iface__Agency__c, LastModifiedDate FROM iface__DCIO__c where LastModifiedDate > %@ order by ID ASC", utcDate];
         
         NSLog(@"Query string %@",queryString);
         
         ZKQueryResult *qr = [_client query:queryString];
-        
-        ZKSObject *zkSObject;
         
         if ([qr.records count] > 0 ) {
             
@@ -247,30 +245,9 @@
             NSError *error = nil;
             NSArray *cioList = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
             
-            
-//            for (ZKSObject *zkSObject in qr.records){
-//                NSLog(@"value = %@",[zkSObject fieldValue:@"iface__Email__c"]);
-//                
-//            }
+
             [self mergeDataFrom:qr.records to:cioList];
         }
-        // save the context
-       // [self saveContext];
-        
-        
-            //copy data from zkSObject into person and do a managedObjectContext save
-            
-//            if (person){
-//                if ([self.delegate respondsToSelector:@selector(mobileBrokerClient:didFinishSynchronizingUser:)]){
-//                    [self.delegate mobileBrokerClient:self didFinishSynchronizingUser:person];
-//                }
-//            }else{
-//                if ([self.delegate respondsToSelector:@selector(mobileBrokerClient:didFailTransaction:)]){
-//                    [self.delegate mobileBrokerClient:self didFailTransaction:MobileBrokerClientErrorUserNotFound];
-//                }
-//            }
-       // }
-        
     });
     
 }
@@ -334,13 +311,11 @@
         NSLog(@"UTC date %@",utcDate);
         
         NSString *queryString =
-        [NSString stringWithFormat:@"SELECT iface__ID__c, iface__DPerson__c,iface__DCIO__c, iface__ActivityType__c, iface__BadgeAwarded__c, iface__BadgeType__c, iface__GeoLat__c, iface__GeoLong__c, iface__Message__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__MoneyToSpend__c, iface__BudgetAuthority__c, iface__Venue__c, LastModifiedDate FROM iface__DActivity__c where LastModifiedDate > %@ order by iface__ID__c ASC", utcDate];
+        [NSString stringWithFormat:@"SELECT ID, iface__DPerson__c,iface__DCIO__c, iface__ActivityType__c, iface__BadgeAwarded__c, iface__BadgeType__c, iface__GeoLat__c, iface__GeoLong__c, iface__Message__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__MoneyToSpend__c, iface__BudgetAuthority__c, iface__Venue__c, LastModifiedDate FROM iface__DActivity__c where LastModifiedDate > %@ order by ID ASC", utcDate];
         
         NSLog(@"Query string %@",queryString);
         
         ZKQueryResult *qr = [_client query:queryString];
-        
-        ZKSObject *zkSObject;
         
         if ([qr.records count] > 0 ) {
             
@@ -364,6 +339,168 @@
     
 }
 
+- (void) syncPPDCIOAssocInformation {
+    if (!self.client) return;
+    
+    // save the new activities
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+        
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        // Edit the entity name as appropriate.
+        NSEntityDescription *entity = [NSEntityDescription entityForName:PPDCIOASSOC_TABLE inManagedObjectContext:self.managedObjectContext];
+        [fetchRequest setEntity:entity];
+        
+        // Edit the predicate
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"remoteID == %@", nil];
+        [fetchRequest setPredicate:predicate];
+        
+        
+        NSError *error = nil;
+        NSArray *ppdCIOAssocList = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        
+        for (PPDCIOAssoc *ppdCIOAssoc in ppdCIOAssocList) {
+            
+            NSLog(@"Activity value = %@", ppdCIOAssoc);
+            
+            ZKSObject *ppdCIOAssocObject = [ZKSObject withType:@"iface__PPDCIOAssoc__c"];
+            
+            [ppdCIOAssocObject setFieldValue:ppdCIOAssoc.dcioInfo field:@"iface__DPerson__c"];
+            [ppdCIOAssocObject setFieldValue:ppdCIOAssoc.dCIO field:@"iface__DCIO__c"];
+            [ppdCIOAssocObject setFieldValue:ppdCIOAssoc.relationshipLength field:@"iface__RelationshipLength__c"];
+            [ppdCIOAssocObject setFieldValue:ppdCIOAssoc.relationshipType field:@"iface__RelationshipType__c"];
+            [ppdCIOAssocObject setFieldValue:ppdCIOAssoc.strength field:@"iface__Strength__c"];
+            
+            NSArray *results = [self.client create:[NSArray arrayWithObject:ppdCIOAssoc]];
+            
+            ZKSaveResult *sr = [results objectAtIndex:0];
+            if ([sr success]) {
+                NSLog(@"New activity id %@", [sr id]);
+                ppdCIOAssoc.remoteID = [sr id];
+                [self saveContext];
+            } else {
+                NSLog(@"Error creating activity %@ %@", [sr statusCode], [sr message]);
+            }
+            
+        }
+    });
+    
+    // pull the non-existent activities
+    NSDate *lastPPDCIOAssocSyncDate = [ApplicationPreferences lastPPDCIOAssocSyncDate];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+        
+        NSString *utcDate = [IFACECoredataHelper getUTCString:lastPPDCIOAssocSyncDate];
+        
+        NSLog(@"UTC date %@",utcDate);
+        
+        NSString *queryString =
+        [NSString stringWithFormat:@"SELECT ID, iface__DPerson__c,iface__DCIO__c, iface__RelationshipLength__c, iface__RelationshipType__c, iface__BadgeType__c, iface__GeoLat__c, iface__GeoLong__c, iface__Message__c, iface__TopicsToAvoid__c, iface__SizeOfBudget__c, iface__Strength__c, LastModifiedDate FROM iface__DPPDCIOAssoc__c where LastModifiedDate > %@ order by ID ASC", utcDate];
+        
+        NSLog(@"Query string %@",queryString);
+        
+        ZKQueryResult *qr = [_client query:queryString];
+        
+        if ([qr.records count] > 0 ) {
+            
+            NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+            // Edit the entity name as appropriate.
+            NSEntityDescription *entity = [NSEntityDescription entityForName:PPDCIOASSOC_TABLE inManagedObjectContext:self.managedObjectContext];
+            [fetchRequest setEntity:entity];
+            
+            // Edit the sort key as appropriate.
+            NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"remoteID" ascending:YES];
+            NSArray *sortDescriptors = @[sortDescriptor];
+            
+            [fetchRequest setSortDescriptors:sortDescriptors];
+            
+            NSError *error = nil;
+            NSArray *activitiesList = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+            
+            [self mergePPDCIOAssocDataFrom:qr.records to:activitiesList];
+        }
+    });
+    
+}
+
+- (void) syncPPDAssocInformation {
+    if (!self.client) return;
+    
+    // save the new activities
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+        
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        // Edit the entity name as appropriate.
+        NSEntityDescription *entity = [NSEntityDescription entityForName:PPDASSOC_TABLE inManagedObjectContext:self.managedObjectContext];
+        [fetchRequest setEntity:entity];
+        
+        // Edit the predicate
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"remoteID == %@", nil];
+        [fetchRequest setPredicate:predicate];
+        
+        
+        NSError *error = nil;
+        NSArray *ppdAssocList = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+        
+        for (PPDAssoc *ppdAssoc in ppdAssocList) {
+            
+            NSLog(@"Activity value = %@", ppdAssoc);
+            
+            ZKSObject *ppdAssocObject = [ZKSObject withType:@"iface__PPDAssoc__c"];
+            
+            [ppdAssocObject setFieldValue:ppdAssoc.dPerson field:@"iface__DPerson__c"];
+            [ppdAssocObject setFieldValue:ppdAssoc.dPersonRelated field:@"iface__DPersonRelated__c"];
+            
+            NSArray *results = [self.client create:[NSArray arrayWithObject:ppdAssoc]];
+            
+            ZKSaveResult *sr = [results objectAtIndex:0];
+            if ([sr success]) {
+                NSLog(@"New activity id %@", [sr id]);
+                ppdAssoc.remoteID = [sr id];
+                [self saveContext];
+            } else {
+                NSLog(@"Error creating activity %@ %@", [sr statusCode], [sr message]);
+            }
+            
+        }
+    });
+    
+    // pull the non-existent activities
+    NSDate *lastPPDAssocSyncDate = [ApplicationPreferences lastPPDAssocSyncDate];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+        
+        NSString *utcDate = [IFACECoredataHelper getUTCString:lastPPDAssocSyncDate];
+        
+        NSLog(@"UTC date %@",utcDate);
+        
+        NSString *queryString =
+        [NSString stringWithFormat:@"SELECT ID, iface__DPerson__c,iface__DPersonRelated__c, LastModifiedDate FROM iface__DPPDAssoc__c where LastModifiedDate > %@ order by ID ASC", utcDate];
+        
+        NSLog(@"Query string %@",queryString);
+        
+        ZKQueryResult *qr = [_client query:queryString];
+        
+        if ([qr.records count] > 0 ) {
+            
+            NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+            // Edit the entity name as appropriate.
+            NSEntityDescription *entity = [NSEntityDescription entityForName:PPDASSOC_TABLE inManagedObjectContext:self.managedObjectContext];
+            [fetchRequest setEntity:entity];
+            
+            // Edit the sort key as appropriate.
+            NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"remoteID" ascending:YES];
+            NSArray *sortDescriptors = @[sortDescriptor];
+            
+            [fetchRequest setSortDescriptors:sortDescriptors];
+            
+            NSError *error = nil;
+            NSArray *activitiesList = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+            
+            [self mergePPDAssocDataFrom:qr.records to:activitiesList];
+        }
+    });
+    
+}
 
 
 
@@ -379,7 +516,7 @@
     DCIO *cioToUpdate;
     
     while (object = [zkSObjectsEnumerator nextObject]) {
-        NSString *remoteID = [object fieldValue:@"iface__ID__c"];
+        NSString *remoteID = [object fieldValue:@"ID"];
         NSLog(@"Compary %@",remoteID);
         if ([remoteID isEqualToString:currentCIO.remoteID]){
             cioToUpdate = currentCIO;
@@ -408,7 +545,7 @@
     DActivity *activityToUpdate;
     
     while (object = [zkSObjectsEnumerator nextObject]) {
-        NSString *remoteID = [object fieldValue:@"iface__ID__c"];
+        NSString *remoteID = [object fieldValue:@"ID"];
         NSLog(@"Compary %@",remoteID);
         
         if ([remoteID isEqualToString:currentActivity.remoteID]){
@@ -419,6 +556,66 @@
         }
         
         [IFACECoredataHelper copyZKSObject:object toActivity:activityToUpdate];
+        
+    }
+    
+    [self saveContext];
+    
+}
+
+/**
+ Merges data following find-and-update from apple
+ */
+-(void) mergePPDCIOAssocDataFrom:(NSArray *) zkSObjectsArray to:(NSArray *) ppdCIOAssocManagedObjects {
+    NSEnumerator *zkSObjectsEnumerator = [zkSObjectsArray objectEnumerator];
+    NSEnumerator *ppdCIOAssocManagedObjectsEnumerator = [ppdCIOAssocManagedObjects objectEnumerator];
+    
+    id object;
+    PPDCIOAssoc *currentPPDCIOAssoc = [ppdCIOAssocManagedObjectsEnumerator nextObject];
+    PPDCIOAssoc *ppdCIOAssocToUpdate;
+    
+    while (object = [zkSObjectsEnumerator nextObject]) {
+        NSString *remoteID = [object fieldValue:@"ID"];
+        NSLog(@"Compary %@",remoteID);
+        
+        if ([remoteID isEqualToString:currentPPDCIOAssoc.remoteID]){
+            ppdCIOAssocToUpdate = currentPPDCIOAssoc;
+            currentPPDCIOAssoc = [ppdCIOAssocManagedObjectsEnumerator nextObject];
+        }else{
+            ppdCIOAssocToUpdate = [NSEntityDescription insertNewObjectForEntityForName:PPDCIOASSOC_TABLE inManagedObjectContext:self.managedObjectContext];
+        }
+        
+        [IFACECoredataHelper copyZKSObject:object toPPDCIOAssoc:ppdCIOAssocToUpdate];
+        
+    }
+    
+    [self saveContext];
+    
+}
+
+/**
+ Merges data following find-and-update from apple
+ */
+-(void) mergePPDAssocDataFrom:(NSArray *) zkSObjectsArray to:(NSArray *) ppdAssocManagedObjects {
+    NSEnumerator *zkSObjectsEnumerator = [zkSObjectsArray objectEnumerator];
+    NSEnumerator *ppdAssocManagedObjectsEnumerator = [ppdAssocManagedObjects objectEnumerator];
+    
+    id object;
+    PPDAssoc *currentPPDAssoc = [ppdAssocManagedObjectsEnumerator nextObject];
+    PPDAssoc *ppdAssocToUpdate;
+    
+    while (object = [zkSObjectsEnumerator nextObject]) {
+        NSString *remoteID = [object fieldValue:@"ID"];
+        NSLog(@"Compary %@",remoteID);
+        
+        if ([remoteID isEqualToString:currentPPDAssoc.remoteID]){
+            ppdAssocToUpdate = currentPPDAssoc;
+            currentPPDAssoc = [ppdAssocManagedObjectsEnumerator nextObject];
+        }else{
+            ppdAssocToUpdate = [NSEntityDescription insertNewObjectForEntityForName:PPDASSOC_TABLE inManagedObjectContext:self.managedObjectContext];
+        }
+        
+        [IFACECoredataHelper copyZKSObject:object toPPDAssoc:ppdAssocToUpdate];
         
     }
     

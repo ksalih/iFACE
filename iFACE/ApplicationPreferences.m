@@ -60,6 +60,30 @@ static NSString * const MOBILE_BROKER_LAST_SYNC= @"MOBILE_BROKER_LAST_SYNC";
     [prefs synchronize];
 }
 
++ (NSDate *) lastPPDCIOAssocSyncDate {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs synchronize];
+    return [prefs objectForKey:MOBILE_BROKER_URL_KEY];
+}
+
++ (void) setLastPPDCIOAssocSyncDate:(NSDate *)lastSyncDate {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setObject:lastSyncDate forKey:MOBILE_BROKER_URL_KEY];
+    [prefs synchronize];
+}
+
++ (NSDate *) lastPPDAssocSyncDate {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs synchronize];
+    return [prefs objectForKey:MOBILE_BROKER_URL_KEY];
+}
+
++ (void) setLastPPDAssocSyncDate:(NSDate *)lastSyncDate {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setObject:lastSyncDate forKey:MOBILE_BROKER_URL_KEY];
+    [prefs synchronize];
+}
+
 
 + (NSURL *) mobileBrokerURL{
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];

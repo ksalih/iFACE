@@ -12,7 +12,10 @@
 #import "DPerson.h"
 #import "DCIO.h"
 #import "DActivity.h"
+#import "PPDCIOAssoc.h"
+#import "PPDAssoc.h"
 #import "zkSObject.h"
+
 
 @interface IFACECoredataHelper : NSObject
 + (DPerson *) getDPersonByEmail:(NSString *) emailAddress withManagedObjectContext:(NSManagedObjectContext *) managedObjectContext;
@@ -20,5 +23,7 @@
 + (void) copyZKSObject:(ZKSObject *)zkSObject toPerson:(DPerson *)person;
 + (void) copyZKSObject:(ZKSObject *)zkSObject toCIO:(DCIO *)cio;
 + (void) copyZKSObject:(ZKSObject *)zkSObject toActivity:(DActivity *)activity;
++ (void) copyZKSObject:(ZKSObject *)zkSObject toPPDCIOAssoc:(PPDCIOAssoc *)ppdCIOAssoc;
++ (void) copyZKSObject:(ZKSObject *)zkSObject toPPDAssoc:(PPDAssoc *)ppdAssoc;
 + (NSString *) getUTCString:(NSDate *) date;
 @end

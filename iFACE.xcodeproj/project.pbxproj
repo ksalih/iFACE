@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F6D54F317116AB40039A083 /* DPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6D54F217116AB40039A083 /* DPerson.m */; };
+		5F6D54F617116AB50039A083 /* PPDAssoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6D54F517116AB50039A083 /* PPDAssoc.m */; };
+		5F6D54F917116AB50039A083 /* PPDCIOAssoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6D54F817116AB50039A083 /* PPDCIOAssoc.m */; };
+		5F6D54FC17116AB50039A083 /* DActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6D54FB17116AB50039A083 /* DActivity.m */; };
+		5F6D54FF17116AB50039A083 /* DCIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6D54FE17116AB50039A083 /* DCIO.m */; };
 		F8625815170E86E400C952A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8625814170E86E400C952A6 /* UIKit.framework */; };
 		F8625817170E86E400C952A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8625816170E86E400C952A6 /* Foundation.framework */; };
 		F8625819170E86E400C952A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8625818170E86E400C952A6 /* CoreGraphics.framework */; };
@@ -179,6 +184,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F6D54F117116AB40039A083 /* DPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPerson.h; path = model/DPerson.h; sourceTree = "<group>"; };
+		5F6D54F217116AB40039A083 /* DPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPerson.m; path = model/DPerson.m; sourceTree = "<group>"; };
+		5F6D54F417116AB50039A083 /* PPDAssoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPDAssoc.h; path = model/PPDAssoc.h; sourceTree = "<group>"; };
+		5F6D54F517116AB50039A083 /* PPDAssoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPDAssoc.m; path = model/PPDAssoc.m; sourceTree = "<group>"; };
+		5F6D54F717116AB50039A083 /* PPDCIOAssoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPDCIOAssoc.h; path = model/PPDCIOAssoc.h; sourceTree = "<group>"; };
+		5F6D54F817116AB50039A083 /* PPDCIOAssoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPDCIOAssoc.m; path = model/PPDCIOAssoc.m; sourceTree = "<group>"; };
+		5F6D54FA17116AB50039A083 /* DActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DActivity.h; path = model/DActivity.h; sourceTree = "<group>"; };
+		5F6D54FB17116AB50039A083 /* DActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DActivity.m; path = model/DActivity.m; sourceTree = "<group>"; };
+		5F6D54FD17116AB50039A083 /* DCIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCIO.h; path = model/DCIO.h; sourceTree = "<group>"; };
+		5F6D54FE17116AB50039A083 /* DCIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCIO.m; path = model/DCIO.m; sourceTree = "<group>"; };
 		F8625811170E86E400C952A6 /* iFACE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iFACE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8625814170E86E400C952A6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F8625816170E86E400C952A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -841,6 +856,7 @@
 		F8625856170E8C7C00C952A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				F8F2BC88171163AA00D5810E /* PPDCIOAssoc.h */,
 				F8F2BC89171163AA00D5810E /* PPDCIOAssoc.m */,
 				F8F2BC85171163A900D5810E /* PPDAssoc.h */,
@@ -851,6 +867,18 @@
 				F8F2BC80171163A900D5810E /* DPerson.m */,
 				F8F2BC7C171163A800D5810E /* DCIO.h */,
 				F8F2BC7D171163A800D5810E /* DCIO.m */,
+=======
+				5F6D54FD17116AB50039A083 /* DCIO.h */,
+				5F6D54FE17116AB50039A083 /* DCIO.m */,
+				5F6D54FA17116AB50039A083 /* DActivity.h */,
+				5F6D54FB17116AB50039A083 /* DActivity.m */,
+				5F6D54F717116AB50039A083 /* PPDCIOAssoc.h */,
+				5F6D54F817116AB50039A083 /* PPDCIOAssoc.m */,
+				5F6D54F417116AB50039A083 /* PPDAssoc.h */,
+				5F6D54F517116AB50039A083 /* PPDAssoc.m */,
+				5F6D54F117116AB40039A083 /* DPerson.h */,
+				5F6D54F217116AB40039A083 /* DPerson.m */,
+>>>>>>> Added PPDCIPAssoc and PPDAssoc mappings.
 				F8F2BC4517110A1D00D5810E /* User.h */,
 				F8F2BC4617110A1D00D5810E /* User.m */,
 				F862585A170E8D2C00C952A6 /* Event.h */,
@@ -1668,12 +1696,20 @@
 				F8F2BC4717110A1D00D5810E /* User.m in Sources */,
 				F8F2BC69171148A300D5810E /* NSString+FetchedGroupByString.m in Sources */,
 				F8F2BC6C1711509200D5810E /* CompleteCheckInViewController.m in Sources */,
+<<<<<<< HEAD
 				F8F2BC7E171163A800D5810E /* DCIO.m in Sources */,
 				F8F2BC81171163A900D5810E /* DPerson.m in Sources */,
 				F8F2BC84171163A900D5810E /* DActivity.m in Sources */,
 				F8F2BC87171163AA00D5810E /* PPDAssoc.m in Sources */,
 				F8F2BC8A171163AA00D5810E /* PPDCIOAssoc.m in Sources */,
 				F8F2BC8D1711652700D5810E /* AllActivityViewController.m in Sources */,
+=======
+				5F6D54F317116AB40039A083 /* DPerson.m in Sources */,
+				5F6D54F617116AB50039A083 /* PPDAssoc.m in Sources */,
+				5F6D54F917116AB50039A083 /* PPDCIOAssoc.m in Sources */,
+				5F6D54FC17116AB50039A083 /* DActivity.m in Sources */,
+				5F6D54FF17116AB50039A083 /* DCIO.m in Sources */,
+>>>>>>> Added PPDCIPAssoc and PPDAssoc mappings.
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

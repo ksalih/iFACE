@@ -39,4 +39,10 @@
 
 + (NSDate *) lastActivitiesSyncDate;
 + (void) setLastActivitiesSyncDate:(NSDate *)lastSyncDate;
+
++ (NSDate *) lastPPDCIOAssocSyncDate;
++ (void) setLastPPDCIOAssocSyncDate:(NSDate *)lastSyncDate;
+
++ (NSDate *) lastPPDAssocSyncDate;
++ (void) setLastPPDAssocSyncDate:(NSDate *)lastSyncDate;
 @end

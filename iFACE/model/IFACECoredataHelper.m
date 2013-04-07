@@ -92,7 +92,7 @@
 
     person.lastName = [zkSObject fieldValue:@"iface__LastName__c"];
     person.linkedinURL = [zkSObject fieldValue:@"iface__LinkedInURL__c"];
-    person.remoteID = [zkSObject fieldValue:@"iface__ID__c"];
+    person.remoteID = [zkSObject fieldValue:@"ID"];
     person.state = [zkSObject fieldValue:@"iface__State__c"];
     person.street = [zkSObject fieldValue:@"iface__Street__c"];
     person.title = [zkSObject fieldValue:@"iface__Title__c"];
@@ -121,7 +121,7 @@
     
     cio.lastName = [zkSObject fieldValue:@"iface__LastName__c"];
     cio.linkedinURL = [zkSObject fieldValue:@"iface__LinkedInURL__c"];
-    cio.remoteID = [zkSObject fieldValue:@"iface__ID__c"];
+    cio.remoteID = [zkSObject fieldValue:@"ID"];
     cio.title = [zkSObject fieldValue:@"iface__Title__c"];
     cio.twitterURL = [zkSObject fieldValue:@"iface__Titile__c"];
 }
@@ -141,11 +141,37 @@
     activity.message = [zkSObject fieldValue:@"iface__Message__c"];
     
     activity.lastModifiedDate = [dateFormat dateFromString:[zkSObject fieldValue:@"LastModifiedDate"]];
-    activity.remoteID = [zkSObject fieldValue:@"iface__ID__c"];
+    activity.remoteID = [zkSObject fieldValue:@"ID"];
     activity.message = [zkSObject fieldValue:@"iface__Message__c"];
     activity.venue = [zkSObject fieldValue:@"iface__Venue__c"];
 }
 
++ (void) copyZKSObject:(ZKSObject *)zkSObject toPPDCIOAssoc:(PPDCIOAssoc *)ppdCIOAssoc {
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-ddTHH:mm:ssZ"];
+    
+    ppdCIOAssoc.dPerson = [zkSObject fieldValue:@"iface__DPerson__c"];
+    ppdCIOAssoc.dCIO = [zkSObject fieldValue:@"iface__DCIO__c"];
+    ppdCIOAssoc.relationshipLength= [zkSObject fieldValue:@"iface__RelationshipLength__c"];
+    ppdCIOAssoc.relationshipType = [zkSObject fieldValue:@"iface__RelationshipType__c"];
+    ppdCIOAssoc.strength = [zkSObject fieldValue:@"iface__Strength__c"];
+    
+    ppdCIOAssoc.lastModifiedDate = [dateFormat dateFromString:[zkSObject fieldValue:@"LastModifiedDate"]];
+    ppdCIOAssoc.remoteID = [zkSObject fieldValue:@"ID"];
+}
+
++ (void) copyZKSObject:(ZKSObject *)zkSObject toPPDAssoc:(PPDAssoc *)ppdAssoc {
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-ddTHH:mm:ssZ"];
+    
+    ppdAssoc.dPerson = [zkSObject fieldValue:@"iface__DPerson__c"];
+    ppdAssoc.dPersonRelated = [zkSObject fieldValue:@"iface_"];
+    ppdAssoc.lastModifiedDate = [dateFormat dateFromString:[zkSObject fieldValue:@"LastModifiedDate"]];
+    ppdAssoc.remoteID = [zkSObject fieldValue:@"ID"];
+
+}
 
 + (NSString *) getUTCString:(NSDate *) date{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

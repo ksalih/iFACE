@@ -15,6 +15,7 @@
 @dynamic dPerson;
 @dynamic dPersonRelated;
 @dynamic lastModifiedDate;
+@dynamic remoteID;
 @dynamic dpersonInfo;
 
 @end

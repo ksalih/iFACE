@@ -11,6 +11,8 @@
 #import "DPerson.h"
 #import "DCIO.h"
 #import "DActivity.h"
+#import "PPDCIOAssoc.h"
+#import "PPDAssoc.h"
 
 @class MobileBrokerClient;
 
@@ -48,5 +50,7 @@ typedef enum {
 - (void) syncUserInformation;
 - (void) syncCIOInformation;
 - (void) syncActivityInformation;
+- (void) syncPPDCIOAssocInformation;
+- (void) syncPPDAssocInformation;
 
 @end
