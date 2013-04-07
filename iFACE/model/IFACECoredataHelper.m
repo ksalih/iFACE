@@ -121,7 +121,7 @@
     
     cio.lastName = [zkSObject fieldValue:@"iface__LastName__c"];
     cio.linkedinURL = [zkSObject fieldValue:@"iface__LinkedInURL__c"];
-    cio.remoteID = [zkSObject fieldValue:@"ID"];
+    cio.remoteID = [zkSObject fieldValue:@"iface__ID__c"];
     cio.title = [zkSObject fieldValue:@"iface__Title__c"];
     cio.twitterURL = [zkSObject fieldValue:@"iface__Titile__c"];
 }
@@ -141,7 +141,7 @@
     activity.message = [zkSObject fieldValue:@"iface__Message__c"];
     
     activity.lastModifiedDate = [dateFormat dateFromString:[zkSObject fieldValue:@"LastModifiedDate"]];
-    activity.remoteID = [zkSObject fieldValue:@"ID"];
+    activity.remoteID = [zkSObject fieldValue:@"iface__ID__c"];
     activity.message = [zkSObject fieldValue:@"iface__Message__c"];
     activity.venue = [zkSObject fieldValue:@"iface__Venue__c"];
 }
@@ -158,7 +158,7 @@
     ppdCIOAssoc.strength = [zkSObject fieldValue:@"iface__Strength__c"];
     
     ppdCIOAssoc.lastModifiedDate = [dateFormat dateFromString:[zkSObject fieldValue:@"LastModifiedDate"]];
-    ppdCIOAssoc.remoteID = [zkSObject fieldValue:@"ID"];
+    ppdCIOAssoc.remoteID = [zkSObject fieldValue:@"iface__ID__c"];
 }
 
 + (void) copyZKSObject:(ZKSObject *)zkSObject toPPDAssoc:(PPDAssoc *)ppdAssoc {
@@ -169,7 +169,7 @@
     ppdAssoc.dPerson = [zkSObject fieldValue:@"iface__DPerson__c"];
     ppdAssoc.dPersonRelated = [zkSObject fieldValue:@"iface_"];
     ppdAssoc.lastModifiedDate = [dateFormat dateFromString:[zkSObject fieldValue:@"LastModifiedDate"]];
-    ppdAssoc.remoteID = [zkSObject fieldValue:@"ID"];
+    ppdAssoc.remoteID = [zkSObject fieldValue:@"iface__ID__c"];
 
 }
 
