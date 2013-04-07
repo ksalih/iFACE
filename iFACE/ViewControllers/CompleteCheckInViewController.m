@@ -47,6 +47,8 @@
     
     myActivity.activityType = @"CHECKIN";
     myActivity.dcioInfo = self.selectedCIO;
+    myActivity.dPerson = mePerson.remoteID;
+    myActivity.dCIO = myActivity.dcioInfo.remoteID;
     myActivity.geoLat = [NSNumber numberWithDouble:self.seletedVenue.coordinate.latitude];
     myActivity.geoLong = [NSNumber numberWithDouble:self.seletedVenue.coordinate.longitude];
     myActivity.message = self.messageTextView.text;
