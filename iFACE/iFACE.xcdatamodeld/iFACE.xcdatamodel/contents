@@ -78,7 +78,7 @@
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DActivity" positionX="-90" positionY="36" width="128" height="238"/>
+        <element name="DActivity" positionX="-90" positionY="36" width="128" height="240"/>
         <element name="DCIO" positionX="-288" positionY="20" width="128" height="328"/>
         <element name="DPerson" positionX="126" positionY="-16" width="128" height="313"/>
         <element name="PPDAssoc" positionX="315" positionY="200" width="128" height="103"/>

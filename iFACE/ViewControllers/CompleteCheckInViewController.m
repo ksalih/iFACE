@@ -11,6 +11,9 @@
 #import "AppDelegate.h"
 #import "AppDefinitions.h"
 #import "DActivity.h"
+#import "IFACECoredataHelper.h"
+#import "DPerson.h"
+#import "ApplicationPreferences.h" 
 
 @implementation CompleteCheckInViewController
 
@@ -36,7 +39,44 @@
 }
 
 - (IBAction)checkInAction:(id)sender {
+    
+    DPerson *mePerson = [IFACECoredataHelper getDPersonByEmail:[ApplicationPreferences applicationUser] withManagedObjectContext:self.managedObjectContext];
     DActivity *myActivity;
+    
+    myActivity = [NSEntityDescription insertNewObjectForEntityForName:ACTIVITY_TABLE inManagedObjectContext:self.managedObjectContext];
+    
+    myActivity.activityType = @"CHECKIN";
+    myActivity.dcioInfo = self.selectedCIO;
+    myActivity.geoLat = [NSNumber numberWithDouble:self.seletedVenue.coordinate.latitude];
+    myActivity.geoLong = [NSNumber numberWithDouble:self.seletedVenue.coordinate.longitude];
+    myActivity.message = self.messageTextView.text;
+    myActivity.venue = self.seletedVenue.name;
+    myActivity.lastModifiedDate = [NSDate date];
+    
+    myActivity.dpersonInfo = mePerson;
+    
+    NSError *error;
+    if (![self.managedObjectContext save:&error]){
+        //TODO: Do something with the error
+        NSLog(@"Error saving activity");
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    /**
+     @dynamic activityType;
+     @dynamic badgeAwarded;
+     @dynamic badgeType;
+     @dynamic dCIO;
+     @dynamic dPerson;
+     @dynamic geoLat;
+     @dynamic geoLong;
+     @dynamic message;
+     @dynamic remoteID;
+     @dynamic venue;
+     @dynamic lastModifiedDate;
+     @dynamic dcioInfo;
+     @dynamic dpersonInfo;
+     */
     
 }
 @end

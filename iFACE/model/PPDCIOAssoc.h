@@ -2,7 +2,7 @@
 //  PPDCIOAssoc.h
 //  iFACE
 //
-//  Created by Karwan Salih on 4/7/13.
+//  Created by Jorge Carvallo on 4/7/13.
 //  Copyright (c) 2013 Deloitte. All rights reserved.
 //
 
@@ -15,10 +15,10 @@
 
 @property (nonatomic, retain) NSString * dCIO;
 @property (nonatomic, retain) NSString * dPerson;
+@property (nonatomic, retain) NSDate * lastModifiedDate;
 @property (nonatomic, retain) NSString * relationshipLength;
 @property (nonatomic, retain) NSString * relationshipType;
 @property (nonatomic, retain) NSString * strength;
-@property (nonatomic, retain) NSDate * lastModifiedDate;
 @property (nonatomic, retain) DCIO *dcioInfo;
 @property (nonatomic, retain) DPerson *dpersonInfo;
 

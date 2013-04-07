@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "DCIO.h"
 #import "FSVenue.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface CompleteCheckInViewController : UIViewController
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;

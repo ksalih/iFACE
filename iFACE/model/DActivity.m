@@ -2,7 +2,7 @@
 //  DActivity.m
 //  iFACE
 //
-//  Created by Karwan Salih on 4/7/13.
+//  Created by Jorge Carvallo on 4/7/13.
 //  Copyright (c) 2013 Deloitte. All rights reserved.
 //
 
@@ -20,10 +20,10 @@
 @dynamic dPerson;
 @dynamic geoLat;
 @dynamic geoLong;
+@dynamic lastModifiedDate;
 @dynamic message;
 @dynamic remoteID;
 @dynamic venue;
-@dynamic lastModifiedDate;
 @dynamic dcioInfo;
 @dynamic dpersonInfo;
 

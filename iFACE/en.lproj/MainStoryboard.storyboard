@@ -441,6 +441,7 @@
                         <outlet property="userContainerView" destination="8FP-an-IIr" id="RSC-Iy-KeQ"/>
                         <outlet property="userPictureImageView" destination="jed-is-9Zn" id="5if-Tc-Bm9"/>
                         <segue destination="zEB-ZB-Umy" kind="push" identifier="checkInSegue" id="9jS-Ta-qbo"/>
+                        <segue destination="Eek-DX-71T" kind="push" identifier="allActivitySegue" id="YDo-st-RVV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZ7-gq-WcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -451,6 +452,36 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="886" y="-18"/>
+        </scene>
+        <!--All Activity View Controller-->
+        <scene sceneID="J6b-fe-iil">
+            <objects>
+                <tableViewController id="Eek-DX-71T" customClass="AllActivityViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qgD-tU-PCQ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="484"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Ckw-pE-1Wh">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Eek-DX-71T" id="KjQ-WN-q8a"/>
+                            <outlet property="delegate" destination="Eek-DX-71T" id="pJG-KT-52V"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="KlT-ae-lCw"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HAu-xW-A40" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1420" y="674"/>
         </scene>
         <!--Pick View Controller - CIO-->
         <scene sceneID="04M-3U-6QI">
@@ -760,6 +791,9 @@
         <image name="settings off.png" width="23" height="23"/>
     </resources>
     <classes>
+        <class className="AllActivityViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AllActivityViewController.h"/>
+        </class>
         <class className="BlueButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BlueButton.h"/>
         </class>
