@@ -17,4 +17,7 @@
 @property (strong,nonatomic) IBOutlet JYDarkTranslucentCellHeaderView *jyDarkTranslucentCellHeaderView;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong,nonatomic) SlideMenuViewController *slideMenuViewController;
+
+- (void) registerSlideMenuViewController:(SlideMenuViewController *) slideMenuViewController;
 @end

@@ -441,7 +441,6 @@
                         <outlet property="userContainerView" destination="8FP-an-IIr" id="RSC-Iy-KeQ"/>
                         <outlet property="userPictureImageView" destination="jed-is-9Zn" id="5if-Tc-Bm9"/>
                         <segue destination="zEB-ZB-Umy" kind="push" identifier="checkInSegue" id="9jS-Ta-qbo"/>
-                        <segue destination="Eek-DX-71T" kind="push" identifier="allActivitySegue" id="YDo-st-RVV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZ7-gq-WcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -458,7 +457,7 @@
             <objects>
                 <tableViewController id="Eek-DX-71T" customClass="AllActivityViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qgD-tU-PCQ">
-                        <rect key="frame" x="0.0" y="64" width="320" height="484"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -477,11 +476,17 @@
                             <outlet property="delegate" destination="Eek-DX-71T" id="pJG-KT-52V"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="KlT-ae-lCw"/>
+                    <navigationItem key="navigationItem" id="KlT-ae-lCw">
+                        <barButtonItem key="leftBarButtonItem" image="backMenuButton.png" id="Yx0-ab-9ak">
+                            <connections>
+                                <action selector="slideMenuAction:" destination="Eek-DX-71T" id="XfH-9q-8dh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HAu-xW-A40" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1420" y="674"/>
+            <point key="canvasLocation" x="799" y="1534"/>
         </scene>
         <!--Pick View Controller - CIO-->
         <scene sceneID="04M-3U-6QI">
@@ -759,7 +764,7 @@
         <!--Navigation Controller-->
         <scene sceneID="6wa-TU-ncG">
             <objects>
-                <navigationController id="gp7-Bc-h8X" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="userProfileStoryBoard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gp7-Bc-h8X" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uh7-11-bxs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -774,6 +779,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JeH-Pk-Wif" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="360" y="-18"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="H5D-2t-ZPM">
+            <objects>
+                <navigationController storyboardIdentifier="activityStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ENP-53-T7i" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="amn-tI-bjD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Eek-DX-71T" kind="relationship" relationship="rootViewController" id="w6r-x8-yLZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WVd-u2-5gy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="347" y="1534"/>
         </scene>
     </scenes>
     <resources>
@@ -793,6 +817,9 @@
     <classes>
         <class className="AllActivityViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AllActivityViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="slideMenuAction:"/>
+            </relationships>
         </class>
         <class className="BlueButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BlueButton.h"/>

@@ -25,6 +25,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+   // [[MobileBrokerClient sharedClient] syncActivityInformation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -109,6 +110,15 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+#pragma mark - slideMenuClient 
+- (void) registerSlideMenuViewController:(SlideMenuViewController *) slideMenuViewController{
+    self.slideMenuViewController = slideMenuViewController;
+}
+
+- (IBAction)slideMenuAction:(id)sender{
+    [self.slideMenuViewController slideMenu];
 }
 
 @end

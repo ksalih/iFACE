@@ -83,9 +83,14 @@ NSInteger const SideMenuOptionsSectionUser = 0;
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-//    switch (indexPath.section) {
-//        case SideMenuOptionsSectionUserActions:
-//            switch (indexPath.row) {
+   switch (indexPath.section) {
+       case SideMenuOptionsActionUser:
+            [self.slideMenuViewController switchMasterToStoryboardID:@"userProfileStoryBoard"];
+           break;
+       case SideMenuOptionsSectionUserActions:
+            switch (indexPath.row) {
+                case 0://activity
+                    [self.slideMenuViewController switchMasterToStoryboardID:@"activityStoryboard"];
 //                case SideMenuOptionsActionLogout:{
 //                    //pop ups an alert
 //                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Logout"
@@ -95,13 +100,13 @@ NSInteger const SideMenuOptionsSectionUser = 0;
 //                                                              otherButtonTitles:NSLocalizedString(@"No", nil), nil];
 //                    [alertView show];
 //                }
-//                    break;
-//            }
-//            break;
+                    break;
+           }
+            break;
 //            
 //        default:
 //            break;
-//    }
+   }
     
 }
 #pragma mark - Alert Delegates
@@ -133,7 +138,7 @@ NSInteger const SideMenuOptionsSectionUser = 0;
 /**
  */
 - (void) registerSlideMenuViewController:(SlideMenuViewController *) slideMenuViewController{
-    
+    self.slideMenuViewController = slideMenuViewController;
 }
 
 - (NSFetchedResultsController *)fetchedResultsController

@@ -41,4 +41,5 @@ extern NSString * const SMSideMenuSegue;
 @property (weak,nonatomic) UIViewController *masterViewController;
 @property (weak,nonatomic) UIViewController *sideViewController;
 
+- (void) switchMasterToStoryboardID:(NSString *) storyBoardID;
 @end

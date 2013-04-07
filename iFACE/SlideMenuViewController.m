@@ -185,6 +185,12 @@ NSString * const SMSideMenuSegue =@"sideMenuSegue";
         }else {
             self.sideViewController = [segue destinationViewController];
         }
+        
+        if ([self.sideViewController conformsToProtocol:@protocol(SlideMenuViewControllerClient)]){
+            id <SlideMenuViewControllerClient> slideMenuViewController = (id <SlideMenuViewControllerClient>) self.sideViewController;
+            [slideMenuViewController registerSlideMenuViewController:self];
+        }
+        
     }
 }
 
@@ -198,5 +204,47 @@ NSString * const SMSideMenuSegue =@"sideMenuSegue";
     slideRight = YES;
 }
 
+- (void) switchMasterToStoryboardID:(NSString *) storyBoardID {
+    UIViewController *destViewController =  [self.storyboard instantiateViewControllerWithIdentifier:storyBoardID];
+    
+    
+    if ([destViewController isKindOfClass:[UINavigationController class]]){
+        UINavigationController *navigationController = (UINavigationController *) destViewController;
+        destViewController = navigationController.topViewController;
+        
+    }
+    
+    self.sideViewController = destViewController;
+    if ([self.sideViewController conformsToProtocol:@protocol(SlideMenuViewControllerClient)]){
+        id <SlideMenuViewControllerClient> slideMenuViewController = (id <SlideMenuViewControllerClient>) self.sideViewController;
+        [slideMenuViewController registerSlideMenuViewController:self];
+    }
+    
+    if (destViewController.navigationController != self.masterViewController.navigationController){
+        [self addChildViewController:destViewController];
+        UINavigationController *navigation = self.masterViewController.navigationController;
+        
+        navigation.viewControllers = @[destViewController];
+        //[self moveToNewController:destViewController fromController:self.masterViewController.navigationController];
+        
+    }
+}
+
+-(void)moveToNewController:(UIViewController *) newController fromController:(UIViewController *) currentVC {
+  
+//[currentVC willMoveToParentViewController:nil];
+//    [UIView
+//     transitionFromView:self.containerController toView:newController.view
+//     duration:0.6 options:UIViewAnimationOptionTransitionFlipFromLeft completion:^(BOOL finished){
+//        self.containerController = newController.view;
+//    }];
+    //self.containerController = newController.view;
+//    [self transitionFromViewController:currentVC toViewController:newController duration:.6 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{}
+//                            completion:^(BOOL finished) {
+//                                [currentVC removeFromParentViewController];
+//                                [newController didMoveToParentViewController:self];
+//                                 //self.masterViewController = newController;
+//                            }];
+}
 
 @end

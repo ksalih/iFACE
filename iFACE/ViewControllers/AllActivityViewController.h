@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "MobileBrokerClient.h"
+#import "SlideMenuViewController.h"
 
-@interface AllActivityViewController : UITableViewController
+@interface AllActivityViewController : UITableViewController <SlideMenuViewControllerClient>
 
+@property (strong,nonatomic) SlideMenuViewController *slideMenuViewController;
+
+- (void) registerSlideMenuViewController:(SlideMenuViewController *) slideMenuViewController;
+
+- (IBAction)slideMenuAction:(id)sender;
 @end
