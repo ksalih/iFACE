@@ -11,10 +11,11 @@
 #import "SlideMenuViewController.h"
 #import "ActivityCell.h"
 
-@interface AllActivityViewController : UITableViewController <SlideMenuViewControllerClient>
+@interface AllActivityViewController : UITableViewController <SlideMenuViewControllerClient,UISearchDisplayDelegate, UISearchBarDelegate, UITableViewDelegate,UIActionSheetDelegate,NSFetchedResultsControllerDelegate,UITableViewDataSource>
 
 @property (strong,nonatomic) SlideMenuViewController *slideMenuViewController;
 @property (strong, nonatomic) IBOutlet ActivityCell *activityCell;
+@property (nonatomic, strong) NSString *searchString;
 
 - (void) registerSlideMenuViewController:(SlideMenuViewController *) slideMenuViewController;
 
@@ -23,5 +24,6 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) UIRefreshControl* refreshControl;
+- (IBAction)imageTapped:(id)sender;
 
 @end
