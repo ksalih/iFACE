@@ -8,7 +8,9 @@
 
 #import "IFACECoredataHelper.h"
 #import "AppDefinitions.h"
+
 #import "ZKUserInfo.h"
+
 #import "AppDefinitions.h"
 
 @implementation IFACECoredataHelper
@@ -23,12 +25,10 @@
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"email == %@", emailAddress];
     [fetchRequest setPredicate:predicate];
-    
     NSArray *usersList = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
     if (!usersList || [usersList count] ==0)
-    {
-        // error = [self generateErrorMessage:@"Invalid user name"];
+    {// error = [self generateErrorMessage:@"Invalid user name"];
         return nil;
     }
     
@@ -89,6 +89,7 @@
     person.firstName = [zkSObject fieldValue:@"iface__FirstName__c"];
     
     person.lastModifiedDate = [dateFormat dateFromString:[zkSObject fieldValue:@"LastModifiedDate"]];
+    
     person.lastName = [zkSObject fieldValue:@"iface__LastName__c"];
     person.linkedinURL = [zkSObject fieldValue:@"iface__LinkedInURL__c"];
     person.remoteID = [zkSObject fieldValue:@"iface__ID__c"];
