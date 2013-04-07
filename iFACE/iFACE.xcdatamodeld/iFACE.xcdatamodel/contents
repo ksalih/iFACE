@@ -51,7 +51,7 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="twitterURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="dActivities" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DActivity" inverseName="dpersonInfo" inverseEntity="DActivity" syncable="YES"/>
+        <relationship name="dActivities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DActivity" inverseName="dpersonInfo" inverseEntity="DActivity" syncable="YES"/>
         <relationship name="ppdAssocs" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PPDAssoc" inverseName="dpersonInfo" inverseEntity="PPDAssoc" syncable="YES"/>
         <relationship name="ppdCIOAssocs" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PPDCIOAssoc" inverseName="dpersonInfo" inverseEntity="PPDCIOAssoc" syncable="YES"/>
     </entity>

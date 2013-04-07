@@ -2,7 +2,7 @@
 //  DPerson.m
 //  iFACE
 //
-//  Created by Jorge Carvallo on 4/6/13.
+//  Created by Jorge Carvallo on 4/7/13.
 //  Copyright (c) 2013 Deloitte. All rights reserved.
 //
 
@@ -30,7 +30,7 @@
 @dynamic twitterURL;
 @dynamic userName;
 @dynamic dActivities;
-@dynamic ppdCIOAssocs;
 @dynamic ppdAssocs;
+@dynamic ppdCIOAssocs;
 
 @end

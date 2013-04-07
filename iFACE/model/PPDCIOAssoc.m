@@ -2,7 +2,7 @@
 //  PPDCIOAssoc.m
 //  iFACE
 //
-//  Created by Jorge Carvallo on 4/6/13.
+//  Created by Jorge Carvallo on 4/7/13.
 //  Copyright (c) 2013 Deloitte. All rights reserved.
 //
 
@@ -18,7 +18,7 @@
 @dynamic relationshipLength;
 @dynamic relationshipType;
 @dynamic strength;
-@dynamic dpersonInfo;
 @dynamic dcioInfo;
+@dynamic dpersonInfo;
 
 @end

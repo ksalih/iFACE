@@ -2,7 +2,7 @@
 //  DPerson.h
 //  iFACE
 //
-//  Created by Jorge Carvallo on 4/6/13.
+//  Created by Jorge Carvallo on 4/7/13.
 //  Copyright (c) 2013 Deloitte. All rights reserved.
 //
 
@@ -28,21 +28,26 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * twitterURL;
 @property (nonatomic, retain) NSString * userName;
-@property (nonatomic, retain) DActivity *dActivities;
-@property (nonatomic, retain) NSSet *ppdCIOAssocs;
+@property (nonatomic, retain) NSSet *dActivities;
 @property (nonatomic, retain) NSSet *ppdAssocs;
+@property (nonatomic, retain) NSSet *ppdCIOAssocs;
 @end
 
 @interface DPerson (CoreDataGeneratedAccessors)
 
-- (void)addPpdCIOAssocsObject:(PPDCIOAssoc *)value;
-- (void)removePpdCIOAssocsObject:(PPDCIOAssoc *)value;
-- (void)addPpdCIOAssocs:(NSSet *)values;
-- (void)removePpdCIOAssocs:(NSSet *)values;
+- (void)addDActivitiesObject:(DActivity *)value;
+- (void)removeDActivitiesObject:(DActivity *)value;
+- (void)addDActivities:(NSSet *)values;
+- (void)removeDActivities:(NSSet *)values;
 
 - (void)addPpdAssocsObject:(PPDAssoc *)value;
 - (void)removePpdAssocsObject:(PPDAssoc *)value;
 - (void)addPpdAssocs:(NSSet *)values;
 - (void)removePpdAssocs:(NSSet *)values;
+
+- (void)addPpdCIOAssocsObject:(PPDCIOAssoc *)value;
+- (void)removePpdCIOAssocsObject:(PPDCIOAssoc *)value;
+- (void)addPpdCIOAssocs:(NSSet *)values;
+- (void)removePpdCIOAssocs:(NSSet *)values;
 
 @end
