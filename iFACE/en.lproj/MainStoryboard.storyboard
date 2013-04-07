@@ -445,6 +445,23 @@
             </objects>
             <point key="canvasLocation" x="886" y="-18"/>
         </scene>
+        <!--View Controller - CIO-->
+        <scene sceneID="04M-3U-6QI">
+            <objects>
+                <viewController id="Qlr-IU-NHa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cIB-vO-myi">
+                        <rect key="frame" x="0.0" y="64" width="320" height="484"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CIO" id="Dps-Dg-B9Q">
+                        <barButtonItem key="backBarButtonItem" title="CIOs" id="vxp-2E-eOD"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LqG-GE-CuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1874" y="-18"/>
+        </scene>
         <!--Check In View Controller - Check-in-->
         <scene sceneID="wIT-Ht-W83">
             <objects>
@@ -461,20 +478,39 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="118" id="Ek8-P5-2ay"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="zEB-ZB-Umy" id="vf3-aq-VPS"/>
+                                </connections>
                             </mapView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hag-Q3-aqQ">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" id="UsM-cp-oqY">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" textLabel="rsX-O3-nns" detailTextLabel="wPR-hc-9wf" style="IBUITableViewCellStyleSubtitle" id="UsM-cp-oqY">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsX-O3-nns">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPR-hc-9wf">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zEB-ZB-Umy" id="m74-wN-S49"/>
+                                    <outlet property="delegate" destination="zEB-ZB-Umy" id="Adg-qb-JGw"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Places" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bpj-i6-WXM">
                                 <constraints>
@@ -505,11 +541,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Check-in" id="CEJ-ry-EXz">
-                        <barButtonItem key="backBarButtonItem" title="Checkin" id="EtZ-uz-O8S"/>
+                        <barButtonItem key="backBarButtonItem" title="Check-in" id="EtZ-uz-O8S"/>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="EF6-ZI-v8B" id="hp2-LQ-VEa"/>
                         <outlet property="tableView" destination="hag-Q3-aqQ" id="C3S-Kl-Zuz"/>
+                        <segue destination="Qlr-IU-NHa" kind="push" id="TX6-d1-6qe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kOk-mw-fcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
