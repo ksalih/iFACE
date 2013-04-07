@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class DActivity, PPDCIOAssoc;
 
 @interface DCIO : NSManagedObject
 
@@ -28,7 +29,20 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * topicsToAvoid;
 @property (nonatomic, retain) NSString * twitterURL;
-@property (nonatomic, retain) NSManagedObject *cioToActivity;
-@property (nonatomic, retain) NSManagedObject *cioToPPDCIOAssoc;
+@property (nonatomic, retain) NSSet *dActivities;
+@property (nonatomic, retain) NSSet *ppdCIOAssocs;
+@end
+
+@interface DCIO (CoreDataGeneratedAccessors)
+
+- (void)addDActivitiesObject:(DActivity *)value;
+- (void)removeDActivitiesObject:(DActivity *)value;
+- (void)addDActivities:(NSSet *)values;
+- (void)removeDActivities:(NSSet *)values;
+
+- (void)addPpdCIOAssocsObject:(PPDCIOAssoc *)value;
+- (void)removePpdCIOAssocsObject:(PPDCIOAssoc *)value;
+- (void)addPpdCIOAssocs:(NSSet *)values;
+- (void)removePpdCIOAssocs:(NSSet *)values;
 
 @end

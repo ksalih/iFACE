@@ -7,6 +7,8 @@
 //
 
 #import "PPDCIOAssoc.h"
+#import "DCIO.h"
+#import "DPerson.h"
 
 
 @implementation PPDCIOAssoc
@@ -16,5 +18,7 @@
 @dynamic relationshipLength;
 @dynamic relationshipType;
 @dynamic strength;
+@dynamic dpersonInfo;
+@dynamic dcioInfo;
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "DCIO.h"
+#import "DActivity.h"
+#import "PPDCIOAssoc.h"
 
 
 @implementation DCIO
@@ -27,7 +29,7 @@
 @dynamic title;
 @dynamic topicsToAvoid;
 @dynamic twitterURL;
-@dynamic cioToActivity;
-@dynamic cioToPPDCIOAssoc;
+@dynamic dActivities;
+@dynamic ppdCIOAssocs;
 
 @end

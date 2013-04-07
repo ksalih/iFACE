@@ -14,6 +14,6 @@
 
 @dynamic dPerson;
 @dynamic dPersonRelated;
-@dynamic personAssocToPerson;
+@dynamic dpersonInfo;
 
 @end

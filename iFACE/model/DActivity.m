@@ -7,6 +7,8 @@
 //
 
 #import "DActivity.h"
+#import "DCIO.h"
+#import "DPerson.h"
 
 
 @implementation DActivity
@@ -21,5 +23,7 @@
 @dynamic message;
 @dynamic remoteID;
 @dynamic venue;
+@dynamic dcioInfo;
+@dynamic dpersonInfo;
 
 @end

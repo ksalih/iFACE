@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class DCIO, DPerson;
 
 @interface PPDCIOAssoc : NSManagedObject
 
@@ -17,5 +18,7 @@
 @property (nonatomic, retain) NSString * relationshipLength;
 @property (nonatomic, retain) NSString * relationshipType;
 @property (nonatomic, retain) NSString * strength;
+@property (nonatomic, retain) DPerson *dpersonInfo;
+@property (nonatomic, retain) DCIO *dcioInfo;
 
 @end

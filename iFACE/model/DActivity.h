@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class DCIO, DPerson;
 
 @interface DActivity : NSManagedObject
 
@@ -22,5 +23,7 @@
 @property (nonatomic, retain) NSString * message;
 @property (nonatomic, retain) NSString * remoteID;
 @property (nonatomic, retain) NSString * venue;
+@property (nonatomic, retain) DCIO *dcioInfo;
+@property (nonatomic, retain) DPerson *dpersonInfo;
 
 @end

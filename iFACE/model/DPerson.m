@@ -7,6 +7,9 @@
 //
 
 #import "DPerson.h"
+#import "DActivity.h"
+#import "PPDAssoc.h"
+#import "PPDCIOAssoc.h"
 
 
 @implementation DPerson
@@ -26,8 +29,8 @@
 @dynamic title;
 @dynamic twitterURL;
 @dynamic userName;
-@dynamic personToActivity;
-@dynamic personToPersonAssoc;
-@dynamic personToPPDCIOAssoc;
+@dynamic dActivities;
+@dynamic ppdCIOAssocs;
+@dynamic ppdAssocs;
 
 @end

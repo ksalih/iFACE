@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class DActivity, PPDAssoc, PPDCIOAssoc;
 
 @interface DPerson : NSManagedObject
 
@@ -27,8 +28,21 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * twitterURL;
 @property (nonatomic, retain) NSString * userName;
-@property (nonatomic, retain) NSManagedObject *personToActivity;
-@property (nonatomic, retain) NSManagedObject *personToPersonAssoc;
-@property (nonatomic, retain) NSManagedObject *personToPPDCIOAssoc;
+@property (nonatomic, retain) DActivity *dActivities;
+@property (nonatomic, retain) NSSet *ppdCIOAssocs;
+@property (nonatomic, retain) NSSet *ppdAssocs;
+@end
+
+@interface DPerson (CoreDataGeneratedAccessors)
+
+- (void)addPpdCIOAssocsObject:(PPDCIOAssoc *)value;
+- (void)removePpdCIOAssocsObject:(PPDCIOAssoc *)value;
+- (void)addPpdCIOAssocs:(NSSet *)values;
+- (void)removePpdCIOAssocs:(NSSet *)values;
+
+- (void)addPpdAssocsObject:(PPDAssoc *)value;
+- (void)removePpdAssocsObject:(PPDAssoc *)value;
+- (void)addPpdAssocs:(NSSet *)values;
+- (void)removePpdAssocs:(NSSet *)values;
 
 @end

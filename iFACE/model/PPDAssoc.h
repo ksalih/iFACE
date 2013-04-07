@@ -15,6 +15,14 @@
 
 @property (nonatomic, retain) NSString * dPerson;
 @property (nonatomic, retain) NSString * dPersonRelated;
-@property (nonatomic, retain) DPerson *personAssocToPerson;
+@property (nonatomic, retain) NSSet *dpersonInfo;
+@end
+
+@interface PPDAssoc (CoreDataGeneratedAccessors)
+
+- (void)addDpersonInfoObject:(DPerson *)value;
+- (void)removeDpersonInfoObject:(DPerson *)value;
+- (void)addDpersonInfo:(NSSet *)values;
+- (void)removeDpersonInfo:(NSSet *)values;
 
 @end
