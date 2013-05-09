@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DCIO.h"
+#import "SlideMenuViewController.h"
 
 @interface CIOProfileViewController : UIViewController
 
@@ -19,5 +20,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *agencyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cityStateLabel;
+@property (weak, nonatomic) SlideMenuViewController *slideMenuViewController;
+
+- (void) registerSlideMenuViewController:(SlideMenuViewController *) slideMenuViewController;
 
 @end

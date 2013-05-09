@@ -11,6 +11,7 @@
 #import "AppDefinitions.h"
 #import "ApplicationPreferences.h"
 #import "AppDelegate.h"
+#import "AllActivityViewController.h"
 
 @implementation MeViewController
 
@@ -132,6 +133,13 @@
         case NSFetchedResultsChangeMove:
             
             break;
+    }
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue destinationViewController] isKindOfClass:[AllActivityViewController class]]){
+        AllActivityViewController *vc = (AllActivityViewController *) segue.destinationViewController;
+        [vc registerSlideMenuViewController:self.slideMenuViewController];
     }
 }
 

@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *searchString;
 
 - (void) registerSlideMenuViewController:(SlideMenuViewController *) slideMenuViewController;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *slideMenuButton;
 
 - (IBAction)slideMenuAction:(id)sender;
 

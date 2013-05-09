@@ -362,6 +362,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Eek-DX-71T" kind="push" id="F4z-hY-W2B"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhf-qo-gPQ">
                                 <constraints>
@@ -450,7 +453,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="886" y="-18"/>
+            <point key="canvasLocation" x="844" y="-18"/>
         </scene>
         <!--All Activity View Controller-->
         <scene sceneID="J6b-fe-iil">
@@ -610,6 +613,7 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="slideMenuButton" destination="Yx0-ab-9ak" id="Zmg-rZ-1zJ"/>
                         <segue destination="zEB-ZB-Umy" kind="push" identifier="checkInSegue" id="T6y-iz-VGn"/>
                     </connections>
                 </tableViewController>
@@ -620,14 +624,14 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="799" y="1534"/>
+            <point key="canvasLocation" x="963" y="1544"/>
         </scene>
         <!--Pick View Controller - CIO-->
         <scene sceneID="04M-3U-6QI">
             <objects>
                 <viewController id="Qlr-IU-NHa" customClass="CIOPickViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cIB-vO-myi">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="484"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="B4Y-qW-TIU">
@@ -705,7 +709,7 @@
             <objects>
                 <viewController id="Mrn-tA-Ma3" customClass="CompleteCheckInViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zTv-cP-9GD">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="484"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JOg-P5-FbC">
@@ -796,7 +800,7 @@
             <objects>
                 <viewController id="zEB-ZB-Umy" customClass="CheckInViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hu0-4o-8vO">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="484"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EF6-ZI-v8B">
@@ -1099,6 +1103,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Eek-DX-71T" kind="push" id="eYU-xv-Vkp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuw-QN-l0E">
                                 <constraints>
@@ -1137,7 +1144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5MP-Ax-Zo4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1275" y="2230"/>
+            <point key="canvasLocation" x="1262" y="2230"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a6y-7F-PJh">
@@ -1175,127 +1182,13 @@
         <image name="search off.png" width="23" height="23"/>
         <image name="settings off.png" width="23" height="23"/>
     </resources>
-    <classes>
-        <class className="ActivityCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ActivityCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activityName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cioFullName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cioTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lastUpdated" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="ppdFullName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="ppdImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="ppdPosition" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="AllActivityViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AllActivityViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="imageTapped:"/>
-                <relationship kind="action" name="slideMenuAction:"/>
-                <relationship kind="outlet" name="activityCell" candidateClass="ActivityCell"/>
-            </relationships>
-        </class>
-        <class className="BlueButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BlueButton.h"/>
-        </class>
-        <class className="CIOPickViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CIOPickViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CIOProfileViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CIOProfileViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="agencyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cityStateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="fullNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="CIOSearchViewController" superclassName="CIOPickViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CIOSearchViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="imageTapped:"/>
-                <relationship kind="action" name="slideMenuAction:"/>
-            </relationships>
-        </class>
-        <class className="CheckInViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CheckInViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="CompleteCheckInViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CompleteCheckInViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="checkInAction:"/>
-                <relationship kind="outlet" name="checkinMessageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="messageTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="textView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="JYDarkTranslucentCellHeaderView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JYDarkTranslucentCellHeaderView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="headerText" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="JYTrueEtchedCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JYTrueEtchedCell.h"/>
-        </class>
-        <class className="MeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MeViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="imageTapped:"/>
-                <relationship kind="action" name="slideMenuAction:"/>
-                <relationship kind="outlet" name="fullNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="serviceAreaLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="slideMenuButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="titlePositionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userContainerView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="userPictureImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ShadowedView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShadowedView.h"/>
-        </class>
-        <class className="SideMenuOptionsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SideMenuOptionsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="jyDarkTranslucentCellHeaderView" candidateClass="JYDarkTranslucentCellHeaderView"/>
-                <relationship kind="outlet" name="userNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SlideMenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlideMenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="panAction:" candidateClass="UIPanGestureRecognizer"/>
-                <relationship kind="outlet" name="containerController" candidateClass="ShadowedView"/>
-                <relationship kind="outlet" name="panGestureRecognizer" candidateClass="UIPanGestureRecognizer"/>
-            </relationships>
-        </class>
-        <class className="WelcomeScreenViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WelcomeScreenViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="signInButton:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="T6y-iz-VGn"/>
+        <segue reference="9jS-Ta-qbo"/>
+        <segue reference="eYU-xv-Vkp"/>
     </inferredMetricsTieBreakers>
 </document>

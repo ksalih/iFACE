@@ -117,7 +117,7 @@
     if (self.searchString) {
         // predicate that uses searchString (used by UISearchDisplayController)
         // e.g., [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", self.searchString];
-        predicate = [NSPredicate predicateWithFormat:@"firstName CONTAINS[cd] %@ or lastName CONTAINS[cd] %@ ", self.searchString,self.searchString];
+        predicate = [NSPredicate predicateWithFormat:@"firstName CONTAINS[cd] %@ or lastName CONTAINS[cd] %@ or agency CONTAINS[cd] %@", self.searchString,self.searchString,self.searchString];
     } else {
         // predicate without searchString (used by UITableViewController)
         predicate = nil;

@@ -49,6 +49,7 @@
     if ([[segue identifier] isEqualToString:@"compleCheckInSegue"]){
         CIOProfileViewController *cioProfileViewController = (CIOProfileViewController *)[segue destinationViewController];
         cioProfileViewController.selectedCIO = self.selectedDCIO;
+        cioProfileViewController.slideMenuViewController = self.slideMenuViewController;
     }
 }
 @end

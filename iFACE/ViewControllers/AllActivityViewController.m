@@ -32,12 +32,13 @@
     [refreshControl addTarget:self action:@selector(refreshFromServer) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
     [self.tableView addSubview: refreshControl];
+    self.navigationItem.hidesBackButton = NO;
     
     formatter  = [[NSDateFormatter alloc] init];
     [formatter setTimeStyle:NSDateFormatterNoStyle];
     [formatter setDateStyle:NSDateFormatterShortStyle];
     formatter.doesRelativeDateFormatting = YES;
-
+   // self.navigationItem.
     self.managedObjectContext = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
     //synchronize
     // Uncomment the following line to preserve selection between presentations.

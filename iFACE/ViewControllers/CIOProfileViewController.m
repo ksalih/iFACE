@@ -7,6 +7,7 @@
 //
 
 #import "CIOProfileViewController.h"
+#import "AllActivityViewController.h"
 
 @interface CIOProfileViewController ()
 
@@ -40,6 +41,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue destinationViewController] isKindOfClass:[AllActivityViewController class]]){
+        AllActivityViewController *vc = (AllActivityViewController *) segue.destinationViewController;
+        [vc registerSlideMenuViewController:self.slideMenuViewController];
+    }
+}
+
+- (void) registerSlideMenuViewController:(SlideMenuViewController *) slideMenuViewController{
+    self.slideMenuViewController = slideMenuViewController;
 }
 
 @end

@@ -3,7 +3,8 @@
 //  FieldOps Mobile
 //
 //  Created by Jorge Carvallo on 11/16/12.
-//  Copyright (c) 2012 Deloitte for US Department of Transportation Pipeline and Hazardous Materials Safety Administration. All rights reserved.
+//  Copyright (c) 2012 Deloitte
+//  All rights reserved.
 //
 
 #ifndef FieldOps_Mobile_AppDefinitions_h
